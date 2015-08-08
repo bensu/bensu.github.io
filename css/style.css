@@ -1,0 +1,92 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+h3 {
+    color: #607d8b;
+}
+
+h4 {
+    color: #607d8b;
+}
+
+h5 {
+    color: #607d8b;
+}
+
+a {
+    color: #546e7a;
+}
+
+ul {
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 40px;
+}
+
+/* This clearly shows why CSS doesn't compose*/
+.nav-wrapper ul li {
+    list-style: none;
+}
+
+ul li {
+    list-style: square;
+}
+
+ul li {
+    color: #263238;
+}
+
+blockquote {
+    border-left-color: #78909c;
+}
+
+.header {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.post-body {
+    font-size: large;
+    max-width: 900px;
+    text-align: justify;
+    margin: auto;
+}
+.post-link {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.post-link-title {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.archive-date {
+    color: #78909c;
+    padding-left: 1rem;
+}
+
+.archive {
+    text-align: left;
+}
+
+/* Math */
+
+.MathJax {
+    text-align: center;
+}
+
+/* TODO: improve padding */
+code {
+    margin: 0.5rem;
+}
