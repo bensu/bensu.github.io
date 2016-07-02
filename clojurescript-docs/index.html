@@ -1,15 +1,13 @@
 <html>
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Overview - clojurescript API documentation</title>
-    <link href="static/favicon.png" rel="icon" />
-    <link href="static/favicon.png" rel="shortcut icon" />
-    <link media="all" type="text/css" href="static/clojure.css" rel="stylesheet" />
-    <link media="all" type="text/css" href="static/wiki.css" rel="stylesheet" />
-    <link media="all" type="text/css" href="static/internal.css" rel="stylesheet" />
+    <link rel="icon" href="static/favicon.png" />
+    <link rel="shortcut icon" href="static/favicon.png" />
+    <link rel="stylesheet" href="static/clojure.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="static/wiki.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="static/internal.css" type="text/css" media="all" />
     <style>.menuWrapper{height: 36px;}</style>
-    <!--[if lte IE 6]>
-    <link rel="stylesheet" href="http://www.wikispaces.com/_/2009051601/s/internal_ie.css" type="text/css" />
-    <![endif]-->
   </head>
 <!--
 This document was auto-generated from the source by the clojure autodoc system.
@@ -21,268 +19,156 @@ namespace.
   <body>
     <div id="AllContentContainer">
       <div id="Header">
-	<a id="Logo" href="index.html"><img alt="Clojure" height="100" width="100" src="static/clojure-icon.gif" /></a>
-	<h1><a title="page header title" id="page-header" href="index.html">clojurescript</a></h1>
+	<a href="index.html" id="Logo"><img src="static/clojure-icon.gif" width="100" height="100" alt="Clojure" /></a>
+	<h1><a href="index.html" id="page-header" title="page header title">clojurescript</a></h1>
       </div>
       <div id="leftcolumn"><div style="text-align: center;"></div>
 <div class="menu">
   <div class="WikiCustomNav WikiElement wiki">
     <span class="toc-header"><span id="project-name">clojurescript</span> <span id="version"></span> API</span><br />
     <ul>
-      <li><a class="wiki_link" href="index.html">Overview</a></li>
-      <li><a class="wiki_link" href="api-index.html">API Index</a></li>
+      <li><a href="index.html" class="wiki_link">Overview</a></li>
+      <li><a href="api-index.html" class="wiki_link">API Index</a></li>
     </ul>
     <div class="NamespaceTOC">
       <span class="toc-header">Namespaces</span>
       <ul id="left-sidebar-list">
-        <li><a href="bootstrap-test.helper-api.html" class="wiki_link">bootstrap-test.helper</a></li><li><a href="bootstrap-test.macros-api.html" class="wiki_link">bootstrap-test.macros</a></li><li><a href="cljs.analyzer-api-tests-api.html" class="wiki_link">cljs.analyzer-api-tests</a></li><li><a href="cljs.analyzer-tests-api.html" class="wiki_link">cljs.analyzer-tests</a></li><li><a href="cljs.analyzer.api-api.html" class="wiki_link">cljs.analyzer.api</a></li><li><a href="cljs.analyzer.macros-api.html" class="wiki_link">cljs.analyzer.macros</a></li><li><a href="cljs.analyzer.utils-api.html" class="wiki_link">cljs.analyzer.utils</a></li><li><a href="cljs.build-api-tests-api.html" class="wiki_link">cljs.build-api-tests</a></li><li><a href="cljs.build.api-api.html" class="wiki_link">cljs.build.api</a></li><li><a href="cljs.closure-api.html" class="wiki_link">cljs.closure</a></li><li><a href="cljs.closure-tests-api.html" class="wiki_link">cljs.closure-tests</a></li><li><a href="cljs.compiler-tests-api.html" class="wiki_link">cljs.compiler-tests</a></li><li><a href="cljs.compiler.api-api.html" class="wiki_link">cljs.compiler.api</a></li><li><a href="cljs.compiler.macros-api.html" class="wiki_link">cljs.compiler.macros</a></li><li><a href="cljs.core.macros-api.html" class="wiki_link">cljs.core.macros</a></li><li><a href="cljs.env.macros-api.html" class="wiki_link">cljs.env.macros</a></li><li><a href="cljs.js-api.html" class="wiki_link">cljs.js</a></li><li><a href="cljs.macro-test.macros-api.html" class="wiki_link">cljs.macro-test.macros</a></li><li><a href="cljs.pprint-api.html" class="wiki_link">cljs.pprint</a></li><li><a href="cljs.pprint-test-api.html" class="wiki_link">cljs.pprint-test</a></li><li><a href="cljs.repl-tests-api.html" class="wiki_link">cljs.repl-tests</a></li><li><a href="cljs.repl.browser-api.html" class="wiki_link">cljs.repl.browser</a></li><li><a href="cljs.repl.nashorn-api.html" class="wiki_link">cljs.repl.nashorn</a></li><li><a href="cljs.repl.node-api.html" class="wiki_link">cljs.repl.node</a></li><li><a href="cljs.repl.reflect-api.html" class="wiki_link">cljs.repl.reflect</a></li><li><a href="cljs.repl.rhino-api.html" class="wiki_link">cljs.repl.rhino</a></li><li><a href="cljs.repl.server-api.html" class="wiki_link">cljs.repl.server</a></li><li><a href="cljs.source-map-api.html" class="wiki_link">cljs.source-map</a></li><li><a href="cljs.test-api.html" class="wiki_link">cljs.test</a></li>
+        <li><a class="wiki_link" href="cljs.analyzer-api.html">cljs.analyzer</a></li><li><a class="wiki_link" href="cljs.build.api-api.html">cljs.build.api</a></li><li><a class="wiki_link" href="cljs.closure-api.html">cljs.closure</a></li><li><a class="wiki_link" href="cljs.compiler-api.html">cljs.compiler</a></li><li><a class="wiki_link" href="cljs.core-api.html">cljs.core</a></li><li><a class="wiki_link" href="cljs.env-api.html">cljs.env</a></li><li><a class="wiki_link" href="cljs.js-api.html">cljs.js</a></li><li><a class="wiki_link" href="cljs.js-deps-api.html">cljs.js-deps</a></li><li><a class="wiki_link" href="cljs.pprint-api.html">cljs.pprint</a></li><li><a class="wiki_link" href="cljs.repl-api.html">cljs.repl</a></li><li><a class="wiki_link" href="cljs.source-map-api.html">cljs.source-map</a></li><li><a class="wiki_link" href="cljs.spec-api.html">cljs.spec</a></li><li><a class="wiki_link" href="cljs.stacktrace-api.html">cljs.stacktrace</a></li><li><a class="wiki_link" href="cljs.support-api.html">cljs.support</a></li><li><a class="wiki_link" href="cljs.tagged-literals-api.html">cljs.tagged-literals</a></li><li><a class="wiki_link" href="cljs.test-api.html">cljs.test</a></li><li><a class="wiki_link" href="cljs.util-api.html">cljs.util</a></li>
       </ul>
     </div>
     
-    <a href="http://clojure.org" class="wiki_link">Clojure Home</a>
+    <a class="wiki_link" href="http://clojure.org">Clojure Home</a>
   </div>
 </div>
 </div>
       <div id="rightcolumn">
 	<div id="Content">
 	  <div class="contentBox"><div class="innerContentBox">
-              <div id="content_view" class="wiki wikiPage">
+              <div class="wiki wikiPage" id="content_view">
                 <div id="right-sidebar"><div id="toc">
   <h1 class="nopad">Table of Contents</h1>
-  <div style="margin-left: 1em;" class="toc-section">
-    <a href="#bootstrap-test.helper">bootstrap-test.helper</a>
+  <div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#cljs.analyzer">cljs.analyzer</a>
     
-    <br />
-  </div><div style="margin-left: 1em;" class="toc-section">
-    <a href="#bootstrap-test.macros">bootstrap-test.macros</a>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#cljs.build.api">cljs.build.api</a>
     
-    <br />
-  </div><div style="margin-left: 1em;" class="toc-section">
-    <a href="#cljs.analyzer-api-tests">cljs.analyzer-api-tests</a>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#cljs.closure">cljs.closure</a>
     
-    <br />
-  </div><div style="margin-left: 1em;" class="toc-section">
-    <a href="#cljs.analyzer-tests">cljs.analyzer-tests</a>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#cljs.compiler">cljs.compiler</a>
     
-    <br />
-  </div><div style="margin-left: 1em;" class="toc-section">
-    <a href="#cljs.analyzer.api">cljs.analyzer.api</a>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#cljs.core">cljs.core</a>
     
-    <br />
-  </div><div style="margin-left: 1em;" class="toc-section">
-    <a href="#cljs.analyzer.macros">cljs.analyzer.macros</a>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#cljs.env">cljs.env</a>
     
-    <br />
-  </div><div style="margin-left: 1em;" class="toc-section">
-    <a href="#cljs.analyzer.utils">cljs.analyzer.utils</a>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#cljs.js">cljs.js</a>
     
-    <br />
-  </div><div style="margin-left: 1em;" class="toc-section">
-    <a href="#cljs.build-api-tests">cljs.build-api-tests</a>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#cljs.js-deps">cljs.js-deps</a>
     
-    <br />
-  </div><div style="margin-left: 1em;" class="toc-section">
-    <a href="#cljs.build.api">cljs.build.api</a>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#cljs.pprint">cljs.pprint</a>
     
-    <br />
-  </div><div style="margin-left: 1em;" class="toc-section">
-    <a href="#cljs.closure">cljs.closure</a>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#cljs.repl">cljs.repl</a>
     
-    <br />
-  </div><div style="margin-left: 1em;" class="toc-section">
-    <a href="#cljs.closure-tests">cljs.closure-tests</a>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#cljs.source-map">cljs.source-map</a>
     
-    <br />
-  </div><div style="margin-left: 1em;" class="toc-section">
-    <a href="#cljs.compiler-tests">cljs.compiler-tests</a>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#cljs.spec">cljs.spec</a>
     
-    <br />
-  </div><div style="margin-left: 1em;" class="toc-section">
-    <a href="#cljs.compiler.api">cljs.compiler.api</a>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#cljs.stacktrace">cljs.stacktrace</a>
     
-    <br />
-  </div><div style="margin-left: 1em;" class="toc-section">
-    <a href="#cljs.compiler.macros">cljs.compiler.macros</a>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#cljs.support">cljs.support</a>
     
-    <br />
-  </div><div style="margin-left: 1em;" class="toc-section">
-    <a href="#cljs.core.macros">cljs.core.macros</a>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#cljs.tagged-literals">cljs.tagged-literals</a>
     
-    <br />
-  </div><div style="margin-left: 1em;" class="toc-section">
-    <a href="#cljs.env.macros">cljs.env.macros</a>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#cljs.test">cljs.test</a>
     
-    <br />
-  </div><div style="margin-left: 1em;" class="toc-section">
-    <a href="#cljs.js">cljs.js</a>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#cljs.util">cljs.util</a>
     
-    <br />
-  </div><div style="margin-left: 1em;" class="toc-section">
-    <a href="#cljs.macro-test.macros">cljs.macro-test.macros</a>
-    
-    <br />
-  </div><div style="margin-left: 1em;" class="toc-section">
-    <a href="#cljs.pprint">cljs.pprint</a>
-    
-    <br />
-  </div><div style="margin-left: 1em;" class="toc-section">
-    <a href="#cljs.pprint-test">cljs.pprint-test</a>
-    
-    <br />
-  </div><div style="margin-left: 1em;" class="toc-section">
-    <a href="#cljs.repl-tests">cljs.repl-tests</a>
-    
-    <br />
-  </div><div style="margin-left: 1em;" class="toc-section">
-    <a href="#cljs.repl.browser">cljs.repl.browser</a>
-    
-    <br />
-  </div><div style="margin-left: 1em;" class="toc-section">
-    <a href="#cljs.repl.nashorn">cljs.repl.nashorn</a>
-    
-    <br />
-  </div><div style="margin-left: 1em;" class="toc-section">
-    <a href="#cljs.repl.node">cljs.repl.node</a>
-    
-    <br />
-  </div><div style="margin-left: 1em;" class="toc-section">
-    <a href="#cljs.repl.reflect">cljs.repl.reflect</a>
-    
-    <br />
-  </div><div style="margin-left: 1em;" class="toc-section">
-    <a href="#cljs.repl.rhino">cljs.repl.rhino</a>
-    
-    <br />
-  </div><div style="margin-left: 1em;" class="toc-section">
-    <a href="#cljs.repl.server">cljs.repl.server</a>
-    
-    <br />
-  </div><div style="margin-left: 1em;" class="toc-section">
-    <a href="#cljs.source-map">cljs.source-map</a>
-    
-    <br />
-  </div><div style="margin-left: 1em;" class="toc-section">
-    <a href="#cljs.test">cljs.test</a>
-    
-    <br />
   </div>
 </div>
 </div>
                 <div id="content-tag"><h1 id="toc0">API Overview - <span id="header-project">clojurescript</span> <span id="header-version"></span></h1>
 <br />
-<div id="project-description"></div>
+<div id="project-description">ClojureScript compiler and core runtime library</div>
+
 <br />
 <div id="namespace-entry">
   <br />
   <hr />
-  <h2 id="bootstrap-test.helper">bootstrap-test.helper</h2>
+  <h2 id="cljs.analyzer">cljs.analyzer</h2>
   
-  <a href="bootstrap-test.helper-api.html" id="api-link">Detailed API documentation</a><br />
+  <a id="api-link" href="cljs.analyzer-api.html">Detailed API documentation</a><br />
   <pre id="namespace-docstr"></pre>
   
   
   
-  Public variables and functions:
-  <br />
-  
-</div><div id="namespace-entry">
-  <br />
-  <hr />
-  <h2 id="bootstrap-test.macros">bootstrap-test.macros</h2>
-  
-  <a href="bootstrap-test.macros-api.html" id="api-link">Detailed API documentation</a><br />
-  <pre id="namespace-docstr"></pre>
-  
-  
-  
-  Public variables and functions:
-  <br />
-  
-</div><div id="namespace-entry">
-  <br />
-  <hr />
-  <h2 id="cljs.analyzer-api-tests">cljs.analyzer-api-tests</h2>
-  
-  <a href="cljs.analyzer-api-tests-api.html" id="api-link">Detailed API documentation</a><br />
-  <pre id="namespace-docstr"></pre>
-  
-  
-  
-  Public variables and functions:
-  <br />
-  
-</div><div id="namespace-entry">
-  <br />
-  <hr />
-  <h2 id="cljs.analyzer-tests">cljs.analyzer-tests</h2>
-  
-  <a href="cljs.analyzer-tests-api.html" id="api-link">Detailed API documentation</a><br />
-  <pre id="namespace-docstr"></pre>
-  
-  
-  
-  Public variables and functions:
-  <br />
-  
-</div><div id="namespace-entry">
-  <br />
-  <hr />
-  <h2 id="cljs.analyzer.api">cljs.analyzer.api</h2>
-  
-  <a href="cljs.analyzer.api-api.html" id="api-link">Detailed API documentation</a><br />
-  <pre id="namespace-docstr">This is intended to be a stable api for those who need programmatic access
-to the analyzer.</pre>
-  
-  
-  
-  Public variables and functions:
-  <br />
-  
-</div><div id="namespace-entry">
-  <br />
-  <hr />
-  <h2 id="cljs.analyzer.macros">cljs.analyzer.macros</h2>
-  
-  <a href="cljs.analyzer.macros-api.html" id="api-link">Detailed API documentation</a><br />
-  <pre id="namespace-docstr"></pre>
-  
-  
-  
-  Public variables and functions:
-  <br />
-  
-</div><div id="namespace-entry">
-  <br />
-  <hr />
-  <h2 id="cljs.analyzer.utils">cljs.analyzer.utils</h2>
-  
-  <a href="cljs.analyzer.utils-api.html" id="api-link">Detailed API documentation</a><br />
-  <pre id="namespace-docstr"></pre>
-  
-  
-  
-  Public variables and functions:
-  <br />
-  
-</div><div id="namespace-entry">
-  <br />
-  <hr />
-  <h2 id="cljs.build-api-tests">cljs.build-api-tests</h2>
-  
-  <a href="cljs.build-api-tests-api.html" id="api-link">Detailed API documentation</a><br />
-  <pre id="namespace-docstr"></pre>
-  
-  
-  
-  Public variables and functions:
-  <br />
-  
+  Contents:
+  <span id="var-link"><a id="var-tag" href="cljs.analyzer-api.html#cljs.analyzer/aliasable-clj-ns?">aliasable-clj-ns?</a> </span><span id="var-link"><a id="var-tag" href="cljs.analyzer-api.html#cljs.analyzer/analyze">analyze</a> </span><span id="var-link"><a id="var-tag" href="cljs.analyzer-api.html#cljs.analyzer/analyze-deps">analyze-deps</a> </span><span id="var-link"><a id="var-tag" href="cljs.analyzer-api.html#cljs.analyzer/analyze-file">analyze-file</a> </span><span id="var-link"><a id="var-tag" href="cljs.analyzer-api.html#cljs.analyzer/analyze-symbol">analyze-symbol</a> </span><span id="var-link"><a id="var-tag" href="cljs.analyzer-api.html#cljs.analyzer/cache-file">cache-file</a> </span><span id="var-link"><a id="var-tag" href="cljs.analyzer-api.html#cljs.analyzer/clj-ns-&gt;cljs-ns">clj-ns-&gt;cljs-ns</a> </span><span id="var-link"><a id="var-tag" href="cljs.analyzer-api.html#cljs.analyzer/confirm-bindings">confirm-bindings</a> </span><span id="var-link"><a id="var-tag" href="cljs.analyzer-api.html#cljs.analyzer/confirm-ns">confirm-ns</a> </span><span id="var-link"><a id="var-tag" href="cljs.analyzer-api.html#cljs.analyzer/core-name?">core-name?</a> </span><span id="var-link"><a id="var-tag" href="cljs.analyzer-api.html#cljs.analyzer/desugar-ns-specs">desugar-ns-specs</a> </span><span id="var-link"><a id="var-tag" href="cljs.analyzer-api.html#cljs.analyzer/empty-env">empty-env</a> </span><span id="var-link"><a id="var-tag" href="cljs.analyzer-api.html#cljs.analyzer/forms-seq">forms-seq</a> </span><span id="var-link"><a id="var-tag" href="cljs.analyzer-api.html#cljs.analyzer/forms-seq*">forms-seq*</a> </span><span id="var-link"><a id="var-tag" href="cljs.analyzer-api.html#cljs.analyzer/get-expander">get-expander</a> </span><span id="var-link"><a id="var-tag" href="cljs.analyzer-api.html#cljs.analyzer/infer-tag">infer-tag</a> </span><span id="var-link"><a id="var-tag" href="cljs.analyzer-api.html#cljs.analyzer/intern-macros">intern-macros</a> </span><span id="var-link"><a id="var-tag" href="cljs.analyzer-api.html#cljs.analyzer/loaded-js-ns?">loaded-js-ns?</a> </span><span id="var-link"><a id="var-tag" href="cljs.analyzer-api.html#cljs.analyzer/locate-src">locate-src</a> </span><span id="var-link"><a id="var-tag" href="cljs.analyzer-api.html#cljs.analyzer/macro-autoload-ns?">macro-autoload-ns?</a> </span><span id="var-link"><a id="var-tag" href="cljs.analyzer-api.html#cljs.analyzer/macroexpand-1">macroexpand-1</a> </span><span id="var-link"><a id="var-tag" href="cljs.analyzer-api.html#cljs.analyzer/parse-ns">parse-ns</a> </span><span id="var-link"><a id="var-tag" href="cljs.analyzer-api.html#cljs.analyzer/requires-analysis?">requires-analysis?</a> </span><span id="var-link"><a id="var-tag" href="cljs.analyzer-api.html#cljs.analyzer/resolve-existing-var">resolve-existing-var</a> </span><span id="var-link"><a id="var-tag" href="cljs.analyzer-api.html#cljs.analyzer/resolve-macro-var">resolve-macro-var</a> </span><span id="var-link"><a id="var-tag" href="cljs.analyzer-api.html#cljs.analyzer/resolve-var">resolve-var</a> </span><span id="var-link"><a id="var-tag" href="cljs.analyzer-api.html#cljs.analyzer/rewrite-cljs-aliases">rewrite-cljs-aliases</a> </span><br />
+  <span id="subspace"><br />Variables and functions in
+    <span id="name">cljs.analyzer.api</span>:
+    <span id="sub-var-link">
+      <a href="cljs.analyzer-api.html#cljs.analyzer.api/all-ns">all-ns</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.analyzer-api.html#cljs.analyzer.api/analyze">analyze</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.analyzer-api.html#cljs.analyzer.api/analyze-file">analyze-file</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.analyzer-api.html#cljs.analyzer.api/default-warning-handler">default-warning-handler</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.analyzer-api.html#cljs.analyzer.api/empty-env">empty-env</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.analyzer-api.html#cljs.analyzer.api/empty-state">empty-state</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.analyzer-api.html#cljs.analyzer.api/find-ns">find-ns</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.analyzer-api.html#cljs.analyzer.api/forms-seq">forms-seq</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.analyzer-api.html#cljs.analyzer.api/get-js-index">get-js-index</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.analyzer-api.html#cljs.analyzer.api/get-options">get-options</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.analyzer-api.html#cljs.analyzer.api/in-cljs-user">in-cljs-user</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.analyzer-api.html#cljs.analyzer.api/no-warn">no-warn</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.analyzer-api.html#cljs.analyzer.api/ns-interns">ns-interns</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.analyzer-api.html#cljs.analyzer.api/ns-publics">ns-publics</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.analyzer-api.html#cljs.analyzer.api/ns-resolve">ns-resolve</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.analyzer-api.html#cljs.analyzer.api/parse-ns">parse-ns</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.analyzer-api.html#cljs.analyzer.api/remove-ns">remove-ns</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.analyzer-api.html#cljs.analyzer.api/resolve">resolve</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.analyzer-api.html#cljs.analyzer.api/warning-enabled?">warning-enabled?</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.analyzer-api.html#cljs.analyzer.api/with-state">with-state</a>
+    </span>
+    <br />
+  </span>
 </div><div id="namespace-entry">
   <br />
   <hr />
   <h2 id="cljs.build.api">cljs.build.api</h2>
   
-  <a href="cljs.build.api-api.html" id="api-link">Detailed API documentation</a><br />
+  <a id="api-link" href="cljs.build.api-api.html">Detailed API documentation</a><br />
   <pre id="namespace-docstr">This is intended to be a stable api for those who need programmatic access
 to ClojureScript's project building facilities.
 
@@ -291,15 +177,15 @@ files so that they will be recompiled.</pre>
   
   
   
-  Public variables and functions:
-  <br />
+  Contents:
+  <span id="var-link"><a id="var-tag" href="cljs.build.api-api.html#cljs.build.api/add-dependencies">add-dependencies</a> </span><span id="var-link"><a id="var-tag" href="cljs.build.api-api.html#cljs.build.api/add-implicit-options">add-implicit-options</a> </span><span id="var-link"><a id="var-tag" href="cljs.build.api-api.html#cljs.build.api/build">build</a> </span><span id="var-link"><a id="var-tag" href="cljs.build.api-api.html#cljs.build.api/cljs-dependents-for-macro-namespaces">cljs-dependents-for-macro-namespaces</a> </span><span id="var-link"><a id="var-tag" href="cljs.build.api-api.html#cljs.build.api/compile">compile</a> </span><span id="var-link"><a id="var-tag" href="cljs.build.api-api.html#cljs.build.api/goog-dep-string">goog-dep-string</a> </span><span id="var-link"><a id="var-tag" href="cljs.build.api-api.html#cljs.build.api/inputs">inputs</a> </span><span id="var-link"><a id="var-tag" href="cljs.build.api-api.html#cljs.build.api/mark-cljs-ns-for-recompile!">mark-cljs-ns-for-recompile!</a> </span><span id="var-link"><a id="var-tag" href="cljs.build.api-api.html#cljs.build.api/ns-&gt;location">ns-&gt;location</a> </span><span id="var-link"><a id="var-tag" href="cljs.build.api-api.html#cljs.build.api/ns-&gt;source">ns-&gt;source</a> </span><span id="var-link"><a id="var-tag" href="cljs.build.api-api.html#cljs.build.api/output-unoptimized">output-unoptimized</a> </span><span id="var-link"><a id="var-tag" href="cljs.build.api-api.html#cljs.build.api/parse-js-ns">parse-js-ns</a> </span><span id="var-link"><a id="var-tag" href="cljs.build.api-api.html#cljs.build.api/source-on-disk">source-on-disk</a> </span><span id="var-link"><a id="var-tag" href="cljs.build.api-api.html#cljs.build.api/src-file-&gt;goog-require">src-file-&gt;goog-require</a> </span><span id="var-link"><a id="var-tag" href="cljs.build.api-api.html#cljs.build.api/src-file-&gt;target-file">src-file-&gt;target-file</a> </span><span id="var-link"><a id="var-tag" href="cljs.build.api-api.html#cljs.build.api/target-file-for-cljs-ns">target-file-for-cljs-ns</a> </span><span id="var-link"><a id="var-tag" href="cljs.build.api-api.html#cljs.build.api/watch">watch</a> </span><br />
   
 </div><div id="namespace-entry">
   <br />
   <hr />
   <h2 id="cljs.closure">cljs.closure</h2>
   
-  <a href="cljs.closure-api.html" id="api-link">Detailed API documentation</a><br />
+  <a id="api-link" href="cljs.closure-api.html">Detailed API documentation</a><br />
   <pre id="namespace-docstr">Compile ClojureScript to JavaScript with optimizations from Google
  Closure Compiler producing runnable JavaScript.
 
@@ -307,7 +193,7 @@ files so that they will be recompiled.</pre>
 
  Use the 'build' function for end-to-end compilation.
 
- build = compile -&gt; add-dependencies -&gt; optimize -&gt; output
+ build = find-sources -&gt; add-dependencies -&gt; compile -&gt; optimize -&gt; output
 
  Two protocols are defined: IJavaScript and Compilable. The
  Compilable protocol is satisfied by something which can return one
@@ -329,256 +215,313 @@ files so that they will be recompiled.</pre>
   
   
   
-  Public variables and functions:
-  <br />
+  Contents:
+  <span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/-&gt;JavaScriptFile">-&gt;JavaScriptFile</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/-compile">-compile</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/-find-sources">-find-sources</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/-paths">-paths</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/-source-map">-source-map</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/-source-url">-source-url</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/add-dep-string">add-dep-string</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/add-dependencies">add-dependencies</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/add-dependency-sources">add-dependency-sources</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/add-js-sources">add-js-sources</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/add-preloads">add-preloads</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/build">build</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/build-modules">build-modules</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/build-provides">build-provides</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/cljs-dependencies">cljs-dependencies</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/cljs-source-for-namespace">cljs-source-for-namespace</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/Compilable">Compilable</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/compile">compile</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/compile-dir">compile-dir</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/compile-file">compile-file</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/compile-form-seq">compile-form-seq</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/compile-from-jar">compile-from-jar</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/compile-sources">compile-sources</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/compiled-file">compiled-file</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/convert-js-module">convert-js-module</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/deps-file">deps-file</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/emit-optimized-source-map">emit-optimized-source-map</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/find-cljs-dependencies">find-cljs-dependencies</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/get-compiled-cljs">get-compiled-cljs</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/get-upstream-deps*">get-upstream-deps*</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/Inputs">Inputs</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/ISourceMap">ISourceMap</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/jar-file-to-disk">jar-file-to-disk</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/JavaScriptFile">JavaScriptFile</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/js-dependencies">js-dependencies</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/js-transforms">js-transforms</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/known-opts">known-opts</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/load-externs">load-externs</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/make-options">make-options</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/map-&gt;JavaScriptFile">map-&gt;JavaScriptFile</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/optimize">optimize</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/optimize-modules">optimize-modules</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/output-modules">output-modules</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/output-unoptimized">output-unoptimized</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/path-from-jarfile">path-from-jarfile</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/path-relative-to">path-relative-to</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/process-js-modules">process-js-modules</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/read-js">read-js</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/rel-output-path">rel-output-path</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/set-options">set-options</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/source-for-namespace">source-for-namespace</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/source-on-disk">source-on-disk</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/watch">watch</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/write-javascript">write-javascript</a> </span><span id="var-link"><a id="var-tag" href="cljs.closure-api.html#cljs.closure/write-js?">write-js?</a> </span><br />
   
 </div><div id="namespace-entry">
   <br />
   <hr />
-  <h2 id="cljs.closure-tests">cljs.closure-tests</h2>
+  <h2 id="cljs.compiler">cljs.compiler</h2>
   
-  <a href="cljs.closure-tests-api.html" id="api-link">Detailed API documentation</a><br />
+  <a id="api-link" href="cljs.compiler-api.html">Detailed API documentation</a><br />
   <pre id="namespace-docstr"></pre>
   
   
   
-  Public variables and functions:
-  <br />
-  
+  Contents:
+  <span id="var-link"><a id="var-tag" href="cljs.compiler-api.html#cljs.compiler/cljs-files-in">cljs-files-in</a> </span><span id="var-link"><a id="var-tag" href="cljs.compiler-api.html#cljs.compiler/compile-file">compile-file</a> </span><span id="var-link"><a id="var-tag" href="cljs.compiler-api.html#cljs.compiler/compile-root">compile-root</a> </span><span id="var-link"><a id="var-tag" href="cljs.compiler-api.html#cljs.compiler/emit-arguments-to-array">emit-arguments-to-array</a> </span><span id="var-link"><a id="var-tag" href="cljs.compiler-api.html#cljs.compiler/emit-comment">emit-comment</a> </span><span id="var-link"><a id="var-tag" href="cljs.compiler-api.html#cljs.compiler/rename-to-js">rename-to-js</a> </span><span id="var-link"><a id="var-tag" href="cljs.compiler-api.html#cljs.compiler/requires-compilation?">requires-compilation?</a> </span><span id="var-link"><a id="var-tag" href="cljs.compiler-api.html#cljs.compiler/with-core-cljs">with-core-cljs</a> </span><br />
+  <span id="subspace"><br />Variables and functions in
+    <span id="name">cljs.compiler.api</span>:
+    <span id="sub-var-link">
+      <a href="cljs.compiler-api.html#cljs.compiler.api/cljs-files-in">cljs-files-in</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.compiler-api.html#cljs.compiler.api/compile-file">compile-file</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.compiler-api.html#cljs.compiler.api/compile-root">compile-root</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.compiler-api.html#cljs.compiler.api/emit">emit</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.compiler-api.html#cljs.compiler.api/requires-compilation?">requires-compilation?</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.compiler-api.html#cljs.compiler.api/with-core-cljs">with-core-cljs</a>
+    </span>
+    <br />
+  </span>
 </div><div id="namespace-entry">
   <br />
   <hr />
-  <h2 id="cljs.compiler-tests">cljs.compiler-tests</h2>
+  <h2 id="cljs.core">cljs.core</h2>
   
-  <a href="cljs.compiler-tests-api.html" id="api-link">Detailed API documentation</a><br />
+  <a id="api-link" href="cljs.core-api.html">Detailed API documentation</a><br />
   <pre id="namespace-docstr"></pre>
   
   
   
-  Public variables and functions:
-  <br />
+  Contents:
+  <span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/-&gt;">-&gt;</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/-&gt;&gt;">-&gt;&gt;</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/..">..</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/amap">amap</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/and">and</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/areduce">areduce</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/as-&gt;">as-&gt;</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/assert">assert</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/binding">binding</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/case">case</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/comment">comment</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/cond">cond</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/cond-&gt;">cond-&gt;</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/cond-&gt;&gt;">cond-&gt;&gt;</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/condp">condp</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/declare">declare</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/defmacro">defmacro</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/defmethod">defmethod</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/defmulti">defmulti</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/defn">defn</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/defn-">defn-</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/defonce">defonce</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/defprotocol">defprotocol</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/defrecord">defrecord</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/deftype">deftype</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/delay">delay</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/doseq">doseq</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/dotimes">dotimes</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/doto">doto</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/exists?">exists?</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/extend-protocol">extend-protocol</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/extend-type">extend-type</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/fast-path-protocol-partitions-count">fast-path-protocol-partitions-count</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/fast-path-protocols">fast-path-protocols</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/fn">fn</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/for">for</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/goog-define">goog-define</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/if-let">if-let</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/if-not">if-not</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/if-some">if-some</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/implements?">implements?</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/js-comment">js-comment</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/js-debugger">js-debugger</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/js-inline-comment">js-inline-comment</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/lazy-cat">lazy-cat</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/lazy-seq">lazy-seq</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/let">let</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/letfn">letfn</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/loop">loop</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/macroexpand">macroexpand</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/macroexpand-1">macroexpand-1</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/memfn">memfn</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/ns-interns">ns-interns</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/ns-unmap">ns-unmap</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/or">or</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/reify">reify</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/satisfies?">satisfies?</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/simple-benchmark">simple-benchmark</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/some-&gt;">some-&gt;</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/some-&gt;&gt;">some-&gt;&gt;</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/specify">specify</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/specify!">specify!</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/this-as">this-as</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/time">time</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/undefined?">undefined?</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/unsafe-cast">unsafe-cast</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/vswap!">vswap!</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/when">when</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/when-first">when-first</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/when-let">when-let</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/when-not">when-not</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/when-some">when-some</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/while">while</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/with-out-str">with-out-str</a> </span><span id="var-link"><a id="var-tag" href="cljs.core-api.html#cljs.core/with-redefs">with-redefs</a> </span><br />
   
 </div><div id="namespace-entry">
   <br />
   <hr />
-  <h2 id="cljs.compiler.api">cljs.compiler.api</h2>
+  <h2 id="cljs.env">cljs.env</h2>
   
-  <a href="cljs.compiler.api-api.html" id="api-link">Detailed API documentation</a><br />
-  <pre id="namespace-docstr">This is intended to be a stable api for those who need programmatic access
-to the compiler.</pre>
-  
-  
-  
-  Public variables and functions:
-  <br />
-  
-</div><div id="namespace-entry">
-  <br />
-  <hr />
-  <h2 id="cljs.compiler.macros">cljs.compiler.macros</h2>
-  
-  <a href="cljs.compiler.macros-api.html" id="api-link">Detailed API documentation</a><br />
-  <pre id="namespace-docstr"></pre>
+  <a id="api-link" href="cljs.env-api.html">Detailed API documentation</a><br />
+  <pre id="namespace-docstr">A namespace that exists solely to provide a place for "compiler"
+state that is accessed/maintained by many different components.</pre>
   
   
   
-  Public variables and functions:
-  <br />
-  
-</div><div id="namespace-entry">
-  <br />
-  <hr />
-  <h2 id="cljs.core.macros">cljs.core.macros</h2>
-  
-  <a href="cljs.core.macros-api.html" id="api-link">Detailed API documentation</a><br />
-  <pre id="namespace-docstr"></pre>
-  
-  
-  
-  Public variables and functions:
-  <br />
-  
-</div><div id="namespace-entry">
-  <br />
-  <hr />
-  <h2 id="cljs.env.macros">cljs.env.macros</h2>
-  
-  <a href="cljs.env.macros-api.html" id="api-link">Detailed API documentation</a><br />
-  <pre id="namespace-docstr"></pre>
-  
-  
-  
-  Public variables and functions:
-  <br />
-  
+  Contents:
+  <span id="var-link"><a id="var-tag" href="cljs.env-api.html#cljs.env/with-compiler-env">with-compiler-env</a> </span><br />
+  <span id="subspace"><br />Variables and functions in
+    <span id="name">cljs.env.macros</span>:
+    <span id="sub-var-link">
+      <a href="cljs.env-api.html#cljs.env.macros/with-compiler-env">with-compiler-env</a>
+    </span>
+    <br />
+  </span>
 </div><div id="namespace-entry">
   <br />
   <hr />
   <h2 id="cljs.js">cljs.js</h2>
   
-  <a href="cljs.js-api.html" id="api-link">Detailed API documentation</a><br />
+  <a id="api-link" href="cljs.js-api.html">Detailed API documentation</a><br />
   <pre id="namespace-docstr"></pre>
   
   
   
-  Public variables and functions:
+  Contents:
   <br />
   
 </div><div id="namespace-entry">
   <br />
   <hr />
-  <h2 id="cljs.macro-test.macros">cljs.macro-test.macros</h2>
+  <h2 id="cljs.js-deps">cljs.js-deps</h2>
   
-  <a href="cljs.macro-test.macros-api.html" id="api-link">Detailed API documentation</a><br />
+  <a id="api-link" href="cljs.js-deps-api.html">Detailed API documentation</a><br />
   <pre id="namespace-docstr"></pre>
   
   
   
-  Public variables and functions:
-  <br />
+  Contents:
+  <span id="var-link"><a id="var-tag" href="cljs.js-deps-api.html#cljs.js-deps/-closure-lib?">-closure-lib?</a> </span><span id="var-link"><a id="var-tag" href="cljs.js-deps-api.html#cljs.js-deps/-foreign?">-foreign?</a> </span><span id="var-link"><a id="var-tag" href="cljs.js-deps-api.html#cljs.js-deps/-provides">-provides</a> </span><span id="var-link"><a id="var-tag" href="cljs.js-deps-api.html#cljs.js-deps/-requires">-requires</a> </span><span id="var-link"><a id="var-tag" href="cljs.js-deps-api.html#cljs.js-deps/-source">-source</a> </span><span id="var-link"><a id="var-tag" href="cljs.js-deps-api.html#cljs.js-deps/-url">-url</a> </span><span id="var-link"><a id="var-tag" href="cljs.js-deps-api.html#cljs.js-deps/build-index">build-index</a> </span><span id="var-link"><a id="var-tag" href="cljs.js-deps-api.html#cljs.js-deps/dependency-order">dependency-order</a> </span><span id="var-link"><a id="var-tag" href="cljs.js-deps-api.html#cljs.js-deps/find-classpath-lib">find-classpath-lib</a> </span><span id="var-link"><a id="var-tag" href="cljs.js-deps-api.html#cljs.js-deps/find-js-classpath">find-js-classpath</a> </span><span id="var-link"><a id="var-tag" href="cljs.js-deps-api.html#cljs.js-deps/find-js-fs">find-js-fs</a> </span><span id="var-link"><a id="var-tag" href="cljs.js-deps-api.html#cljs.js-deps/find-js-jar">find-js-jar</a> </span><span id="var-link"><a id="var-tag" href="cljs.js-deps-api.html#cljs.js-deps/find-url">find-url</a> </span><span id="var-link"><a id="var-tag" href="cljs.js-deps-api.html#cljs.js-deps/goog-dependencies*">goog-dependencies*</a> </span><span id="var-link"><a id="var-tag" href="cljs.js-deps-api.html#cljs.js-deps/IJavaScript">IJavaScript</a> </span><span id="var-link"><a id="var-tag" href="cljs.js-deps-api.html#cljs.js-deps/js-dependency-index">js-dependency-index</a> </span><span id="var-link"><a id="var-tag" href="cljs.js-deps-api.html#cljs.js-deps/load-foreign-library*">load-foreign-library*</a> </span><span id="var-link"><a id="var-tag" href="cljs.js-deps-api.html#cljs.js-deps/load-library*">load-library*</a> </span><span id="var-link"><a id="var-tag" href="cljs.js-deps-api.html#cljs.js-deps/parse-js-ns">parse-js-ns</a> </span><br />
   
 </div><div id="namespace-entry">
   <br />
   <hr />
   <h2 id="cljs.pprint">cljs.pprint</h2>
   
-  <a href="cljs.pprint-api.html" id="api-link">Detailed API documentation</a><br />
+  <a id="api-link" href="cljs.pprint-api.html">Detailed API documentation</a><br />
   <pre id="namespace-docstr"></pre>
   
   
   
-  Public variables and functions:
-  <span id="var-link"><a href="cljs.pprint-api.html#cljs.pprint/formatter" id="var-tag">formatter</a> </span><span id="var-link"><a href="cljs.pprint-api.html#cljs.pprint/formatter-out" id="var-tag">formatter-out</a> </span><span id="var-link"><a href="cljs.pprint-api.html#cljs.pprint/getf" id="var-tag">getf</a> </span><span id="var-link"><a href="cljs.pprint-api.html#cljs.pprint/pp" id="var-tag">pp</a> </span><span id="var-link"><a href="cljs.pprint-api.html#cljs.pprint/pprint-logical-block" id="var-tag">pprint-logical-block</a> </span><span id="var-link"><a href="cljs.pprint-api.html#cljs.pprint/print-length-loop" id="var-tag">print-length-loop</a> </span><span id="var-link"><a href="cljs.pprint-api.html#cljs.pprint/setf" id="var-tag">setf</a> </span><span id="var-link"><a href="cljs.pprint-api.html#cljs.pprint/with-pprint-dispatch" id="var-tag">with-pprint-dispatch</a> </span><br />
+  Contents:
+  <span id="var-link"><a id="var-tag" href="cljs.pprint-api.html#cljs.pprint/formatter">formatter</a> </span><span id="var-link"><a id="var-tag" href="cljs.pprint-api.html#cljs.pprint/formatter-out">formatter-out</a> </span><span id="var-link"><a id="var-tag" href="cljs.pprint-api.html#cljs.pprint/getf">getf</a> </span><span id="var-link"><a id="var-tag" href="cljs.pprint-api.html#cljs.pprint/pp">pp</a> </span><span id="var-link"><a id="var-tag" href="cljs.pprint-api.html#cljs.pprint/pprint-logical-block">pprint-logical-block</a> </span><span id="var-link"><a id="var-tag" href="cljs.pprint-api.html#cljs.pprint/print-length-loop">print-length-loop</a> </span><span id="var-link"><a id="var-tag" href="cljs.pprint-api.html#cljs.pprint/setf">setf</a> </span><span id="var-link"><a id="var-tag" href="cljs.pprint-api.html#cljs.pprint/with-pprint-dispatch">with-pprint-dispatch</a> </span><br />
   
 </div><div id="namespace-entry">
   <br />
   <hr />
-  <h2 id="cljs.pprint-test">cljs.pprint-test</h2>
+  <h2 id="cljs.repl">cljs.repl</h2>
   
-  <a href="cljs.pprint-test-api.html" id="api-link">Detailed API documentation</a><br />
+  <a id="api-link" href="cljs.repl-api.html">Detailed API documentation</a><br />
   <pre id="namespace-docstr"></pre>
   
   
   
-  Public variables and functions:
-  <br />
-  
-</div><div id="namespace-entry">
-  <br />
-  <hr />
-  <h2 id="cljs.repl-tests">cljs.repl-tests</h2>
-  
-  <a href="cljs.repl-tests-api.html" id="api-link">Detailed API documentation</a><br />
-  <pre id="namespace-docstr"></pre>
-  
-  
-  
-  Public variables and functions:
-  <br />
-  
-</div><div id="namespace-entry">
-  <br />
-  <hr />
-  <h2 id="cljs.repl.browser">cljs.repl.browser</h2>
-  
-  <a href="cljs.repl.browser-api.html" id="api-link">Detailed API documentation</a><br />
-  <pre id="namespace-docstr"></pre>
-  
-  
-  
-  Public variables and functions:
-  <br />
-  
-</div><div id="namespace-entry">
-  <br />
-  <hr />
-  <h2 id="cljs.repl.nashorn">cljs.repl.nashorn</h2>
-  
-  <a href="cljs.repl.nashorn-api.html" id="api-link">Detailed API documentation</a><br />
-  <pre id="namespace-docstr"></pre>
-  
-  
-  
-  Public variables and functions:
-  <br />
-  
-</div><div id="namespace-entry">
-  <br />
-  <hr />
-  <h2 id="cljs.repl.node">cljs.repl.node</h2>
-  
-  <a href="cljs.repl.node-api.html" id="api-link">Detailed API documentation</a><br />
-  <pre id="namespace-docstr"></pre>
-  
-  
-  
-  Public variables and functions:
-  <br />
-  
-</div><div id="namespace-entry">
-  <br />
-  <hr />
-  <h2 id="cljs.repl.reflect">cljs.repl.reflect</h2>
-  
-  <a href="cljs.repl.reflect-api.html" id="api-link">Detailed API documentation</a><br />
-  <pre id="namespace-docstr"></pre>
-  
-  
-  
-  Public variables and functions:
-  <br />
-  
-</div><div id="namespace-entry">
-  <br />
-  <hr />
-  <h2 id="cljs.repl.rhino">cljs.repl.rhino</h2>
-  
-  <a href="cljs.repl.rhino-api.html" id="api-link">Detailed API documentation</a><br />
-  <pre id="namespace-docstr"></pre>
-  
-  
-  
-  Public variables and functions:
-  <br />
-  
-</div><div id="namespace-entry">
-  <br />
-  <hr />
-  <h2 id="cljs.repl.server">cljs.repl.server</h2>
-  
-  <a href="cljs.repl.server-api.html" id="api-link">Detailed API documentation</a><br />
-  <pre id="namespace-docstr"></pre>
-  
-  
-  
-  Public variables and functions:
-  <span id="var-link"><a href="cljs.repl.server-api.html#cljs.repl.server/connection" id="var-tag">connection</a> </span><span id="var-link"><a href="cljs.repl.server-api.html#cljs.repl.server/dispatch-on" id="var-tag">dispatch-on</a> </span><span id="var-link"><a href="cljs.repl.server-api.html#cljs.repl.server/parse-headers" id="var-tag">parse-headers</a> </span><span id="var-link"><a href="cljs.repl.server-api.html#cljs.repl.server/send-and-close" id="var-tag">send-and-close</a> </span><span id="var-link"><a href="cljs.repl.server-api.html#cljs.repl.server/set-connection" id="var-tag">set-connection</a> </span><span id="var-link"><a href="cljs.repl.server-api.html#cljs.repl.server/start" id="var-tag">start</a> </span><br />
-  
+  Contents:
+  <span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/-evaluate">-evaluate</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/-get-error">-get-error</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/-load">-load</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/-parse-error">-parse-error</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/-parse-stacktrace">-parse-stacktrace</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/-print-stacktrace">-print-stacktrace</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/-repl-options">-repl-options</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/-setup">-setup</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/-tear-down">-tear-down</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/analyze-source">analyze-source</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/apropos">apropos</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/dir">dir</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/doc">doc</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/evaluate-form">evaluate-form</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/find-doc">find-doc</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/IGetError">IGetError</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/IJavaScriptEnv">IJavaScriptEnv</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/IParseError">IParseError</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/IParseStacktrace">IParseStacktrace</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/IPrintStacktrace">IPrintStacktrace</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/IReplEnvOptions">IReplEnvOptions</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/js-src-&gt;cljs-src">js-src-&gt;cljs-src</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/known-repl-opts">known-repl-opts</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/load-namespace">load-namespace</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/mapped-stacktrace">mapped-stacktrace</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/ns-info">ns-info</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/print-mapped-stacktrace">print-mapped-stacktrace</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/read-source-map">read-source-map</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/repl">repl</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/repl-read">repl-read</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/skip-if-eol">skip-if-eol</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/skip-whitespace">skip-whitespace</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/source">source</a> </span><span id="var-link"><a id="var-tag" href="cljs.repl-api.html#cljs.repl/source-fn">source-fn</a> </span><br />
+  <span id="subspace"><br />Variables and functions in
+    <span id="name">cljs.repl.browser</span>:
+    <span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.browser/-&gt;BrowserEnv">-&gt;BrowserEnv</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.browser/browser-eval">browser-eval</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.browser/BrowserEnv">BrowserEnv</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.browser/constrain-order">constrain-order</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.browser/load-javascript">load-javascript</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.browser/map-&gt;BrowserEnv">map-&gt;BrowserEnv</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.browser/repl-env">repl-env</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.browser/send-for-eval">send-for-eval</a>
+    </span>
+    <br />
+  </span><span id="subspace"><br />Variables and functions in
+    <span id="name">cljs.repl.nashorn</span>:
+    <span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.nashorn/-&gt;NashornEnv">-&gt;NashornEnv</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.nashorn/eval-resource">eval-resource</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.nashorn/map-&gt;NashornEnv">map-&gt;NashornEnv</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.nashorn/NashornEnv">NashornEnv</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.nashorn/repl-env">repl-env</a>
+    </span>
+    <br />
+  </span><span id="subspace"><br />Variables and functions in
+    <span id="name">cljs.repl.node</span>:
+    <span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.node/-&gt;NodeEnv">-&gt;NodeEnv</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.node/load-javascript">load-javascript</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.node/map-&gt;NodeEnv">map-&gt;NodeEnv</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.node/node-eval">node-eval</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.node/NodeEnv">NodeEnv</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.node/repl-env">repl-env</a>
+    </span>
+    <br />
+  </span><span id="subspace"><br />Variables and functions in
+    <span id="name">cljs.repl.reflect</span>:
+    <span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.reflect/parse-param">parse-param</a>
+    </span>
+    <br />
+  </span><span id="subspace"><br />Variables and functions in
+    <span id="name">cljs.repl.rhino</span>:
+    <span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.rhino/-&gt;RhinoEnv">-&gt;RhinoEnv</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.rhino/load-file">load-file</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.rhino/map-&gt;RhinoEnv">map-&gt;RhinoEnv</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.rhino/repl-env">repl-env</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.rhino/RhinoEnv">RhinoEnv</a>
+    </span>
+    <br />
+  </span><span id="subspace"><br />Variables and functions in
+    <span id="name">cljs.repl.server</span>:
+    <span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.server/connection">connection</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.server/dispatch-on">dispatch-on</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.server/parse-headers">parse-headers</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.server/send-and-close">send-and-close</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.server/set-connection">set-connection</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.repl-api.html#cljs.repl.server/start">start</a>
+    </span>
+    <br />
+  </span>
 </div><div id="namespace-entry">
   <br />
   <hr />
   <h2 id="cljs.source-map">cljs.source-map</h2>
   
-  <a href="cljs.source-map-api.html" id="api-link">Detailed API documentation</a><br />
+  <a id="api-link" href="cljs.source-map-api.html">Detailed API documentation</a><br />
   <pre id="namespace-docstr"></pre>
   
   
   
-  Public variables and functions:
+  Contents:
+  <span id="var-link"><a id="var-tag" href="cljs.source-map-api.html#cljs.source-map/decode">decode</a> </span><span id="var-link"><a id="var-tag" href="cljs.source-map-api.html#cljs.source-map/decode-reverse">decode-reverse</a> </span><span id="var-link"><a id="var-tag" href="cljs.source-map-api.html#cljs.source-map/encode">encode</a> </span><span id="var-link"><a id="var-tag" href="cljs.source-map-api.html#cljs.source-map/encode*">encode*</a> </span><span id="var-link"><a id="var-tag" href="cljs.source-map-api.html#cljs.source-map/indexed-sources">indexed-sources</a> </span><span id="var-link"><a id="var-tag" href="cljs.source-map-api.html#cljs.source-map/invert-reverse-map">invert-reverse-map</a> </span><span id="var-link"><a id="var-tag" href="cljs.source-map-api.html#cljs.source-map/lines-&gt;segs">lines-&gt;segs</a> </span><span id="var-link"><a id="var-tag" href="cljs.source-map-api.html#cljs.source-map/merge-source-maps">merge-source-maps</a> </span><span id="var-link"><a id="var-tag" href="cljs.source-map-api.html#cljs.source-map/relativize-path">relativize-path</a> </span><span id="var-link"><a id="var-tag" href="cljs.source-map-api.html#cljs.source-map/seg-&gt;map">seg-&gt;map</a> </span><span id="var-link"><a id="var-tag" href="cljs.source-map-api.html#cljs.source-map/seg-combine">seg-combine</a> </span><span id="var-link"><a id="var-tag" href="cljs.source-map-api.html#cljs.source-map/source-compare">source-compare</a> </span><span id="var-link"><a id="var-tag" href="cljs.source-map-api.html#cljs.source-map/update-result">update-result</a> </span><span id="var-link"><a id="var-tag" href="cljs.source-map-api.html#cljs.source-map/update-reverse-result">update-reverse-result</a> </span><br />
+  
+</div><div id="namespace-entry">
   <br />
+  <hr />
+  <h2 id="cljs.spec">cljs.spec</h2>
+  
+  <a id="api-link" href="cljs.spec-api.html">Detailed API documentation</a><br />
+  <pre id="namespace-docstr"></pre>
+  
+  
+  
+  Contents:
+  <span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/&amp;">&amp;</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/*">*</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/+">+</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/?">?</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/alt">alt</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/and">and</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/cat">cat</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/coll-of">coll-of</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/conformer">conformer</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/def">def</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/every">every</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/every-kv">every-kv</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/exercise-fn">exercise-fn</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/fdef">fdef</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/fspec">fspec</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/inst-in">inst-in</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/instrument">instrument</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/instrument-all">instrument-all</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/instrument-ns">instrument-ns</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/int-in">int-in</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/keys">keys</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/keys*">keys*</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/map-of">map-of</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/merge">merge</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/multi-spec">multi-spec</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/nilable">nilable</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/or">or</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/spec">spec</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/speced-vars">speced-vars</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/tuple">tuple</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/unstrument">unstrument</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/unstrument-all">unstrument-all</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/unstrument-ns">unstrument-ns</a> </span><span id="var-link"><a id="var-tag" href="cljs.spec-api.html#cljs.spec/with-instrument-disabled">with-instrument-disabled</a> </span><br />
+  <span id="subspace"><br />Variables and functions in
+    <span id="name">cljs.spec.impl.gen</span>:
+    <span id="sub-var-link">
+      <a href="cljs.spec-api.html#cljs.spec.impl.gen/delay">delay</a>
+    </span>
+    <br />
+  </span><span id="subspace"><br />Variables and functions in
+    <span id="name">cljs.spec.test</span>:
+    <span id="sub-var-link">
+      <a href="cljs.spec-api.html#cljs.spec.test/run-all-tests">run-all-tests</a>
+    </span><span id="sub-var-link">
+      <a href="cljs.spec-api.html#cljs.spec.test/run-tests">run-tests</a>
+    </span>
+    <br />
+  </span>
+</div><div id="namespace-entry">
+  <br />
+  <hr />
+  <h2 id="cljs.stacktrace">cljs.stacktrace</h2>
+  
+  <a id="api-link" href="cljs.stacktrace-api.html">Detailed API documentation</a><br />
+  <pre id="namespace-docstr"></pre>
+  
+  
+  
+  Contents:
+  <span id="var-link"><a id="var-tag" href="cljs.stacktrace-api.html#cljs.stacktrace/mapped-frame">mapped-frame</a> </span><span id="var-link"><a id="var-tag" href="cljs.stacktrace-api.html#cljs.stacktrace/mapped-line-column-call">mapped-line-column-call</a> </span><span id="var-link"><a id="var-tag" href="cljs.stacktrace-api.html#cljs.stacktrace/mapped-stacktrace">mapped-stacktrace</a> </span><span id="var-link"><a id="var-tag" href="cljs.stacktrace-api.html#cljs.stacktrace/mapped-stacktrace-str">mapped-stacktrace-str</a> </span><span id="var-link"><a id="var-tag" href="cljs.stacktrace-api.html#cljs.stacktrace/parse-file">parse-file</a> </span><span id="var-link"><a id="var-tag" href="cljs.stacktrace-api.html#cljs.stacktrace/parse-stacktrace">parse-stacktrace</a> </span><br />
+  
+</div><div id="namespace-entry">
+  <br />
+  <hr />
+  <h2 id="cljs.support">cljs.support</h2>
+  
+  <a id="api-link" href="cljs.support-api.html">Detailed API documentation</a><br />
+  <pre id="namespace-docstr"></pre>
+  
+  
+  
+  Contents:
+  <span id="var-link"><a id="var-tag" href="cljs.support-api.html#cljs.support/assert-args">assert-args</a> </span><br />
+  
+</div><div id="namespace-entry">
+  <br />
+  <hr />
+  <h2 id="cljs.tagged-literals">cljs.tagged-literals</h2>
+  
+  <a id="api-link" href="cljs.tagged-literals-api.html">Detailed API documentation</a><br />
+  <pre id="namespace-docstr"></pre>
+  
+  
+  
+  Contents:
+  <span id="var-link"><a id="var-tag" href="cljs.tagged-literals-api.html#cljs.tagged-literals/-&gt;JSValue">-&gt;JSValue</a> </span><span id="var-link"><a id="var-tag" href="cljs.tagged-literals-api.html#cljs.tagged-literals/JSValue">JSValue</a> </span><br />
   
 </div><div id="namespace-entry">
   <br />
   <hr />
   <h2 id="cljs.test">cljs.test</h2>
   
-  <a href="cljs.test-api.html" id="api-link">Detailed API documentation</a><br />
+  <a id="api-link" href="cljs.test-api.html">Detailed API documentation</a><br />
   <pre id="namespace-docstr"></pre>
   
   
   
-  Public variables and functions:
+  Contents:
+  <span id="var-link"><a id="var-tag" href="cljs.test-api.html#cljs.test/are">are</a> </span><span id="var-link"><a id="var-tag" href="cljs.test-api.html#cljs.test/assert-any">assert-any</a> </span><span id="var-link"><a id="var-tag" href="cljs.test-api.html#cljs.test/assert-predicate">assert-predicate</a> </span><span id="var-link"><a id="var-tag" href="cljs.test-api.html#cljs.test/async">async</a> </span><span id="var-link"><a id="var-tag" href="cljs.test-api.html#cljs.test/deftest">deftest</a> </span><span id="var-link"><a id="var-tag" href="cljs.test-api.html#cljs.test/function?">function?</a> </span><span id="var-link"><a id="var-tag" href="cljs.test-api.html#cljs.test/is">is</a> </span><span id="var-link"><a id="var-tag" href="cljs.test-api.html#cljs.test/run-all-tests">run-all-tests</a> </span><span id="var-link"><a id="var-tag" href="cljs.test-api.html#cljs.test/run-tests">run-tests</a> </span><span id="var-link"><a id="var-tag" href="cljs.test-api.html#cljs.test/run-tests-block">run-tests-block</a> </span><span id="var-link"><a id="var-tag" href="cljs.test-api.html#cljs.test/test-all-vars">test-all-vars</a> </span><span id="var-link"><a id="var-tag" href="cljs.test-api.html#cljs.test/test-ns">test-ns</a> </span><span id="var-link"><a id="var-tag" href="cljs.test-api.html#cljs.test/test-ns-block">test-ns-block</a> </span><span id="var-link"><a id="var-tag" href="cljs.test-api.html#cljs.test/testing">testing</a> </span><span id="var-link"><a id="var-tag" href="cljs.test-api.html#cljs.test/try-expr">try-expr</a> </span><br />
+  
+</div><div id="namespace-entry">
   <br />
+  <hr />
+  <h2 id="cljs.util">cljs.util</h2>
+  
+  <a id="api-link" href="cljs.util-api.html">Detailed API documentation</a><br />
+  <pre id="namespace-docstr"></pre>
+  
+  
+  
+  Contents:
+  <span id="var-link"><a id="var-tag" href="cljs.util-api.html#cljs.util/clojurescript-version">clojurescript-version</a> </span><span id="var-link"><a id="var-tag" href="cljs.util-api.html#cljs.util/ext">ext</a> </span><span id="var-link"><a id="var-tag" href="cljs.util-api.html#cljs.util/get-name">get-name</a> </span><span id="var-link"><a id="var-tag" href="cljs.util-api.html#cljs.util/levenshtein-distance">levenshtein-distance</a> </span><span id="var-link"><a id="var-tag" href="cljs.util-api.html#cljs.util/measure">measure</a> </span><span id="var-link"><a id="var-tag" href="cljs.util-api.html#cljs.util/mkdirs">mkdirs</a> </span><span id="var-link"><a id="var-tag" href="cljs.util-api.html#cljs.util/ns-&gt;relpath">ns-&gt;relpath</a> </span><span id="var-link"><a id="var-tag" href="cljs.util-api.html#cljs.util/ns-&gt;source">ns-&gt;source</a> </span><span id="var-link"><a id="var-tag" href="cljs.util-api.html#cljs.util/suggestion">suggestion</a> </span><span id="var-link"><a id="var-tag" href="cljs.util-api.html#cljs.util/unknown-opts">unknown-opts</a> </span><br />
   
 </div>
 </div>
@@ -587,10 +530,10 @@ to the compiler.</pre>
           </div>
 	</div>
 	<div id="foot">
-	  <div style="text-align: center;" id="copyright">No copyright info </div>
+	  <div id="copyright" style="text-align: center;">No copyright info </div>
 	</div>
       </div>
-      <div id="DesignedBy">Logo &amp; site design by <a title="Visit Tom Hickey's website." href="http://www.tomhickey.com">Tom Hickey</a>.<br />
+      <div id="DesignedBy">Logo &amp; site design by <a href="http://www.tomhickey.com" title="Visit Tom Hickey's website.">Tom Hickey</a>.<br />
       Clojure auto-documentation system by Tom Faulhaber.</div>
     </div>
     <!-- /AllContentContainer -->

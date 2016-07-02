@@ -1,15 +1,13 @@
 <html>
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>cljs.closure - clojurescript API documentation</title>
-    <link href="static/favicon.png" rel="icon" />
-    <link href="static/favicon.png" rel="shortcut icon" />
-    <link media="all" type="text/css" href="static/clojure.css" rel="stylesheet" />
-    <link media="all" type="text/css" href="static/wiki.css" rel="stylesheet" />
-    <link media="all" type="text/css" href="static/internal.css" rel="stylesheet" />
+    <link rel="icon" href="static/favicon.png" />
+    <link rel="shortcut icon" href="static/favicon.png" />
+    <link rel="stylesheet" href="static/clojure.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="static/wiki.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="static/internal.css" type="text/css" media="all" />
     <style>.menuWrapper{height: 36px;}</style>
-    <!--[if lte IE 6]>
-    <link rel="stylesheet" href="http://www.wikispaces.com/_/2009051601/s/internal_ie.css" type="text/css" />
-    <![endif]-->
   </head>
 <!--
 This document was auto-generated from the source by the clojure autodoc system.
@@ -21,48 +19,220 @@ namespace.
   <body>
     <div id="AllContentContainer">
       <div id="Header">
-	<a id="Logo" href="index.html"><img alt="Clojure" height="100" width="100" src="static/clojure-icon.gif" /></a>
-	<h1><a title="page header title" id="page-header" href="index.html">clojurescript</a></h1>
+	<a href="index.html" id="Logo"><img src="static/clojure-icon.gif" width="100" height="100" alt="Clojure" /></a>
+	<h1><a href="index.html" id="page-header" title="page header title">clojurescript</a></h1>
       </div>
       <div id="leftcolumn"><div style="text-align: center;"></div>
 <div class="menu">
   <div class="WikiCustomNav WikiElement wiki">
     <span class="toc-header"><span id="project-name">clojurescript</span> <span id="version"></span> API</span><br />
     <ul>
-      <li><a class="wiki_link" href="index.html">Overview</a></li>
-      <li><a class="wiki_link" href="api-index.html">API Index</a></li>
+      <li><a href="index.html" class="wiki_link">Overview</a></li>
+      <li><a href="api-index.html" class="wiki_link">API Index</a></li>
     </ul>
     <div class="NamespaceTOC">
       <span class="toc-header">Namespaces</span>
       <ul id="left-sidebar-list">
-        <li><a href="bootstrap-test.helper-api.html" class="wiki_link">bootstrap-test.helper</a></li><li><a href="bootstrap-test.macros-api.html" class="wiki_link">bootstrap-test.macros</a></li><li><a href="cljs.analyzer-api-tests-api.html" class="wiki_link">cljs.analyzer-api-tests</a></li><li><a href="cljs.analyzer-tests-api.html" class="wiki_link">cljs.analyzer-tests</a></li><li><a href="cljs.analyzer.api-api.html" class="wiki_link">cljs.analyzer.api</a></li><li><a href="cljs.analyzer.macros-api.html" class="wiki_link">cljs.analyzer.macros</a></li><li><a href="cljs.analyzer.utils-api.html" class="wiki_link">cljs.analyzer.utils</a></li><li><a href="cljs.build-api-tests-api.html" class="wiki_link">cljs.build-api-tests</a></li><li><a href="cljs.build.api-api.html" class="wiki_link">cljs.build.api</a></li><li><a href="cljs.closure-api.html" class="wiki_link">cljs.closure</a></li><li><a href="cljs.closure-tests-api.html" class="wiki_link">cljs.closure-tests</a></li><li><a href="cljs.compiler-tests-api.html" class="wiki_link">cljs.compiler-tests</a></li><li><a href="cljs.compiler.api-api.html" class="wiki_link">cljs.compiler.api</a></li><li><a href="cljs.compiler.macros-api.html" class="wiki_link">cljs.compiler.macros</a></li><li><a href="cljs.core.macros-api.html" class="wiki_link">cljs.core.macros</a></li><li><a href="cljs.env.macros-api.html" class="wiki_link">cljs.env.macros</a></li><li><a href="cljs.js-api.html" class="wiki_link">cljs.js</a></li><li><a href="cljs.macro-test.macros-api.html" class="wiki_link">cljs.macro-test.macros</a></li><li><a href="cljs.pprint-api.html" class="wiki_link">cljs.pprint</a></li><li><a href="cljs.pprint-test-api.html" class="wiki_link">cljs.pprint-test</a></li><li><a href="cljs.repl-tests-api.html" class="wiki_link">cljs.repl-tests</a></li><li><a href="cljs.repl.browser-api.html" class="wiki_link">cljs.repl.browser</a></li><li><a href="cljs.repl.nashorn-api.html" class="wiki_link">cljs.repl.nashorn</a></li><li><a href="cljs.repl.node-api.html" class="wiki_link">cljs.repl.node</a></li><li><a href="cljs.repl.reflect-api.html" class="wiki_link">cljs.repl.reflect</a></li><li><a href="cljs.repl.rhino-api.html" class="wiki_link">cljs.repl.rhino</a></li><li><a href="cljs.repl.server-api.html" class="wiki_link">cljs.repl.server</a></li><li><a href="cljs.source-map-api.html" class="wiki_link">cljs.source-map</a></li><li><a href="cljs.test-api.html" class="wiki_link">cljs.test</a></li>
+        <li><a class="wiki_link" href="cljs.analyzer-api.html">cljs.analyzer</a></li><li><a class="wiki_link" href="cljs.build.api-api.html">cljs.build.api</a></li><li><a class="wiki_link" href="cljs.closure-api.html">cljs.closure</a></li><li><a class="wiki_link" href="cljs.compiler-api.html">cljs.compiler</a></li><li><a class="wiki_link" href="cljs.core-api.html">cljs.core</a></li><li><a class="wiki_link" href="cljs.env-api.html">cljs.env</a></li><li><a class="wiki_link" href="cljs.js-api.html">cljs.js</a></li><li><a class="wiki_link" href="cljs.js-deps-api.html">cljs.js-deps</a></li><li><a class="wiki_link" href="cljs.pprint-api.html">cljs.pprint</a></li><li><a class="wiki_link" href="cljs.repl-api.html">cljs.repl</a></li><li><a class="wiki_link" href="cljs.source-map-api.html">cljs.source-map</a></li><li><a class="wiki_link" href="cljs.spec-api.html">cljs.spec</a></li><li><a class="wiki_link" href="cljs.stacktrace-api.html">cljs.stacktrace</a></li><li><a class="wiki_link" href="cljs.support-api.html">cljs.support</a></li><li><a class="wiki_link" href="cljs.tagged-literals-api.html">cljs.tagged-literals</a></li><li><a class="wiki_link" href="cljs.test-api.html">cljs.test</a></li><li><a class="wiki_link" href="cljs.util-api.html">cljs.util</a></li>
       </ul>
     </div>
     
-    <a href="http://clojure.org" class="wiki_link">Clojure Home</a>
+    <a class="wiki_link" href="http://clojure.org">Clojure Home</a>
   </div>
 </div>
 </div>
       <div id="rightcolumn">
 	<div id="Content">
 	  <div class="contentBox"><div class="innerContentBox">
-              <div id="content_view" class="wiki wikiPage">
+              <div class="wiki wikiPage" id="content_view">
                 <div id="right-sidebar"><div id="toc">
   <h1 class="nopad">Table of Contents</h1>
-  <div style="margin-left: 1em;" class="toc-section">
-    <a href="#toc0">Overview</a>
+  <div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#toc0">Overview</a>
     
-    <br />
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#proto-section">Protocols</a>
+    <div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/Compilable" class="toc-entry-anchor">Compilable</a>
+      <div class="toc-subentry" style="margin-left: 1em;">
+        <a href="#cljs.closure/-compile" class="toc-subentry-anchor">-compile</a>
+      </div><div class="toc-subentry" style="margin-left: 1em;">
+        <a href="#cljs.closure/-find-sources" class="toc-subentry-anchor">-find-sources</a>
+      </div>
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/ISourceMap" class="toc-entry-anchor">ISourceMap</a>
+      <div class="toc-subentry" style="margin-left: 1em;">
+        <a href="#cljs.closure/-source-map" class="toc-subentry-anchor">-source-map</a>
+      </div><div class="toc-subentry" style="margin-left: 1em;">
+        <a href="#cljs.closure/-source-url" class="toc-subentry-anchor">-source-url</a>
+      </div>
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/Inputs" class="toc-entry-anchor">Inputs</a>
+      <div class="toc-subentry" style="margin-left: 1em;">
+        <a href="#cljs.closure/-paths" class="toc-subentry-anchor">-paths</a>
+      </div>
+    </div>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#type-section">Types</a>
+    <div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/JavaScriptFile" class="toc-entry-anchor">JavaScriptFile</a>
+      
+    </div>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#var-section">Vars and Functions</a>
+    <div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/-&gt;JavaScriptFile" class="toc-entry-anchor">-&gt;JavaScriptFile</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/add-dep-string" class="toc-entry-anchor">add-dep-string</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/add-dependencies" class="toc-entry-anchor">add-dependencies</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/add-dependency-sources" class="toc-entry-anchor">add-dependency-sources</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/add-js-sources" class="toc-entry-anchor">add-js-sources</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/add-preloads" class="toc-entry-anchor">add-preloads</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/build" class="toc-entry-anchor">build</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/build-modules" class="toc-entry-anchor">build-modules</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/build-provides" class="toc-entry-anchor">build-provides</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/cljs-dependencies" class="toc-entry-anchor">cljs-dependencies</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/cljs-source-for-namespace" class="toc-entry-anchor">cljs-source-for-namespace</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/compile" class="toc-entry-anchor">compile</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/compile-dir" class="toc-entry-anchor">compile-dir</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/compile-file" class="toc-entry-anchor">compile-file</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/compile-form-seq" class="toc-entry-anchor">compile-form-seq</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/compile-from-jar" class="toc-entry-anchor">compile-from-jar</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/compile-sources" class="toc-entry-anchor">compile-sources</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/compiled-file" class="toc-entry-anchor">compiled-file</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/convert-js-module" class="toc-entry-anchor">convert-js-module</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/deps-file" class="toc-entry-anchor">deps-file</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/emit-optimized-source-map" class="toc-entry-anchor">emit-optimized-source-map</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/find-cljs-dependencies" class="toc-entry-anchor">find-cljs-dependencies</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/get-compiled-cljs" class="toc-entry-anchor">get-compiled-cljs</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/get-upstream-deps*" class="toc-entry-anchor">get-upstream-deps*</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/jar-file-to-disk" class="toc-entry-anchor">jar-file-to-disk</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/js-dependencies" class="toc-entry-anchor">js-dependencies</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/js-transforms" class="toc-entry-anchor">js-transforms</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/known-opts" class="toc-entry-anchor">known-opts</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/load-externs" class="toc-entry-anchor">load-externs</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/make-options" class="toc-entry-anchor">make-options</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/map-&gt;JavaScriptFile" class="toc-entry-anchor">map-&gt;JavaScriptFile</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/optimize" class="toc-entry-anchor">optimize</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/optimize-modules" class="toc-entry-anchor">optimize-modules</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/output-modules" class="toc-entry-anchor">output-modules</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/output-unoptimized" class="toc-entry-anchor">output-unoptimized</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/path-from-jarfile" class="toc-entry-anchor">path-from-jarfile</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/path-relative-to" class="toc-entry-anchor">path-relative-to</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/process-js-modules" class="toc-entry-anchor">process-js-modules</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/read-js" class="toc-entry-anchor">read-js</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/rel-output-path" class="toc-entry-anchor">rel-output-path</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/set-options" class="toc-entry-anchor">set-options</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/source-for-namespace" class="toc-entry-anchor">source-for-namespace</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/source-on-disk" class="toc-entry-anchor">source-on-disk</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/watch" class="toc-entry-anchor">watch</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/write-javascript" class="toc-entry-anchor">write-javascript</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.closure/write-js?" class="toc-entry-anchor">write-js?</a>
+      
+    </div>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#"></a>
+    
   </div>
 </div>
 </div>
-                <div id="content-tag"><h1 id="overview">API for <span id="namespace-name">cljs.closure</span>
+                <div id="content-tag"><h1 id="overview">API for <span id="cljs.closure">cljs.closure</span>
   - <span id="header-project">clojurescript</span> <span id="header-version"></span>
   </h1>
 
 <br />Full namespace name: <span id="long-name">cljs.closure</span>
 <p></p>
 <h2>Overview</h2>
+
 <pre id="namespace-docstr">Compile ClojureScript to JavaScript with optimizations from Google
  Closure Compiler producing runnable JavaScript.
 
@@ -70,7 +240,7 @@ namespace.
 
  Use the 'build' function for end-to-end compilation.
 
- build = compile -&gt; add-dependencies -&gt; optimize -&gt; output
+ build = find-sources -&gt; add-dependencies -&gt; compile -&gt; optimize -&gt; output
 
  Two protocols are defined: IJavaScript and Compilable. The
  Compilable protocol is satisfied by something which can return one
@@ -92,8 +262,751 @@ namespace.
 
 
 <br />
-<h2>Public Variables and Functions</h2>
 
+<div id="proto-section">
+  <p></p>
+  <h2>Protocols</h2>
+  <div id="proto-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/Compilable">Compilable</h2>
+    <span id="proto-type">Protocol</span><br />
+    <pre id="proto-docstr"></pre>
+    Known implementations: <span id="proto-impls">clojure.lang.PersistentList, clojure.lang.PersistentVector, java.io.File, java.lang.String, java.net.URL</span>
+    <div id="proto-var-entry">
+      <br />
+      <h3 id="cljs.closure/-compile">-compile</h3>
+      <span id="var-type">function</span><br />
+      <pre id="var-usage">Usage: (-compile this opts)
+</pre>
+      <pre id="var-docstr">Returns one or more IJavaScripts.</pre>
+      <pre id="var-specs"></pre>
+      
+      
+      
+    </div><div id="proto-var-entry">
+      <br />
+      <h3 id="cljs.closure/-find-sources">-find-sources</h3>
+      <span id="var-type">function</span><br />
+      <pre id="var-usage">Usage: (-find-sources this opts)
+</pre>
+      <pre id="var-docstr">Returns one or more IJavascripts, without compiling them.</pre>
+      <pre id="var-specs"></pre>
+      
+      
+      
+    </div>
+    
+    
+    
+  </div><div id="proto-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/ISourceMap">ISourceMap</h2>
+    <span id="proto-type">Protocol</span><br />
+    <pre id="proto-docstr"></pre>
+    Known implementations: <span id="proto-impls"><a href="#cljs.closure/JavaScriptFile">JavaScriptFile</a></span>
+    <div id="proto-var-entry">
+      <br />
+      <h3 id="cljs.closure/-source-map">-source-map</h3>
+      <span id="var-type">function</span><br />
+      <pre id="var-usage">Usage: (-source-map this)
+</pre>
+      <pre id="var-docstr">Return the CLJS compiler generated JS source mapping</pre>
+      <pre id="var-specs"></pre>
+      
+      
+      
+    </div><div id="proto-var-entry">
+      <br />
+      <h3 id="cljs.closure/-source-url">-source-url</h3>
+      <span id="var-type">function</span><br />
+      <pre id="var-usage">Usage: (-source-url this)
+</pre>
+      <pre id="var-docstr">Return the CLJS source url</pre>
+      <pre id="var-specs"></pre>
+      
+      
+      
+    </div>
+    
+    
+    
+  </div><div id="proto-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/Inputs">Inputs</h2>
+    <span id="proto-type">Protocol</span><br />
+    <pre id="proto-docstr"></pre>
+    Known implementations: <span id="proto-impls">java.io.File, java.lang.String</span>
+    <div id="proto-var-entry">
+      <br />
+      <h3 id="cljs.closure/-paths">-paths</h3>
+      <span id="var-type">function</span><br />
+      <pre id="var-usage">Usage: (-paths this)
+</pre>
+      <pre id="var-docstr">Returns the file paths to the source inputs</pre>
+      <pre id="var-specs"></pre>
+      
+      
+      
+    </div>
+    
+    
+    
+  </div>
+</div>
+<div id="type-section">
+  <p></p>
+  <h2>Types</h2>
+  <div id="type-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/JavaScriptFile">JavaScriptFile</h2>
+    <span id="type-type">record</span><br />
+    <pre id="type-docstr"></pre>
+    Fields: <span id="type-fields">[foreign url source-url provides requires lines source-map]</span><br />
+    Protocols: <span id="type-protocols"><a href="#cljs.closure/ISourceMap">ISourceMap</a>, <a href="cljs.js-deps-api.html#cljs.js-deps/IJavaScript">cljs.js-deps/IJavaScript</a></span><br />
+    Interfaces: <span id="type-interfaces">clojure.lang.IHashEq, clojure.lang.IKeywordLookup, clojure.lang.ILookup, clojure.lang.IObj, clojure.lang.IPersistentMap, java.io.Serializable, java.util.Map</span><br />
+  </div>
+</div>
+<div id="var-section">
+  <p></p>
+  <h2>Public Variables and Functions</h2>
+  <div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/-&gt;JavaScriptFile">-&gt;JavaScriptFile</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (-&gt;JavaScriptFile foreign url source-url provides requires lines source-map)
+</pre>
+    <pre id="var-docstr">Positional factory function for class cljs.closure.JavaScriptFile.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/add-dep-string">add-dep-string</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (add-dep-string opts input)
+</pre>
+    <pre id="var-docstr">Return a goog.addDependency string for an input.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/add-dependencies">add-dependencies</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (add-dependencies opts &amp; inputs)
+</pre>
+    <pre id="var-docstr">Given one or more IJavaScript objects in dependency order, produce
+a new sequence of IJavaScript objects which includes the input list
+plus all dependencies in dependency order.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/add-dependency-sources">add-dependency-sources</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (add-dependency-sources inputs)
+       (add-dependency-sources inputs compile-opts)
+</pre>
+    <pre id="var-docstr">Given list of IJavaScript objects, produce a new sequence of IJavaScript objects
+of all dependencies of inputs.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/add-js-sources">add-js-sources</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (add-js-sources inputs opts)
+</pre>
+    <pre id="var-docstr">Given list of IJavaScript objects, add foreign-deps, constants-table
+IJavaScript objects to the list.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/add-preloads">add-preloads</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (add-preloads inputs opts)
+</pre>
+    <pre id="var-docstr">Add :preloads to a given set of inputs (IJavaScript). Returns a new
+list of inputs where the preloaded namespaces and their deps come immediately after
+cljs.core or the constants table depending on the optimization setting. Any
+files needing copying or compilation will be compiled and/or copied to the
+appropiate location.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/build">build</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (build source opts)
+       (build source opts compiler-env)
+</pre>
+    <pre id="var-docstr">Given a source which can be compiled, produce runnable JavaScript.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/build-modules">build-modules</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (build-modules sources opts)
+</pre>
+    <pre id="var-docstr">Given a list of IJavaScript sources in dependency order and compiler options
+return a dependency sorted list of module name / description tuples. The
+module descriptions will be augmented with a :closure-module entry holding
+the Closure JSModule. Each module description will also be augmented with
+a :foreign-deps vector containing foreign IJavaScript sources in dependency
+order.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/build-provides">build-provides</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (build-provides provides)
+</pre>
+    <pre id="var-docstr">Given a vector of provides, builds required goog.provide statements</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/cljs-dependencies">cljs-dependencies</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (cljs-dependencies opts requires)
+</pre>
+    <pre id="var-docstr">Given a list of all required namespaces, return a list of
+IJavaScripts which are the cljs dependencies. The returned list will
+not only include the explicitly required files but any transitive
+dependencies as well. JavaScript files will be compiled to the
+working directory if they do not already exist.
+
+Only load dependencies from the classpath.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/cljs-source-for-namespace">cljs-source-for-namespace</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (cljs-source-for-namespace ns)
+</pre>
+    <pre id="var-docstr">Given a namespace return the corresponding source with either a .cljs or
+.cljc extension.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/compile">compile</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (compile compilable opts)
+</pre>
+    <pre id="var-docstr">Given a Compilable, compile it and return an IJavaScript.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/compile-dir">compile-dir</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (compile-dir src-dir opts)
+</pre>
+    <pre id="var-docstr">Recursively compile all cljs files under the given source
+directory. Return a list of JavaScriptFiles.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/compile-file">compile-file</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (compile-file file {:keys [output-file], :as opts})
+</pre>
+    <pre id="var-docstr">Compile a single cljs file. If no output-file is specified, returns
+a string of compiled JavaScript. With an output-file option, the
+compiled JavaScript will written to this location and the function
+returns a JavaScriptFile. In either case the return value satisfies
+IJavaScript.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/compile-form-seq">compile-form-seq</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (compile-form-seq forms)
+</pre>
+    <pre id="var-docstr">Compile a sequence of forms to a JavaScript source string.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/compile-from-jar">compile-from-jar</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (compile-from-jar jar-file {:keys [output-file], :as opts})
+</pre>
+    <pre id="var-docstr">Compile a file from a jar if necessary. Returns IJavaScript.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/compile-sources">compile-sources</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (compile-sources inputs opts)
+       (compile-sources inputs compiler-stats opts)
+</pre>
+    <pre id="var-docstr">Takes dependency ordered list of IJavaScript compatible maps from parse-ns
+and compiles them.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/compiled-file">compiled-file</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (compiled-file m)
+</pre>
+    <pre id="var-docstr">Given a map with at least a :file key, return a map with
+{:file .. :provides .. :requires ..}.
+
+Compiled files are cached so they will only be read once.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/convert-js-module">convert-js-module</h2>
+    <span id="var-type">multimethod</span><br />
+    <pre id="var-usage">No usage documentation available</pre>
+    <pre id="var-docstr">Takes a JavaScript module as an IJavaScript and rewrites it into a Google
+Closure-compatible form. Returns an IJavaScript with the converted module
+code set as source.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/deps-file">deps-file</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (deps-file opts sources)
+</pre>
+    <pre id="var-docstr">Return a deps file string for a sequence of inputs.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/emit-optimized-source-map">emit-optimized-source-map</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (emit-optimized-source-map sm-json sources name opts)
+</pre>
+    <pre id="var-docstr">Given a JSON parsed Google Closure JavaScript to JavaScript source map,
+the entire list of original IJavaScript sources output a merged JavaScript
+to ClojureScript source map file with the given file name. opts should
+supply :preamble-line-count and :foreign-deps-line-count if they are
+relevant.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/find-cljs-dependencies">find-cljs-dependencies</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (find-cljs-dependencies requires)
+</pre>
+    <pre id="var-docstr">Given set of cljs namespace symbols, find IJavaScript objects for the namespaces.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/get-compiled-cljs">get-compiled-cljs</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (get-compiled-cljs opts {:keys [relative-path uri]})
+</pre>
+    <pre id="var-docstr">Return an IJavaScript for this file. Compiled output will be
+written to the working directory.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/get-upstream-deps*">get-upstream-deps*</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (get-upstream-deps*)
+       (get-upstream-deps* classloader)
+</pre>
+    <pre id="var-docstr">returns a merged map containing all upstream dependencies defined
+by libraries on the classpath.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/jar-file-to-disk">jar-file-to-disk</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (jar-file-to-disk url out-dir)
+       (jar-file-to-disk url out-dir opts)
+</pre>
+    <pre id="var-docstr">Copy a file contained within a jar to disk. Return the created file.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/js-dependencies">js-dependencies</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (js-dependencies opts requires)
+</pre>
+    <pre id="var-docstr">Given a sequence of Closure namespace strings, return the list of
+all dependencies. The returned list includes all Google and
+third-party library dependencies.
+
+Third-party libraries are configured using the :libs option where
+the value is a list of directories containing third-party
+libraries.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/js-transforms">js-transforms</h2>
+    <span id="var-type">multimethod</span><br />
+    <pre id="var-usage">No usage documentation available</pre>
+    <pre id="var-docstr">Takes an IJavaScript with the source code set as source, transforms the
+source code and returns an IJavascript with the new code set as source.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/known-opts">known-opts</h2>
+    <span id="var-type">var</span><br />
+    <pre id="var-usage"></pre>
+    <pre id="var-docstr">Set of all known compiler options.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/load-externs">load-externs</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (load-externs {:keys [externs use-only-custom-externs target ups-externs]})
+</pre>
+    <pre id="var-docstr">Externs are JavaScript files which contain empty definitions of
+functions which will be provided by the environment. Any function in
+an extern file will not be renamed during optimization.
+
+Options may contain an :externs key with a list of file paths to
+load. The :use-only-custom-externs flag may be used to indicate that
+the default externs should be excluded.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/make-options">make-options</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (make-options opts)
+</pre>
+    <pre id="var-docstr">Create a CompilerOptions object and set options from opts map.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/map-&gt;JavaScriptFile">map-&gt;JavaScriptFile</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (map-&gt;JavaScriptFile m#)
+</pre>
+    <pre id="var-docstr">Factory function for class cljs.closure.JavaScriptFile, taking a map of keywords to field values.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/optimize">optimize</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (optimize opts &amp; sources)
+</pre>
+    <pre id="var-docstr">Use the Closure Compiler to optimize one or more JavaScript files.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/optimize-modules">optimize-modules</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (optimize-modules opts &amp; sources)
+</pre>
+    <pre id="var-docstr">Use the Closure Compiler to optimize one or more Closure JSModules. Returns
+a dependency sorted list of module name and description tuples.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/output-modules">output-modules</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (output-modules opts js-sources modules)
+</pre>
+    <pre id="var-docstr">Given compiler options, original IJavaScript sources and a sequence of
+module name and module description tuples output module sources to disk.
+Modules description must define :output-to and supply :source entry with
+the JavaScript source to write to disk.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/output-unoptimized">output-unoptimized</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (output-unoptimized opts &amp; sources)
+</pre>
+    <pre id="var-docstr">Ensure that all JavaScript source files are on disk (not in jars),
+write the goog deps file including only the libraries that are being
+used and write the deps file for the current project.
+
+The deps file for the current project will include third-party
+libraries.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/path-from-jarfile">path-from-jarfile</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (path-from-jarfile url)
+</pre>
+    <pre id="var-docstr">Given the URL of a file within a jar, return the path of the file
+from the root of the jar.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/path-relative-to">path-relative-to</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (path-relative-to base input)
+</pre>
+    <pre id="var-docstr">Generate a string which is the path to the input IJavaScript relative
+to the specified base file.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/process-js-modules">process-js-modules</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (process-js-modules opts)
+</pre>
+    <pre id="var-docstr">Given the current compiler options, converts JavaScript modules to Google
+Closure modules and writes them to disk. Adds mapping from original module
+namespace to new module namespace to compiler env. Returns modified compiler
+options where new modules are passed with :libs option.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/read-js">read-js</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (read-js f)
+</pre>
+    <pre id="var-docstr">Read a JavaScript file returning a map of file information.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/rel-output-path">rel-output-path</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (rel-output-path js)
+       (rel-output-path js opts)
+</pre>
+    <pre id="var-docstr">Given an IJavaScript which is either in memory, in a jar file,
+or is a foreign lib, return the path relative to the output
+directory.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/set-options">set-options</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (set-options opts compiler-options)
+</pre>
+    <pre id="var-docstr">TODO: Add any other options that we would like to support.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/source-for-namespace">source-for-namespace</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (source-for-namespace ns compiler-env)
+</pre>
+    <pre id="var-docstr">Given a namespace and compilation environment return the relative path and
+uri of the corresponding source regardless of the source language extension:
+.cljs, .cljc, .js</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/source-on-disk">source-on-disk</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (source-on-disk opts js)
+</pre>
+    <pre id="var-docstr">Ensure that the given IJavaScript exists on disk in the output directory.
+Return updated IJavaScript with the new location if necessary.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/watch">watch</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (watch source opts)
+       (watch source opts compiler-env)
+       (watch source opts compiler-env quit)
+</pre>
+    <pre id="var-docstr">Given a source directory, produce runnable JavaScript. Watch the source
+directory for changes rebuliding when necessary. Takes the same arguments as
+cljs.closure/build in addition to :watch-fn, a function of no arguments to
+run after a successful build.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/write-javascript">write-javascript</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (write-javascript opts js)
+</pre>
+    <pre id="var-docstr">Write or copy a JavaScript file to output directory. Only write if the file
+does not already exist. Return IJavaScript for the file on disk at the new
+location.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.closure/write-js?">write-js?</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (write-js? js)
+</pre>
+    <pre id="var-docstr">Returns true if IJavaScript instance needs to be written/copied to output
+directory. True when in memory, in a JAR, or if foreign library.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div>
+</div>
 
 
 </div>
@@ -102,10 +1015,10 @@ namespace.
           </div>
 	</div>
 	<div id="foot">
-	  <div style="text-align: center;" id="copyright">No copyright info </div>
+	  <div id="copyright" style="text-align: center;">No copyright info </div>
 	</div>
       </div>
-      <div id="DesignedBy">Logo &amp; site design by <a title="Visit Tom Hickey's website." href="http://www.tomhickey.com">Tom Hickey</a>.<br />
+      <div id="DesignedBy">Logo &amp; site design by <a href="http://www.tomhickey.com" title="Visit Tom Hickey's website.">Tom Hickey</a>.<br />
       Clojure auto-documentation system by Tom Faulhaber.</div>
     </div>
     <!-- /AllContentContainer -->

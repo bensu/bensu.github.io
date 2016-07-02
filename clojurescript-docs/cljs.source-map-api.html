@@ -1,15 +1,13 @@
 <html>
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>cljs.source-map - clojurescript API documentation</title>
-    <link href="static/favicon.png" rel="icon" />
-    <link href="static/favicon.png" rel="shortcut icon" />
-    <link media="all" type="text/css" href="static/clojure.css" rel="stylesheet" />
-    <link media="all" type="text/css" href="static/wiki.css" rel="stylesheet" />
-    <link media="all" type="text/css" href="static/internal.css" rel="stylesheet" />
+    <link rel="icon" href="static/favicon.png" />
+    <link rel="shortcut icon" href="static/favicon.png" />
+    <link rel="stylesheet" href="static/clojure.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="static/wiki.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="static/internal.css" type="text/css" media="all" />
     <style>.menuWrapper{height: 36px;}</style>
-    <!--[if lte IE 6]>
-    <link rel="stylesheet" href="http://www.wikispaces.com/_/2009051601/s/internal_ie.css" type="text/css" />
-    <![endif]-->
   </head>
 <!--
 This document was auto-generated from the source by the clojure autodoc system.
@@ -21,54 +19,308 @@ namespace.
   <body>
     <div id="AllContentContainer">
       <div id="Header">
-	<a id="Logo" href="index.html"><img alt="Clojure" height="100" width="100" src="static/clojure-icon.gif" /></a>
-	<h1><a title="page header title" id="page-header" href="index.html">clojurescript</a></h1>
+	<a href="index.html" id="Logo"><img src="static/clojure-icon.gif" width="100" height="100" alt="Clojure" /></a>
+	<h1><a href="index.html" id="page-header" title="page header title">clojurescript</a></h1>
       </div>
       <div id="leftcolumn"><div style="text-align: center;"></div>
 <div class="menu">
   <div class="WikiCustomNav WikiElement wiki">
     <span class="toc-header"><span id="project-name">clojurescript</span> <span id="version"></span> API</span><br />
     <ul>
-      <li><a class="wiki_link" href="index.html">Overview</a></li>
-      <li><a class="wiki_link" href="api-index.html">API Index</a></li>
+      <li><a href="index.html" class="wiki_link">Overview</a></li>
+      <li><a href="api-index.html" class="wiki_link">API Index</a></li>
     </ul>
     <div class="NamespaceTOC">
       <span class="toc-header">Namespaces</span>
       <ul id="left-sidebar-list">
-        <li><a href="bootstrap-test.helper-api.html" class="wiki_link">bootstrap-test.helper</a></li><li><a href="bootstrap-test.macros-api.html" class="wiki_link">bootstrap-test.macros</a></li><li><a href="cljs.analyzer-api-tests-api.html" class="wiki_link">cljs.analyzer-api-tests</a></li><li><a href="cljs.analyzer-tests-api.html" class="wiki_link">cljs.analyzer-tests</a></li><li><a href="cljs.analyzer.api-api.html" class="wiki_link">cljs.analyzer.api</a></li><li><a href="cljs.analyzer.macros-api.html" class="wiki_link">cljs.analyzer.macros</a></li><li><a href="cljs.analyzer.utils-api.html" class="wiki_link">cljs.analyzer.utils</a></li><li><a href="cljs.build-api-tests-api.html" class="wiki_link">cljs.build-api-tests</a></li><li><a href="cljs.build.api-api.html" class="wiki_link">cljs.build.api</a></li><li><a href="cljs.closure-api.html" class="wiki_link">cljs.closure</a></li><li><a href="cljs.closure-tests-api.html" class="wiki_link">cljs.closure-tests</a></li><li><a href="cljs.compiler-tests-api.html" class="wiki_link">cljs.compiler-tests</a></li><li><a href="cljs.compiler.api-api.html" class="wiki_link">cljs.compiler.api</a></li><li><a href="cljs.compiler.macros-api.html" class="wiki_link">cljs.compiler.macros</a></li><li><a href="cljs.core.macros-api.html" class="wiki_link">cljs.core.macros</a></li><li><a href="cljs.env.macros-api.html" class="wiki_link">cljs.env.macros</a></li><li><a href="cljs.js-api.html" class="wiki_link">cljs.js</a></li><li><a href="cljs.macro-test.macros-api.html" class="wiki_link">cljs.macro-test.macros</a></li><li><a href="cljs.pprint-api.html" class="wiki_link">cljs.pprint</a></li><li><a href="cljs.pprint-test-api.html" class="wiki_link">cljs.pprint-test</a></li><li><a href="cljs.repl-tests-api.html" class="wiki_link">cljs.repl-tests</a></li><li><a href="cljs.repl.browser-api.html" class="wiki_link">cljs.repl.browser</a></li><li><a href="cljs.repl.nashorn-api.html" class="wiki_link">cljs.repl.nashorn</a></li><li><a href="cljs.repl.node-api.html" class="wiki_link">cljs.repl.node</a></li><li><a href="cljs.repl.reflect-api.html" class="wiki_link">cljs.repl.reflect</a></li><li><a href="cljs.repl.rhino-api.html" class="wiki_link">cljs.repl.rhino</a></li><li><a href="cljs.repl.server-api.html" class="wiki_link">cljs.repl.server</a></li><li><a href="cljs.source-map-api.html" class="wiki_link">cljs.source-map</a></li><li><a href="cljs.test-api.html" class="wiki_link">cljs.test</a></li>
+        <li><a class="wiki_link" href="cljs.analyzer-api.html">cljs.analyzer</a></li><li><a class="wiki_link" href="cljs.build.api-api.html">cljs.build.api</a></li><li><a class="wiki_link" href="cljs.closure-api.html">cljs.closure</a></li><li><a class="wiki_link" href="cljs.compiler-api.html">cljs.compiler</a></li><li><a class="wiki_link" href="cljs.core-api.html">cljs.core</a></li><li><a class="wiki_link" href="cljs.env-api.html">cljs.env</a></li><li><a class="wiki_link" href="cljs.js-api.html">cljs.js</a></li><li><a class="wiki_link" href="cljs.js-deps-api.html">cljs.js-deps</a></li><li><a class="wiki_link" href="cljs.pprint-api.html">cljs.pprint</a></li><li><a class="wiki_link" href="cljs.repl-api.html">cljs.repl</a></li><li><a class="wiki_link" href="cljs.source-map-api.html">cljs.source-map</a></li><li><a class="wiki_link" href="cljs.spec-api.html">cljs.spec</a></li><li><a class="wiki_link" href="cljs.stacktrace-api.html">cljs.stacktrace</a></li><li><a class="wiki_link" href="cljs.support-api.html">cljs.support</a></li><li><a class="wiki_link" href="cljs.tagged-literals-api.html">cljs.tagged-literals</a></li><li><a class="wiki_link" href="cljs.test-api.html">cljs.test</a></li><li><a class="wiki_link" href="cljs.util-api.html">cljs.util</a></li>
       </ul>
     </div>
     
-    <a href="http://clojure.org" class="wiki_link">Clojure Home</a>
+    <a class="wiki_link" href="http://clojure.org">Clojure Home</a>
   </div>
 </div>
 </div>
       <div id="rightcolumn">
 	<div id="Content">
 	  <div class="contentBox"><div class="innerContentBox">
-              <div id="content_view" class="wiki wikiPage">
+              <div class="wiki wikiPage" id="content_view">
                 <div id="right-sidebar"><div id="toc">
   <h1 class="nopad">Table of Contents</h1>
-  <div style="margin-left: 1em;" class="toc-section">
-    <a href="#toc0">Overview</a>
+  <div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#toc0">Overview</a>
     
-    <br />
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#"></a>
+    
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#"></a>
+    
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#var-section">Vars and Functions</a>
+    <div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.source-map/decode" class="toc-entry-anchor">decode</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.source-map/decode-reverse" class="toc-entry-anchor">decode-reverse</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.source-map/encode" class="toc-entry-anchor">encode</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.source-map/encode*" class="toc-entry-anchor">encode*</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.source-map/indexed-sources" class="toc-entry-anchor">indexed-sources</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.source-map/invert-reverse-map" class="toc-entry-anchor">invert-reverse-map</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.source-map/lines-&gt;segs" class="toc-entry-anchor">lines-&gt;segs</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.source-map/merge-source-maps" class="toc-entry-anchor">merge-source-maps</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.source-map/relativize-path" class="toc-entry-anchor">relativize-path</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.source-map/seg-&gt;map" class="toc-entry-anchor">seg-&gt;map</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.source-map/seg-combine" class="toc-entry-anchor">seg-combine</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.source-map/source-compare" class="toc-entry-anchor">source-compare</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.source-map/update-result" class="toc-entry-anchor">update-result</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.source-map/update-reverse-result" class="toc-entry-anchor">update-reverse-result</a>
+      
+    </div>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#"></a>
+    
   </div>
 </div>
 </div>
-                <div id="content-tag"><h1 id="overview">API for <span id="namespace-name">cljs.source-map</span>
+                <div id="content-tag"><h1 id="overview">API for <span id="cljs.source-map">cljs.source-map</span>
   - <span id="header-project">clojurescript</span> <span id="header-version"></span>
   </h1>
 
 <br />Full namespace name: <span id="long-name">cljs.source-map</span>
 <p></p>
 <h2>Overview</h2>
+
 <pre id="namespace-docstr"></pre>
 
 
 <br />
-<h2>Public Variables and Functions</h2>
 
+
+
+<div id="var-section">
+  <p></p>
+  <h2>Public Variables and Functions</h2>
+  <div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.source-map/decode">decode</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (decode source-map)
+       (decode mappings source-map)
+</pre>
+    <pre id="var-docstr">Convert a v3 source map JSON object into a nested sorted map
+organized as file, line, and column. Note this source map
+maps from *generated* source location to original source
+location.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.source-map/decode-reverse">decode-reverse</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (decode-reverse source-map)
+       (decode-reverse mappings source-map)
+</pre>
+    <pre id="var-docstr">Convert a v3 source map JSON object into a nested sorted map 
+organized as file, line, and column. Note this source map
+maps from *original* source location to generated source location.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.source-map/encode">encode</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (encode m opts)
+</pre>
+    <pre id="var-docstr">Take an internal source map representation represented as nested
+sorted maps of file, line, column and return a source map v3 JSON
+string.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.source-map/encode*">encode*</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (encode* m opts)
+</pre>
+    <pre id="var-docstr">Take an internal source map representation represented as nested
+sorted maps of file, line, column and return a v3 representation.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.source-map/indexed-sources">indexed-sources</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (indexed-sources sources)
+</pre>
+    <pre id="var-docstr">Take a seq of source file names and return a map from
+file number to integer index.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.source-map/invert-reverse-map">invert-reverse-map</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (invert-reverse-map reverse-map)
+</pre>
+    <pre id="var-docstr">Given a ClojureScript to JavaScript source map, invert it. Useful when
+mapping JavaScript stack traces when environment support is unavailable.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.source-map/lines-&gt;segs">lines-&gt;segs</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (lines-&gt;segs lines)
+</pre>
+    <pre id="var-docstr">Take a nested sorted map encoding line and column information
+for a file and return a vector of vectors of encoded segments.
+Each vector represents a line, and the internal vectors are segments
+representing the contents of the line.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.source-map/merge-source-maps">merge-source-maps</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (merge-source-maps cljs-map js-map)
+</pre>
+    <pre id="var-docstr">Merge an internal source map representation of a single
+ClojureScript file mapping original to generated with a
+second source map mapping original JS to generated JS.
+The is to support source maps that work through multiple
+compilation steps like Google Closure optimization passes.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.source-map/relativize-path">relativize-path</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (relativize-path path {:keys [output-dir source-map-path source-map relpaths], :as opts})
+</pre>
+    <pre id="var-docstr">Relativize a path using :source-map-path if provided or the parent directory
+otherwise.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.source-map/seg-&gt;map">seg-&gt;map</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (seg-&gt;map seg source-map)
+</pre>
+    <pre id="var-docstr">Take a source map segment represented as a vector
+and return a map.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.source-map/seg-combine">seg-combine</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (seg-combine seg relseg)
+</pre>
+    <pre id="var-docstr">Combine a source map segment vector and a relative
+source map segment vector and combine them to get
+an absolute segment posititon information as a vector.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.source-map/source-compare">source-compare</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (source-compare sources)
+</pre>
+    <pre id="var-docstr">Take a seq of source file names and return a comparator
+that can be used to construct a sorted map.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.source-map/update-result">update-result</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (update-result result segmap gline)
+</pre>
+    <pre id="var-docstr">Helper for decode. Take a source map and update it based on a
+segment map.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.source-map/update-reverse-result">update-reverse-result</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (update-reverse-result result segmap gline)
+</pre>
+    <pre id="var-docstr">Helper for decode-reverse. Take a source map and update it
+based on a segment map.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div>
+</div>
 
 
 </div>
@@ -77,10 +329,10 @@ namespace.
           </div>
 	</div>
 	<div id="foot">
-	  <div style="text-align: center;" id="copyright">No copyright info </div>
+	  <div id="copyright" style="text-align: center;">No copyright info </div>
 	</div>
       </div>
-      <div id="DesignedBy">Logo &amp; site design by <a title="Visit Tom Hickey's website." href="http://www.tomhickey.com">Tom Hickey</a>.<br />
+      <div id="DesignedBy">Logo &amp; site design by <a href="http://www.tomhickey.com" title="Visit Tom Hickey's website.">Tom Hickey</a>.<br />
       Clojure auto-documentation system by Tom Faulhaber.</div>
     </div>
     <!-- /AllContentContainer -->
