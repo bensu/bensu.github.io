@@ -1,0 +1,1660 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>cljs.core - clojurescript API documentation</title>
+    <link rel="icon" href="static/favicon.png" />
+    <link rel="shortcut icon" href="static/favicon.png" />
+    <link rel="stylesheet" href="static/clojure.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="static/wiki.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="static/internal.css" type="text/css" media="all" />
+    <style>.menuWrapper{height: 36px;}</style>
+  </head>
+<!--
+This document was auto-generated from the source by the clojure autodoc system.
+To report errors or ask questions about the overall documentation structure, formatting,
+etc., contact Tom Faulhaber (google mail name: tomfaulhaber).
+For errors in the documentation of a particular namespace, contact the author of that
+namespace.
+-->
+  <body>
+    <div id="AllContentContainer">
+      <div id="Header">
+	<a href="index.html" id="Logo"><img src="static/clojure-icon.gif" width="100" height="100" alt="Clojure" /></a>
+	<h1><a href="index.html" id="page-header" title="page header title">clojurescript</a></h1>
+      </div>
+      <div id="leftcolumn"><div style="text-align: center;"></div>
+<div class="menu">
+  <div class="WikiCustomNav WikiElement wiki">
+    <span class="toc-header"><span id="project-name">clojurescript</span> <span id="version"></span> API</span><br />
+    <ul>
+      <li><a href="index.html" class="wiki_link">Overview</a></li>
+      <li><a href="api-index.html" class="wiki_link">API Index</a></li>
+    </ul>
+    <div class="NamespaceTOC">
+      <span class="toc-header">Namespaces</span>
+      <ul id="left-sidebar-list">
+        <li><a class="wiki_link" href="cljs.analyzer-api.html">cljs.analyzer</a></li><li><a class="wiki_link" href="cljs.build.api-api.html">cljs.build.api</a></li><li><a class="wiki_link" href="cljs.closure-api.html">cljs.closure</a></li><li><a class="wiki_link" href="cljs.compiler-api.html">cljs.compiler</a></li><li><a class="wiki_link" href="cljs.core-api.html">cljs.core</a></li><li><a class="wiki_link" href="cljs.env-api.html">cljs.env</a></li><li><a class="wiki_link" href="cljs.js-api.html">cljs.js</a></li><li><a class="wiki_link" href="cljs.js-deps-api.html">cljs.js-deps</a></li><li><a class="wiki_link" href="cljs.pprint-api.html">cljs.pprint</a></li><li><a class="wiki_link" href="cljs.repl-api.html">cljs.repl</a></li><li><a class="wiki_link" href="cljs.source-map-api.html">cljs.source-map</a></li><li><a class="wiki_link" href="cljs.spec-api.html">cljs.spec</a></li><li><a class="wiki_link" href="cljs.stacktrace-api.html">cljs.stacktrace</a></li><li><a class="wiki_link" href="cljs.support-api.html">cljs.support</a></li><li><a class="wiki_link" href="cljs.tagged-literals-api.html">cljs.tagged-literals</a></li><li><a class="wiki_link" href="cljs.test-api.html">cljs.test</a></li><li><a class="wiki_link" href="cljs.util-api.html">cljs.util</a></li>
+      </ul>
+    </div>
+    
+    <a class="wiki_link" href="http://clojure.org">Clojure Home</a>
+  </div>
+</div>
+</div>
+      <div id="rightcolumn">
+	<div id="Content">
+	  <div class="contentBox"><div class="innerContentBox">
+              <div class="wiki wikiPage" id="content_view">
+                <div id="right-sidebar"><div id="toc">
+  <h1 class="nopad">Table of Contents</h1>
+  <div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#toc0">Overview</a>
+    
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#"></a>
+    
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#"></a>
+    
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#var-section">Vars and Functions</a>
+    <div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/-&gt;" class="toc-entry-anchor">-&gt;</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/-&gt;&gt;" class="toc-entry-anchor">-&gt;&gt;</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/.." class="toc-entry-anchor">..</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/amap" class="toc-entry-anchor">amap</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/and" class="toc-entry-anchor">and</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/areduce" class="toc-entry-anchor">areduce</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/as-&gt;" class="toc-entry-anchor">as-&gt;</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/assert" class="toc-entry-anchor">assert</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/binding" class="toc-entry-anchor">binding</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/case" class="toc-entry-anchor">case</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/comment" class="toc-entry-anchor">comment</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/cond" class="toc-entry-anchor">cond</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/cond-&gt;" class="toc-entry-anchor">cond-&gt;</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/cond-&gt;&gt;" class="toc-entry-anchor">cond-&gt;&gt;</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/condp" class="toc-entry-anchor">condp</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/declare" class="toc-entry-anchor">declare</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/defmacro" class="toc-entry-anchor">defmacro</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/defmethod" class="toc-entry-anchor">defmethod</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/defmulti" class="toc-entry-anchor">defmulti</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/defn" class="toc-entry-anchor">defn</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/defn-" class="toc-entry-anchor">defn-</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/defonce" class="toc-entry-anchor">defonce</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/defprotocol" class="toc-entry-anchor">defprotocol</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/defrecord" class="toc-entry-anchor">defrecord</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/deftype" class="toc-entry-anchor">deftype</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/delay" class="toc-entry-anchor">delay</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/doseq" class="toc-entry-anchor">doseq</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/dotimes" class="toc-entry-anchor">dotimes</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/doto" class="toc-entry-anchor">doto</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/exists?" class="toc-entry-anchor">exists?</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/extend-protocol" class="toc-entry-anchor">extend-protocol</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/extend-type" class="toc-entry-anchor">extend-type</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/fast-path-protocol-partitions-count" class="toc-entry-anchor">fast-path-protocol-partitions-count</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/fast-path-protocols" class="toc-entry-anchor">fast-path-protocols</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/fn" class="toc-entry-anchor">fn</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/for" class="toc-entry-anchor">for</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/goog-define" class="toc-entry-anchor">goog-define</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/if-let" class="toc-entry-anchor">if-let</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/if-not" class="toc-entry-anchor">if-not</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/if-some" class="toc-entry-anchor">if-some</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/implements?" class="toc-entry-anchor">implements?</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/js-comment" class="toc-entry-anchor">js-comment</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/js-debugger" class="toc-entry-anchor">js-debugger</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/js-inline-comment" class="toc-entry-anchor">js-inline-comment</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/lazy-cat" class="toc-entry-anchor">lazy-cat</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/lazy-seq" class="toc-entry-anchor">lazy-seq</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/let" class="toc-entry-anchor">let</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/letfn" class="toc-entry-anchor">letfn</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/loop" class="toc-entry-anchor">loop</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/macroexpand" class="toc-entry-anchor">macroexpand</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/macroexpand-1" class="toc-entry-anchor">macroexpand-1</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/memfn" class="toc-entry-anchor">memfn</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/ns-interns" class="toc-entry-anchor">ns-interns</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/ns-unmap" class="toc-entry-anchor">ns-unmap</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/or" class="toc-entry-anchor">or</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/reify" class="toc-entry-anchor">reify</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/satisfies?" class="toc-entry-anchor">satisfies?</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/simple-benchmark" class="toc-entry-anchor">simple-benchmark</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/some-&gt;" class="toc-entry-anchor">some-&gt;</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/some-&gt;&gt;" class="toc-entry-anchor">some-&gt;&gt;</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/specify" class="toc-entry-anchor">specify</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/specify!" class="toc-entry-anchor">specify!</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/this-as" class="toc-entry-anchor">this-as</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/time" class="toc-entry-anchor">time</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/undefined?" class="toc-entry-anchor">undefined?</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/unsafe-cast" class="toc-entry-anchor">unsafe-cast</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/vswap!" class="toc-entry-anchor">vswap!</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/when" class="toc-entry-anchor">when</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/when-first" class="toc-entry-anchor">when-first</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/when-let" class="toc-entry-anchor">when-let</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/when-not" class="toc-entry-anchor">when-not</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/when-some" class="toc-entry-anchor">when-some</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/while" class="toc-entry-anchor">while</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/with-out-str" class="toc-entry-anchor">with-out-str</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.core/with-redefs" class="toc-entry-anchor">with-redefs</a>
+      
+    </div>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#"></a>
+    
+  </div>
+</div>
+</div>
+                <div id="content-tag"><h1 id="overview">API for <span id="cljs.core">cljs.core</span>
+  - <span id="header-project">clojurescript</span> <span id="header-version"></span>
+  </h1>
+
+<br />Full namespace name: <span id="long-name">cljs.core</span>
+<p></p>
+<h2>Overview</h2>
+
+<pre id="namespace-docstr"></pre>
+
+
+<br />
+
+
+
+<div id="var-section">
+  <p></p>
+  <h2>Public Variables and Functions</h2>
+  <div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/-&gt;">-&gt;</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (-&gt; x &amp; forms)
+</pre>
+    <pre id="var-docstr">Threads the expr through the forms. Inserts x as the
+second item in the first form, making a list of it if it is not a
+list already. If there are more forms, inserts the first form as the
+second item in second form, etc.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/-&gt;&gt;">-&gt;&gt;</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (-&gt;&gt; x &amp; forms)
+</pre>
+    <pre id="var-docstr">Threads the expr through the forms. Inserts x as the
+last item in the first form, making a list of it if it is not a
+list already. If there are more forms, inserts the first form as the
+last item in second form, etc.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/..">..</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (.. x form)
+       (.. x form &amp; more)
+</pre>
+    <pre id="var-docstr">form =&gt; fieldName-symbol or (instanceMethodName-symbol args*)
+
+Expands into a member access (.) of the first member on the first
+argument, followed by the next member on the result, etc. For
+instance:
+
+(.. System (getProperties) (get "os.name"))
+
+expands to:
+
+(. (. System (getProperties)) (get "os.name"))
+
+but is easier to write, read, and understand.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/amap">amap</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (amap a idx ret expr)
+</pre>
+    <pre id="var-docstr">Maps an expression across an array a, using an index named idx, and
+return value named ret, initialized to a clone of a, then setting
+each element of ret to the evaluation of expr, returning the new
+array ret.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/and">and</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (and)
+       (and x)
+       (and x &amp; next)
+</pre>
+    <pre id="var-docstr">Evaluates exprs one at a time, from left to right. If a form
+returns logical false (nil or false), and returns that value and
+doesn't evaluate any of the other expressions, otherwise it returns
+the value of the last expr. (and) returns true.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/areduce">areduce</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (areduce a idx ret init expr)
+</pre>
+    <pre id="var-docstr">Reduces an expression across an array a, using an index named idx,
+and return value named ret, initialized to init, setting ret to the
+evaluation of expr at each step, returning ret.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/as-&gt;">as-&gt;</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (as-&gt; expr name &amp; forms)
+</pre>
+    <pre id="var-docstr">Binds name to expr, evaluates the first form in the lexical context
+of that binding, then binds name to that result, repeating for each
+successive form, returning the result of the last form.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/assert">assert</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (assert x)
+       (assert x message)
+</pre>
+    <pre id="var-docstr">Evaluates expr and throws an exception if it does not evaluate to
+logical true.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/binding">binding</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (binding bindings &amp; body)
+</pre>
+    <pre id="var-docstr">binding =&gt; var-symbol init-expr
+
+Creates new bindings for the (already-existing) vars, with the
+supplied initial values, executes the exprs in an implicit do, then
+re-establishes the bindings that existed before.  The new bindings
+are made in parallel (unlike let); all init-exprs are evaluated
+before the vars are bound to their new values.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/case">case</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (case e &amp; clauses)
+</pre>
+    <pre id="var-docstr">Takes an expression, and a set of clauses.
+
+Each clause can take the form of either:
+
+test-constant result-expr
+
+(test-constant1 ... test-constantN)  result-expr
+
+The test-constants are not evaluated. They must be compile-time
+literals, and need not be quoted.  If the expression is equal to a
+test-constant, the corresponding result-expr is returned. A single
+default expression can follow the clauses, and its value will be
+returned if no clause matches. If no default expression is provided
+and no clause matches, an Error is thrown.
+
+Unlike cond and condp, case does a constant-time dispatch, the
+clauses are not considered sequentially.  All manner of constant
+expressions are acceptable in case, including numbers, strings,
+symbols, keywords, and (ClojureScript) composites thereof. Note that since
+lists are used to group multiple constants that map to the same
+expression, a vector can be used to match a list if needed. The
+test-constants need not be all of the same type.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/comment">comment</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (comment &amp; body)
+</pre>
+    <pre id="var-docstr">Ignores body, yields nil</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/cond">cond</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (cond &amp; clauses)
+</pre>
+    <pre id="var-docstr">Takes a set of test/expr pairs. It evaluates each test one at a
+time.  If a test returns logical true, cond evaluates and returns
+the value of the corresponding expr and doesn't evaluate any of the
+other tests or exprs. (cond) returns nil.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/cond-&gt;">cond-&gt;</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (cond-&gt; expr &amp; clauses)
+</pre>
+    <pre id="var-docstr">Takes an expression and a set of test/form pairs. Threads expr (via -&gt;)
+through each form for which the corresponding test
+expression is true. Note that, unlike cond branching, cond-&gt; threading does
+not short circuit after the first true test expression.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/cond-&gt;&gt;">cond-&gt;&gt;</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (cond-&gt;&gt; expr &amp; clauses)
+</pre>
+    <pre id="var-docstr">Takes an expression and a set of test/form pairs. Threads expr (via -&gt;&gt;)
+through each form for which the corresponding test expression
+is true.  Note that, unlike cond branching, cond-&gt;&gt; threading does not short circuit
+after the first true test expression.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/condp">condp</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (condp pred expr &amp; clauses)
+</pre>
+    <pre id="var-docstr">Takes a binary predicate, an expression, and a set of clauses.
+Each clause can take the form of either:
+
+test-expr result-expr
+
+test-expr :&gt;&gt; result-fn
+
+Note :&gt;&gt; is an ordinary keyword.
+
+For each clause, (pred test-expr expr) is evaluated. If it returns
+logical true, the clause is a match. If a binary clause matches, the
+result-expr is returned, if a ternary clause matches, its result-fn,
+which must be a unary function, is called with the result of the
+predicate as its argument, the result of that call being the return
+value of condp. A single default expression can follow the clauses,
+and its value will be returned if no clause matches. If no default
+expression is provided and no clause matches, an
+IllegalArgumentException is thrown.</pre>
+    <pre id="var-specs"></pre>
+    <span class="var-added"><span id="content">Added in clojurescript version 1.0</span><br /></span>
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/declare">declare</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (declare &amp; names)
+</pre>
+    <pre id="var-docstr">defs the supplied var names with no bindings, useful for making forward declarations.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/defmacro">defmacro</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (defmacro name doc-string? attr-map? [params*] body)
+       (defmacro name doc-string? attr-map? ([params*] body) + attr-map?)
+</pre>
+    <pre id="var-docstr">Like defn, but the resulting function name is declared as a
+macro and will be used as a macro by the compiler when it is
+called.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/defmethod">defmethod</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (defmethod multifn dispatch-val &amp; fn-tail)
+</pre>
+    <pre id="var-docstr">Creates and installs a new method of multimethod associated with dispatch-value. </pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/defmulti">defmulti</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (defmulti mm-name &amp; options)
+</pre>
+    <pre id="var-docstr">Creates a new multimethod with the associated dispatch function.
+The docstring and attribute-map are optional.
+
+Options are key-value pairs and may be one of:
+  :default    the default dispatch value, defaults to :default
+  :hierarchy  the isa? hierarchy to use for dispatching
+              defaults to the global hierarchy</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/defn">defn</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (defn name doc-string? attr-map? [params*] prepost-map? body)
+       (defn name doc-string? attr-map? ([params*] prepost-map? body) + attr-map?)
+</pre>
+    <pre id="var-docstr">Same as (def name (core/fn [params* ] exprs*)) or (def
+name (core/fn ([params* ] exprs*)+)) with any doc-string or attrs added
+to the var metadata. prepost-map defines a map with optional keys
+:pre and :post that contain collections of pre or post conditions.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/defn-">defn-</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (defn- name &amp; decls)
+</pre>
+    <pre id="var-docstr">same as defn, yielding non-public def</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/defonce">defonce</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (defonce x init)
+</pre>
+    <pre id="var-docstr">defs name to have the root value of init iff the named var has no root value,
+else init is unevaluated</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/defprotocol">defprotocol</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (defprotocol psym &amp; doc+methods)
+</pre>
+    <pre id="var-docstr">A protocol is a named set of named methods and their signatures:
+
+(defprotocol AProtocolName
+  ;optional doc string
+  "A doc string for AProtocol abstraction"
+
+;method signatures
+  (bar [this a b] "bar docs")
+  (baz [this a] [this a b] [this a b c] "baz docs"))
+
+No implementations are provided. Docs can be specified for the
+protocol overall and for each method. The above yields a set of
+polymorphic functions and a protocol object. All are
+namespace-qualified by the ns enclosing the definition The resulting
+functions dispatch on the type of their first argument, which is
+required and corresponds to the implicit target object ('this' in
+JavaScript parlance). defprotocol is dynamic, has no special compile-time
+effect, and defines no new types.
+
+(defprotocol P
+  (foo [this])
+  (bar-me [this] [this y]))
+
+(deftype Foo [a b c]
+  P
+  (foo [this] a)
+  (bar-me [this] b)
+  (bar-me [this y] (+ c y)))
+
+(bar-me (Foo. 1 2 3) 42)
+=&gt; 45
+
+(foo
+  (let [x 42]
+    (reify P
+      (foo [this] 17)
+      (bar-me [this] x)
+      (bar-me [this y] x))))
+=&gt; 17</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/defrecord">defrecord</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (defrecord rsym fields &amp; impls)
+</pre>
+    <pre id="var-docstr">(defrecord name [fields*]  options* specs*)
+
+Currently there are no options.
+
+Each spec consists of a protocol or interface name followed by zero
+or more method bodies:
+
+protocol-or-Object
+(methodName [args*] body)*
+
+The record will have the (immutable) fields named by
+fields, which can have type hints. Protocols and methods
+are optional. The only methods that can be supplied are those
+declared in the protocols.  Note that method bodies are
+not closures, the local environment includes only the named fields,
+and those fields can be accessed directly.
+
+Method definitions take the form:
+
+(methodname [args*] body)
+
+The argument and return types can be hinted on the arg and
+methodname symbols. If not supplied, they will be inferred, so type
+hints should be reserved for disambiguation.
+
+Methods should be supplied for all methods of the desired
+protocol(s). You can also define overrides for
+methods of Object. Note that a parameter must be supplied to
+correspond to the target object ('this' in JavaScript parlance). Note also
+that recur calls to the method head should *not* pass the target object, it
+will be supplied automatically and can not be substituted.
+
+In the method bodies, the (unqualified) name can be used to name the
+class (for calls to new, instance? etc).
+
+The type will have implementations of several ClojureScript
+protocol generated automatically: IMeta/IWithMeta (metadata support) and
+IMap, etc.
+
+In addition, defrecord will define type-and-value-based =,
+and will define ClojureScript IHash and IEquiv.
+
+Two constructors will be defined, one taking the designated fields
+followed by a metadata map (nil for none) and an extension field
+map (nil for none), and one taking only the fields (using nil for
+meta and extension fields). Note that the field names __meta
+and __extmap are currently reserved and should not be used when
+defining your own records.
+
+Given (defrecord TypeName ...), two factory functions will be
+defined: -&gt;TypeName, taking positional parameters for the fields,
+and map-&gt;TypeName, taking a map of keywords to field values.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/deftype">deftype</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (deftype t fields &amp; impls)
+</pre>
+    <pre id="var-docstr">(deftype name [fields*]  options* specs*)
+
+Currently there are no options.
+
+Each spec consists of a protocol or interface name followed by zero
+or more method bodies:
+
+protocol-or-Object
+(methodName [args*] body)*
+
+The type will have the (by default, immutable) fields named by
+fields, which can have type hints. Protocols and methods
+are optional. The only methods that can be supplied are those
+declared in the protocols/interfaces.  Note that method bodies are
+not closures, the local environment includes only the named fields,
+and those fields can be accessed directly. Fields can be qualified
+with the metadata :mutable true at which point (set! afield aval) will be
+supported in method bodies. Note well that mutable fields are extremely
+difficult to use correctly, and are present only to facilitate the building
+of higherlevel constructs, such as ClojureScript's reference types, in
+ClojureScript itself. They are for experts only - if the semantics and
+implications of :mutable are not immediately apparent to you, you should not
+be using them.
+
+Method definitions take the form:
+
+(methodname [args*] body)
+
+The argument and return types can be hinted on the arg and
+methodname symbols. If not supplied, they will be inferred, so type
+hints should be reserved for disambiguation.
+
+Methods should be supplied for all methods of the desired
+protocol(s). You can also define overrides for methods of Object. Note that
+a parameter must be supplied to correspond to the target object
+('this' in JavaScript parlance). Note also that recur calls to the method
+head should *not* pass the target object, it will be supplied
+automatically and can not be substituted.
+
+In the method bodies, the (unqualified) name can be used to name the
+class (for calls to new, instance? etc).
+
+One constructor will be defined, taking the designated fields.  Note
+that the field names __meta and __extmap are currently reserved and
+should not be used when defining your own types.
+
+Given (deftype TypeName ...), a factory function called -&gt;TypeName
+will be defined, taking positional parameters for the fields</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/delay">delay</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (delay &amp; body)
+</pre>
+    <pre id="var-docstr">Takes a body of expressions and yields a Delay object that will
+invoke the body only the first time it is forced (with force or deref/@), and
+will cache the result and return it on all subsequent force
+calls.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/doseq">doseq</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (doseq seq-exprs &amp; body)
+</pre>
+    <pre id="var-docstr">Repeatedly executes body (presumably for side-effects) with
+bindings and filtering as provided by "for".  Does not retain
+the head of the sequence. Returns nil.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/dotimes">dotimes</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (dotimes bindings &amp; body)
+</pre>
+    <pre id="var-docstr">bindings =&gt; name n
+
+Repeatedly executes body (presumably for side-effects) with name
+bound to integers from 0 through n-1.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/doto">doto</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (doto x &amp; forms)
+</pre>
+    <pre id="var-docstr">Evaluates x then calls all of the methods and functions with the
+value of x supplied at the front of the given arguments.  The forms
+are evaluated in order.  Returns x.
+
+(doto (new java.util.HashMap) (.put "a" 1) (.put "b" 2))</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/exists?">exists?</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (exists? x)
+</pre>
+    <pre id="var-docstr">Return true if argument exists, analogous to usage of typeof operator
+in JavaScript.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/extend-protocol">extend-protocol</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (extend-protocol p &amp; specs)
+</pre>
+    <pre id="var-docstr">Useful when you want to provide several implementations of the same
+protocol all at once. Takes a single protocol and the implementation
+of that protocol for one or more types. Expands into calls to
+extend-type:
+
+(extend-protocol Protocol
+  AType
+    (foo [x] ...)
+    (bar [x y] ...)
+  BType
+    (foo [x] ...)
+    (bar [x y] ...)
+  AClass
+    (foo [x] ...)
+    (bar [x y] ...)
+  nil
+    (foo [x] ...)
+    (bar [x y] ...))
+
+expands into:
+
+(do
+ (clojure.core/extend-type AType Protocol 
+   (foo [x] ...) 
+   (bar [x y] ...))
+ (clojure.core/extend-type BType Protocol 
+   (foo [x] ...) 
+   (bar [x y] ...))
+ (clojure.core/extend-type AClass Protocol 
+   (foo [x] ...) 
+   (bar [x y] ...))
+ (clojure.core/extend-type nil Protocol 
+   (foo [x] ...) 
+   (bar [x y] ...)))</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/extend-type">extend-type</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (extend-type type-sym &amp; impls)
+</pre>
+    <pre id="var-docstr">Extend a type to a series of protocols. Useful when you are
+supplying the definitions explicitly inline. Propagates the
+type as a type hint on the first argument of all fns.
+
+type-sym may be
+
+ * default, meaning the definitions will apply for any value,
+   unless an extend-type exists for one of the more specific
+   cases below.
+ * nil, meaning the definitions will apply for the nil value.
+ * any of object, boolean, number, string, array, or function,
+   indicating the definitions will apply for values of the
+   associated base JavaScript types. Note that, for example,
+   string should be used instead of js/String.
+ * a JavaScript type not covered by the previous list, such
+   as js/RegExp.
+ * a type defined by deftype or defrecord.
+
+(extend-type MyType
+  ICounted
+  (-count [c] ...)
+  Foo
+  (bar [x y] ...)
+  (baz ([x] ...) ([x y &amp; zs] ...))</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/fast-path-protocol-partitions-count">fast-path-protocol-partitions-count</h2>
+    <span id="var-type">var</span><br />
+    <pre id="var-usage"></pre>
+    <pre id="var-docstr">total number of partitions</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/fast-path-protocols">fast-path-protocols</h2>
+    <span id="var-type">var</span><br />
+    <pre id="var-usage"></pre>
+    <pre id="var-docstr">protocol fqn -&gt; [partition number, bit]</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/fn">fn</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (fn &amp; sigs)
+</pre>
+    <pre id="var-docstr">params =&gt; positional-params* , or positional-params* &amp; next-param
+positional-param =&gt; binding-form
+next-param =&gt; binding-form
+name =&gt; symbol
+
+Defines a function</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/for">for</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (for seq-exprs body-expr)
+</pre>
+    <pre id="var-docstr">List comprehension. Takes a vector of one or more
+ binding-form/collection-expr pairs, each followed by zero or more
+ modifiers, and yields a lazy sequence of evaluations of expr.
+ Collections are iterated in a nested fashion, rightmost fastest,
+ and nested coll-exprs can refer to bindings created in prior
+ binding-forms.  Supported modifiers are: :let [binding-form expr ...],
+ :while test, :when test.
+
+(take 100 (for [x (range 100000000) y (range 1000000) :while (&lt; y x)]  [x y]))</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/goog-define">goog-define</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (goog-define sym default)
+</pre>
+    <pre id="var-docstr">Defines a var using `goog.define`. Passed default value must be
+string, number or boolean.
+
+Default value can be overridden at compile time using the
+compiler option `:closure-defines`.
+
+Example:
+  (ns your-app.core)
+  (goog-define DEBUG! false)
+  ;; can be overridden with
+  :closure-defines {"your_app.core.DEBUG_BANG_" true}
+  or
+  :closure-defines {'your-app.core/DEBUG! true}</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/if-let">if-let</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (if-let bindings then)
+       (if-let bindings then else &amp; oldform)
+</pre>
+    <pre id="var-docstr">bindings =&gt; binding-form test
+
+If test is true, evaluates then with binding-form bound to the value of 
+test, if not, yields else</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/if-not">if-not</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (if-not test then)
+       (if-not test then else)
+</pre>
+    <pre id="var-docstr">Evaluates test. If logical false, evaluates and returns then expr, 
+otherwise else expr, if supplied, else nil.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/if-some">if-some</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (if-some bindings then)
+       (if-some bindings then else &amp; oldform)
+</pre>
+    <pre id="var-docstr">bindings =&gt; binding-form test
+
+If test is not nil, evaluates then with binding-form bound to the
+value of test, if not, yields else</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/implements?">implements?</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (implements? psym x)
+</pre>
+    <pre id="var-docstr">EXPERIMENTAL</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/js-comment">js-comment</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (js-comment comment)
+</pre>
+    <pre id="var-docstr">Emit a top-level JavaScript multi-line comment. New lines will create a
+new comment line. Comment block will be preceded and followed by a newline</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/js-debugger">js-debugger</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (js-debugger)
+</pre>
+    <pre id="var-docstr">Emit JavaScript "debugger;" statement</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/js-inline-comment">js-inline-comment</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (js-inline-comment comment)
+</pre>
+    <pre id="var-docstr">Emit an inline JavaScript comment.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/lazy-cat">lazy-cat</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (lazy-cat &amp; colls)
+</pre>
+    <pre id="var-docstr">Expands to code which yields a lazy sequence of the concatenation
+of the supplied colls.  Each coll expr is not evaluated until it is
+needed.
+
+(lazy-cat xs ys zs) === (concat (lazy-seq xs) (lazy-seq ys) (lazy-seq zs))</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/lazy-seq">lazy-seq</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (lazy-seq &amp; body)
+</pre>
+    <pre id="var-docstr">Takes a body of expressions that returns an ISeq or nil, and yields
+a ISeqable object that will invoke the body only the first time seq
+is called, and will cache the result and return it on all subsequent
+seq calls.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/let">let</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (let bindings &amp; body)
+</pre>
+    <pre id="var-docstr">binding =&gt; binding-form init-expr
+
+Evaluates the exprs in a lexical context in which the symbols in
+the binding-forms are bound to their respective init-exprs or parts
+therein.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/letfn">letfn</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (letfn fnspecs &amp; body)
+</pre>
+    <pre id="var-docstr">fnspec ==&gt; (fname [params*] exprs) or (fname ([params*] exprs)+)
+
+Takes a vector of function specs and a body, and generates a set of
+bindings of functions to their names. All of the names are available
+in all of the definitions of the functions, as well as the body.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/loop">loop</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (loop bindings &amp; body)
+</pre>
+    <pre id="var-docstr">Evaluates the exprs in a lexical context in which the symbols in
+the binding-forms are bound to their respective init-exprs or parts
+therein. Acts as a recur target.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/macroexpand">macroexpand</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (macroexpand quoted)
+</pre>
+    <pre id="var-docstr">Repeatedly calls macroexpand-1 on form until it no longer
+represents a macro form, then returns it.  Note neither
+macroexpand-1 nor macroexpand expand macros in subforms.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/macroexpand-1">macroexpand-1</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (macroexpand-1 quoted)
+</pre>
+    <pre id="var-docstr">If form represents a macro form, returns its expansion,
+else returns form.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/memfn">memfn</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (memfn name &amp; args)
+</pre>
+    <pre id="var-docstr">Expands into code that creates a fn that expects to be passed an
+object and any args and calls the named instance method on the
+object passing the args. Use when you want to treat a Java method as
+a first-class fn. name may be type-hinted with the method receiver's
+type in order to avoid reflective calls.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/ns-interns">ns-interns</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (ns-interns [quote ns])
+</pre>
+    <pre id="var-docstr">Returns a map of the intern mappings for the namespace.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/ns-unmap">ns-unmap</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (ns-unmap [quote0 ns] [quote1 sym])
+</pre>
+    <pre id="var-docstr">Removes the mappings for the symbol from the namespace.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/or">or</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (or)
+       (or x)
+       (or x &amp; next)
+</pre>
+    <pre id="var-docstr">Evaluates exprs one at a time, from left to right. If a form
+returns a logical true value, or returns that value and doesn't
+evaluate any of the other expressions, otherwise it returns the
+value of the last expression. (or) returns nil.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/reify">reify</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (reify &amp; impls)
+</pre>
+    <pre id="var-docstr">reify is a macro with the following structure:
+
+(reify options* specs*)
+
+ Currently there are no options.
+
+ Each spec consists of the protocol name followed by zero
+ or more method bodies:
+
+ protocol
+ (methodName [args+] body)*
+
+ Methods should be supplied for all methods of the desired
+ protocol(s). You can also define overrides for Object methods. Note that
+ the first parameter must be supplied to correspond to the target object
+ ('this' in JavaScript parlance). Note also that recur calls
+ to the method head should *not* pass the target object, it will be supplied
+ automatically and can not be substituted.
+
+ recur works to method heads The method bodies of reify are lexical
+ closures, and can refer to the surrounding local scope:
+
+ (str (let [f "foo"]
+      (reify Object
+        (toString [this] f))))
+ == "foo"
+
+ (seq (let [f "foo"]
+      (reify ISeqable
+        (-seq [this] (-seq f)))))
+ == (\f \o \o))
+
+ reify always implements IMeta and IWithMeta and transfers meta
+ data of the form to the created object.
+
+ (meta ^{:k :v} (reify Object (toString [this] "foo")))
+ == {:k :v}</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/satisfies?">satisfies?</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (satisfies? psym x)
+</pre>
+    <pre id="var-docstr">Returns true if x satisfies the protocol</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/simple-benchmark">simple-benchmark</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (simple-benchmark bindings expr iterations &amp; {:keys [print-fn], :or {print-fn (quote println)}})
+</pre>
+    <pre id="var-docstr">Runs expr iterations times in the context of a let expression with
+the given bindings, then prints out the bindings and the expr
+followed by number of iterations and total time. The optional
+argument print-fn, defaulting to println, sets function used to
+print the result. expr's string representation will be produced
+using pr-str in any case.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/some-&gt;">some-&gt;</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (some-&gt; expr &amp; forms)
+</pre>
+    <pre id="var-docstr">When expr is not nil, threads it into the first form (via -&gt;),
+and when that result is not nil, through the next etc</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/some-&gt;&gt;">some-&gt;&gt;</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (some-&gt;&gt; expr &amp; forms)
+</pre>
+    <pre id="var-docstr">When expr is not nil, threads it into the first form (via -&gt;&gt;),
+and when that result is not nil, through the next etc</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/specify">specify</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (specify expr &amp; impls)
+</pre>
+    <pre id="var-docstr">Identical to specify! but does not mutate its first argument. The first
+argument must be an ICloneable instance.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/specify!">specify!</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (specify! expr &amp; impls)
+</pre>
+    <pre id="var-docstr">Identical to reify but mutates its first argument.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/this-as">this-as</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (this-as name &amp; body)
+</pre>
+    <pre id="var-docstr">Defines a scope where JavaScript's implicit "this" is bound to the name provided.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/time">time</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (time expr)
+</pre>
+    <pre id="var-docstr">Evaluates expr and prints the time it took. Returns the value of expr.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/undefined?">undefined?</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (undefined? x)
+</pre>
+    <pre id="var-docstr">Return true if argument is identical to the JavaScript undefined value.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/unsafe-cast">unsafe-cast</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (unsafe-cast t x)
+</pre>
+    <pre id="var-docstr">EXPERIMENTAL: Subject to change. Unsafely cast a value to a different type.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/vswap!">vswap!</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (vswap! vol f &amp; args)
+</pre>
+    <pre id="var-docstr">Non-atomically swaps the value of the volatile as if:
+(apply f current-value-of-vol args). Returns the value that
+was swapped in.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/when">when</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (when test &amp; body)
+</pre>
+    <pre id="var-docstr">Evaluates test. If logical true, evaluates body in an implicit do.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/when-first">when-first</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (when-first bindings &amp; body)
+</pre>
+    <pre id="var-docstr">bindings =&gt; x xs
+
+Roughly the same as (when (seq xs) (let [x (first xs)] body)) but xs is evaluated only once</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/when-let">when-let</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (when-let bindings &amp; body)
+</pre>
+    <pre id="var-docstr">bindings =&gt; binding-form test
+
+When test is true, evaluates body with binding-form bound to the value of test</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/when-not">when-not</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (when-not test &amp; body)
+</pre>
+    <pre id="var-docstr">Evaluates test. If logical false, evaluates body in an implicit do.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/when-some">when-some</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (when-some bindings &amp; body)
+</pre>
+    <pre id="var-docstr">bindings =&gt; binding-form test
+
+When test is not nil, evaluates body with binding-form bound to the
+value of test</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/while">while</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (while test &amp; body)
+</pre>
+    <pre id="var-docstr">Repeatedly executes body while test expression is true. Presumes
+some side-effect will cause test to become false/nil. Returns nil</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/with-out-str">with-out-str</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (with-out-str &amp; body)
+</pre>
+    <pre id="var-docstr">Evaluates exprs in a context in which *print-fn* is bound to .append
+on a fresh StringBuffer.  Returns the string created by any nested
+printing calls.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.core/with-redefs">with-redefs</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (with-redefs bindings &amp; body)
+</pre>
+    <pre id="var-docstr">binding =&gt; var-symbol temp-value-expr
+
+Temporarily redefines vars while executing the body.  The
+temp-value-exprs will be evaluated and each resulting value will
+replace in parallel the root value of its var.  After the body is
+executed, the root values of all the vars will be set back to their
+old values. Useful for mocking out functions during testing.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div>
+</div>
+
+
+</div>
+              </div>
+            </div>
+          </div>
+	</div>
+	<div id="foot">
+	  <div id="copyright" style="text-align: center;">No copyright info </div>
+	</div>
+      </div>
+      <div id="DesignedBy">Logo &amp; site design by <a href="http://www.tomhickey.com" title="Visit Tom Hickey's website.">Tom Hickey</a>.<br />
+      Clojure auto-documentation system by Tom Faulhaber.</div>
+    </div>
+    <!-- /AllContentContainer -->
+  </body>
+
+</html>

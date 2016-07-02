@@ -1,0 +1,385 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>cljs.compiler - clojurescript API documentation</title>
+    <link rel="icon" href="static/favicon.png" />
+    <link rel="shortcut icon" href="static/favicon.png" />
+    <link rel="stylesheet" href="static/clojure.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="static/wiki.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="static/internal.css" type="text/css" media="all" />
+    <style>.menuWrapper{height: 36px;}</style>
+  </head>
+<!--
+This document was auto-generated from the source by the clojure autodoc system.
+To report errors or ask questions about the overall documentation structure, formatting,
+etc., contact Tom Faulhaber (google mail name: tomfaulhaber).
+For errors in the documentation of a particular namespace, contact the author of that
+namespace.
+-->
+  <body>
+    <div id="AllContentContainer">
+      <div id="Header">
+	<a href="index.html" id="Logo"><img src="static/clojure-icon.gif" width="100" height="100" alt="Clojure" /></a>
+	<h1><a href="index.html" id="page-header" title="page header title">clojurescript</a></h1>
+      </div>
+      <div id="leftcolumn"><div style="text-align: center;"></div>
+<div class="menu">
+  <div class="WikiCustomNav WikiElement wiki">
+    <span class="toc-header"><span id="project-name">clojurescript</span> <span id="version"></span> API</span><br />
+    <ul>
+      <li><a href="index.html" class="wiki_link">Overview</a></li>
+      <li><a href="api-index.html" class="wiki_link">API Index</a></li>
+    </ul>
+    <div class="NamespaceTOC">
+      <span class="toc-header">Namespaces</span>
+      <ul id="left-sidebar-list">
+        <li><a class="wiki_link" href="cljs.analyzer-api.html">cljs.analyzer</a></li><li><a class="wiki_link" href="cljs.build.api-api.html">cljs.build.api</a></li><li><a class="wiki_link" href="cljs.closure-api.html">cljs.closure</a></li><li><a class="wiki_link" href="cljs.compiler-api.html">cljs.compiler</a></li><li><a class="wiki_link" href="cljs.core-api.html">cljs.core</a></li><li><a class="wiki_link" href="cljs.env-api.html">cljs.env</a></li><li><a class="wiki_link" href="cljs.js-api.html">cljs.js</a></li><li><a class="wiki_link" href="cljs.js-deps-api.html">cljs.js-deps</a></li><li><a class="wiki_link" href="cljs.pprint-api.html">cljs.pprint</a></li><li><a class="wiki_link" href="cljs.repl-api.html">cljs.repl</a></li><li><a class="wiki_link" href="cljs.source-map-api.html">cljs.source-map</a></li><li><a class="wiki_link" href="cljs.spec-api.html">cljs.spec</a></li><li><a class="wiki_link" href="cljs.stacktrace-api.html">cljs.stacktrace</a></li><li><a class="wiki_link" href="cljs.support-api.html">cljs.support</a></li><li><a class="wiki_link" href="cljs.tagged-literals-api.html">cljs.tagged-literals</a></li><li><a class="wiki_link" href="cljs.test-api.html">cljs.test</a></li><li><a class="wiki_link" href="cljs.util-api.html">cljs.util</a></li>
+      </ul>
+    </div>
+    
+    <a class="wiki_link" href="http://clojure.org">Clojure Home</a>
+  </div>
+</div>
+</div>
+      <div id="rightcolumn">
+	<div id="Content">
+	  <div class="contentBox"><div class="innerContentBox">
+              <div class="wiki wikiPage" id="content_view">
+                <div id="right-sidebar"><div id="toc">
+  <h1 class="nopad">Table of Contents</h1>
+  <div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#toc0">Overview</a>
+    
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#"></a>
+    
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#"></a>
+    
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#var-section">Vars and Functions</a>
+    <div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.compiler/cljs-files-in" class="toc-entry-anchor">cljs-files-in</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.compiler/compile-file" class="toc-entry-anchor">compile-file</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.compiler/compile-root" class="toc-entry-anchor">compile-root</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.compiler/emit-arguments-to-array" class="toc-entry-anchor">emit-arguments-to-array</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.compiler/emit-comment" class="toc-entry-anchor">emit-comment</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.compiler/rename-to-js" class="toc-entry-anchor">rename-to-js</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.compiler/requires-compilation?" class="toc-entry-anchor">requires-compilation?</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.compiler/with-core-cljs" class="toc-entry-anchor">with-core-cljs</a>
+      
+    </div>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#"></a>
+    
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#cljs.compiler.api">cljs.compiler.api</a>
+    <div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.compiler.api/cljs-files-in" class="toc-entry-anchor">cljs-files-in</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.compiler.api/compile-file" class="toc-entry-anchor">compile-file</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.compiler.api/compile-root" class="toc-entry-anchor">compile-root</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.compiler.api/emit" class="toc-entry-anchor">emit</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.compiler.api/requires-compilation?" class="toc-entry-anchor">requires-compilation?</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.compiler.api/with-core-cljs" class="toc-entry-anchor">with-core-cljs</a>
+      
+    </div>
+  </div>
+</div>
+</div>
+                <div id="content-tag"><h1 id="overview">API for <span id="cljs.compiler">cljs.compiler</span>
+  - <span id="header-project">clojurescript</span> <span id="header-version"></span>
+  </h1>
+
+<br />Full namespace name: <span id="long-name">cljs.compiler</span>
+<p></p>
+<h2>Overview</h2>
+
+<pre id="namespace-docstr"></pre>
+
+
+<br />
+
+
+
+<div id="var-section">
+  <p></p>
+  <h2>Public Variables and Functions</h2>
+  <div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.compiler/cljs-files-in">cljs-files-in</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (cljs-files-in dir)
+</pre>
+    <pre id="var-docstr">Return a sequence of all .cljs and .cljc files in the given directory.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.compiler/compile-file">compile-file</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (compile-file src)
+       (compile-file src dest)
+       (compile-file src dest opts)
+</pre>
+    <pre id="var-docstr">Compiles src to a file of the same name, but with a .js extension,
+in the src file's directory.
+
+With dest argument, write file to provided location. If the dest
+argument is a file outside the source tree, missing parent
+directories will be created. The src file will only be compiled if
+the dest file has an older modification time.
+
+Both src and dest may be either a String or a File.
+
+Returns a map containing {:ns .. :provides .. :requires .. :file ..}.
+If the file was not compiled returns only {:file ...}</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.compiler/compile-root">compile-root</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (compile-root src-dir)
+       (compile-root src-dir target-dir)
+       (compile-root src-dir target-dir opts)
+</pre>
+    <pre id="var-docstr">Looks recursively in src-dir for .cljs files and compiles them to
+.js files. If target-dir is provided, output will go into this
+directory mirroring the source directory structure. Returns a list
+of maps containing information about each file which was compiled
+in dependency order.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.compiler/emit-arguments-to-array">emit-arguments-to-array</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (emit-arguments-to-array startslice)
+</pre>
+    <pre id="var-docstr">Emit code that copies function arguments into an array starting at an index.
+Returns name of var holding the array.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.compiler/emit-comment">emit-comment</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (emit-comment doc jsdoc)
+       (emit-comment env doc jsdoc)
+</pre>
+    <pre id="var-docstr">Emit a nicely formatted comment string.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.compiler/rename-to-js">rename-to-js</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (rename-to-js file-str)
+</pre>
+    <pre id="var-docstr">Change the file extension from .cljs to .js. Takes a File or a
+String. Always returns a String.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.compiler/requires-compilation?">requires-compilation?</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (requires-compilation? src dest)
+       (requires-compilation? src dest opts)
+</pre>
+    <pre id="var-docstr">Return true if the src file requires compilation.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.compiler/with-core-cljs">with-core-cljs</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (with-core-cljs)
+       (with-core-cljs opts)
+       (with-core-cljs opts body)
+</pre>
+    <pre id="var-docstr">Ensure that core.cljs has been loaded.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div>
+</div>
+
+<br />
+<h2 id="cljs.compiler.api">cljs.compiler.api</h2>
+<pre id="namespace-docstr">This is intended to be a stable api for those who need programmatic access
+to the compiler.</pre>
+
+
+<br />
+
+
+<div id="var-section">
+  <p></p>
+  <h2>Public Variables and Functions</h2>
+  <div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.compiler.api/cljs-files-in">cljs-files-in</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (cljs-files-in dir)
+</pre>
+    <pre id="var-docstr">Return a sequence of all .cljs and .cljc files in the given directory.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.compiler.api/compile-file">compile-file</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (compile-file src)
+       (compile-file src dest)
+       (compile-file src dest opts)
+       (compile-file state src dest opts)
+</pre>
+    <pre id="var-docstr">Compiles src to a file of the same name, but with a .js extension,
+in the src file's directory.
+
+With dest argument, write file to provided location. If the dest
+argument is a file outside the source tree, missing parent
+directories will be created. The src file will only be compiled if
+the dest file has an older modification time.
+
+Both src and dest may be either a String or a File.
+
+Returns a map containing {:ns .. :provides .. :requires .. :file ..}.
+If the file was not compiled returns only {:file ...}</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.compiler.api/compile-root">compile-root</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (compile-root src-dir)
+       (compile-root src-dir target-dir)
+       (compile-root src-dir target-dir opts)
+       (compile-root state src-dir target-dir opts)
+</pre>
+    <pre id="var-docstr">Looks recursively in src-dir for .cljs files and compiles them to
+.js files. If target-dir is provided, output will go into this
+directory mirroring the source directory structure. Returns a list
+of maps containing information about each file which was compiled
+in dependency order.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.compiler.api/emit">emit</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (emit ast)
+       (emit state ast)
+</pre>
+    <pre id="var-docstr">Given an AST node generated by the analyzer emit JavaScript as a string.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.compiler.api/requires-compilation?">requires-compilation?</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (requires-compilation? src dest)
+       (requires-compilation? src dest opts)
+       (requires-compilation? state src dest opts)
+</pre>
+    <pre id="var-docstr">Return true if the src file requires compilation.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.compiler.api/with-core-cljs">with-core-cljs</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (with-core-cljs)
+       (with-core-cljs opts)
+       (with-core-cljs opts body)
+       (with-core-cljs state opts body)
+</pre>
+    <pre id="var-docstr">Ensure that core.cljs has been loaded.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div>
+</div>
+
+
+</div>
+              </div>
+            </div>
+          </div>
+	</div>
+	<div id="foot">
+	  <div id="copyright" style="text-align: center;">No copyright info </div>
+	</div>
+      </div>
+      <div id="DesignedBy">Logo &amp; site design by <a href="http://www.tomhickey.com" title="Visit Tom Hickey's website.">Tom Hickey</a>.<br />
+      Clojure auto-documentation system by Tom Faulhaber.</div>
+    </div>
+    <!-- /AllContentContainer -->
+  </body>
+
+</html>

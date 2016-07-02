@@ -1,0 +1,1357 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>cljs.repl - clojurescript API documentation</title>
+    <link rel="icon" href="static/favicon.png" />
+    <link rel="shortcut icon" href="static/favicon.png" />
+    <link rel="stylesheet" href="static/clojure.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="static/wiki.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="static/internal.css" type="text/css" media="all" />
+    <style>.menuWrapper{height: 36px;}</style>
+  </head>
+<!--
+This document was auto-generated from the source by the clojure autodoc system.
+To report errors or ask questions about the overall documentation structure, formatting,
+etc., contact Tom Faulhaber (google mail name: tomfaulhaber).
+For errors in the documentation of a particular namespace, contact the author of that
+namespace.
+-->
+  <body>
+    <div id="AllContentContainer">
+      <div id="Header">
+	<a href="index.html" id="Logo"><img src="static/clojure-icon.gif" width="100" height="100" alt="Clojure" /></a>
+	<h1><a href="index.html" id="page-header" title="page header title">clojurescript</a></h1>
+      </div>
+      <div id="leftcolumn"><div style="text-align: center;"></div>
+<div class="menu">
+  <div class="WikiCustomNav WikiElement wiki">
+    <span class="toc-header"><span id="project-name">clojurescript</span> <span id="version"></span> API</span><br />
+    <ul>
+      <li><a href="index.html" class="wiki_link">Overview</a></li>
+      <li><a href="api-index.html" class="wiki_link">API Index</a></li>
+    </ul>
+    <div class="NamespaceTOC">
+      <span class="toc-header">Namespaces</span>
+      <ul id="left-sidebar-list">
+        <li><a class="wiki_link" href="cljs.analyzer-api.html">cljs.analyzer</a></li><li><a class="wiki_link" href="cljs.build.api-api.html">cljs.build.api</a></li><li><a class="wiki_link" href="cljs.closure-api.html">cljs.closure</a></li><li><a class="wiki_link" href="cljs.compiler-api.html">cljs.compiler</a></li><li><a class="wiki_link" href="cljs.core-api.html">cljs.core</a></li><li><a class="wiki_link" href="cljs.env-api.html">cljs.env</a></li><li><a class="wiki_link" href="cljs.js-api.html">cljs.js</a></li><li><a class="wiki_link" href="cljs.js-deps-api.html">cljs.js-deps</a></li><li><a class="wiki_link" href="cljs.pprint-api.html">cljs.pprint</a></li><li><a class="wiki_link" href="cljs.repl-api.html">cljs.repl</a></li><li><a class="wiki_link" href="cljs.source-map-api.html">cljs.source-map</a></li><li><a class="wiki_link" href="cljs.spec-api.html">cljs.spec</a></li><li><a class="wiki_link" href="cljs.stacktrace-api.html">cljs.stacktrace</a></li><li><a class="wiki_link" href="cljs.support-api.html">cljs.support</a></li><li><a class="wiki_link" href="cljs.tagged-literals-api.html">cljs.tagged-literals</a></li><li><a class="wiki_link" href="cljs.test-api.html">cljs.test</a></li><li><a class="wiki_link" href="cljs.util-api.html">cljs.util</a></li>
+      </ul>
+    </div>
+    
+    <a class="wiki_link" href="http://clojure.org">Clojure Home</a>
+  </div>
+</div>
+</div>
+      <div id="rightcolumn">
+	<div id="Content">
+	  <div class="contentBox"><div class="innerContentBox">
+              <div class="wiki wikiPage" id="content_view">
+                <div id="right-sidebar"><div id="toc">
+  <h1 class="nopad">Table of Contents</h1>
+  <div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#toc0">Overview</a>
+    
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#proto-section">Protocols</a>
+    <div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl/IGetError" class="toc-entry-anchor">IGetError</a>
+      <div class="toc-subentry" style="margin-left: 1em;">
+        <a href="#cljs.repl/-get-error" class="toc-subentry-anchor">-get-error</a>
+      </div>
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl/IJavaScriptEnv" class="toc-entry-anchor">IJavaScriptEnv</a>
+      <div class="toc-subentry" style="margin-left: 1em;">
+        <a href="#cljs.repl/-evaluate" class="toc-subentry-anchor">-evaluate</a>
+      </div><div class="toc-subentry" style="margin-left: 1em;">
+        <a href="#cljs.repl/-load" class="toc-subentry-anchor">-load</a>
+      </div><div class="toc-subentry" style="margin-left: 1em;">
+        <a href="#cljs.repl/-setup" class="toc-subentry-anchor">-setup</a>
+      </div><div class="toc-subentry" style="margin-left: 1em;">
+        <a href="#cljs.repl/-tear-down" class="toc-subentry-anchor">-tear-down</a>
+      </div>
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl/IParseError" class="toc-entry-anchor">IParseError</a>
+      <div class="toc-subentry" style="margin-left: 1em;">
+        <a href="#cljs.repl/-parse-error" class="toc-subentry-anchor">-parse-error</a>
+      </div>
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl/IParseStacktrace" class="toc-entry-anchor">IParseStacktrace</a>
+      <div class="toc-subentry" style="margin-left: 1em;">
+        <a href="#cljs.repl/-parse-stacktrace" class="toc-subentry-anchor">-parse-stacktrace</a>
+      </div>
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl/IPrintStacktrace" class="toc-entry-anchor">IPrintStacktrace</a>
+      <div class="toc-subentry" style="margin-left: 1em;">
+        <a href="#cljs.repl/-print-stacktrace" class="toc-subentry-anchor">-print-stacktrace</a>
+      </div>
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl/IReplEnvOptions" class="toc-entry-anchor">IReplEnvOptions</a>
+      <div class="toc-subentry" style="margin-left: 1em;">
+        <a href="#cljs.repl/-repl-options" class="toc-subentry-anchor">-repl-options</a>
+      </div>
+    </div>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#"></a>
+    
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#var-section">Vars and Functions</a>
+    <div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl/analyze-source" class="toc-entry-anchor">analyze-source</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl/apropos" class="toc-entry-anchor">apropos</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl/dir" class="toc-entry-anchor">dir</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl/doc" class="toc-entry-anchor">doc</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl/evaluate-form" class="toc-entry-anchor">evaluate-form</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl/find-doc" class="toc-entry-anchor">find-doc</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl/js-src-&gt;cljs-src" class="toc-entry-anchor">js-src-&gt;cljs-src</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl/known-repl-opts" class="toc-entry-anchor">known-repl-opts</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl/load-namespace" class="toc-entry-anchor">load-namespace</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl/mapped-stacktrace" class="toc-entry-anchor">mapped-stacktrace</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl/ns-info" class="toc-entry-anchor">ns-info</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl/print-mapped-stacktrace" class="toc-entry-anchor">print-mapped-stacktrace</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl/read-source-map" class="toc-entry-anchor">read-source-map</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl/repl" class="toc-entry-anchor">repl</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl/repl-read" class="toc-entry-anchor">repl-read</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl/skip-if-eol" class="toc-entry-anchor">skip-if-eol</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl/skip-whitespace" class="toc-entry-anchor">skip-whitespace</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl/source" class="toc-entry-anchor">source</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl/source-fn" class="toc-entry-anchor">source-fn</a>
+      
+    </div>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#"></a>
+    
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#cljs.repl.browser">cljs.repl.browser</a>
+    <div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.browser/BrowserEnv" class="toc-entry-anchor">BrowserEnv</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.browser/-&gt;BrowserEnv" class="toc-entry-anchor">-&gt;BrowserEnv</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.browser/browser-eval" class="toc-entry-anchor">browser-eval</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.browser/constrain-order" class="toc-entry-anchor">constrain-order</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.browser/load-javascript" class="toc-entry-anchor">load-javascript</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.browser/map-&gt;BrowserEnv" class="toc-entry-anchor">map-&gt;BrowserEnv</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.browser/repl-env" class="toc-entry-anchor">repl-env</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.browser/send-for-eval" class="toc-entry-anchor">send-for-eval</a>
+      
+    </div>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#cljs.repl.nashorn">cljs.repl.nashorn</a>
+    <div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.nashorn/NashornEnv" class="toc-entry-anchor">NashornEnv</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.nashorn/-&gt;NashornEnv" class="toc-entry-anchor">-&gt;NashornEnv</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.nashorn/eval-resource" class="toc-entry-anchor">eval-resource</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.nashorn/map-&gt;NashornEnv" class="toc-entry-anchor">map-&gt;NashornEnv</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.nashorn/repl-env" class="toc-entry-anchor">repl-env</a>
+      
+    </div>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#cljs.repl.node">cljs.repl.node</a>
+    <div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.node/NodeEnv" class="toc-entry-anchor">NodeEnv</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.node/-&gt;NodeEnv" class="toc-entry-anchor">-&gt;NodeEnv</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.node/load-javascript" class="toc-entry-anchor">load-javascript</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.node/map-&gt;NodeEnv" class="toc-entry-anchor">map-&gt;NodeEnv</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.node/node-eval" class="toc-entry-anchor">node-eval</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.node/repl-env" class="toc-entry-anchor">repl-env</a>
+      
+    </div>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#cljs.repl.reflect">cljs.repl.reflect</a>
+    <div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.reflect/parse-param" class="toc-entry-anchor">parse-param</a>
+      
+    </div>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#cljs.repl.rhino">cljs.repl.rhino</a>
+    <div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.rhino/RhinoEnv" class="toc-entry-anchor">RhinoEnv</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.rhino/-&gt;RhinoEnv" class="toc-entry-anchor">-&gt;RhinoEnv</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.rhino/load-file" class="toc-entry-anchor">load-file</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.rhino/map-&gt;RhinoEnv" class="toc-entry-anchor">map-&gt;RhinoEnv</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.rhino/repl-env" class="toc-entry-anchor">repl-env</a>
+      
+    </div>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#cljs.repl.server">cljs.repl.server</a>
+    <div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.server/connection" class="toc-entry-anchor">connection</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.server/dispatch-on" class="toc-entry-anchor">dispatch-on</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.server/parse-headers" class="toc-entry-anchor">parse-headers</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.server/send-and-close" class="toc-entry-anchor">send-and-close</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.server/set-connection" class="toc-entry-anchor">set-connection</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.repl.server/start" class="toc-entry-anchor">start</a>
+      
+    </div>
+  </div>
+</div>
+</div>
+                <div id="content-tag"><h1 id="overview">API for <span id="cljs.repl">cljs.repl</span>
+  - <span id="header-project">clojurescript</span> <span id="header-version"></span>
+  </h1>
+
+<br />Full namespace name: <span id="long-name">cljs.repl</span>
+<p></p>
+<h2>Overview</h2>
+
+<pre id="namespace-docstr"></pre>
+
+
+<br />
+
+<div id="proto-section">
+  <p></p>
+  <h2>Protocols</h2>
+  <div id="proto-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl/IGetError">IGetError</h2>
+    <span id="proto-type">Protocol</span><br />
+    <pre id="proto-docstr"></pre>
+    Known implementations: <span id="proto-impls"><a href="cljs.repl.browser-api.html#cljs.repl.browser/BrowserEnv">cljs.repl.browser.BrowserEnv</a>, <a href="cljs.repl.rhino-api.html#cljs.repl.rhino/RhinoEnv">cljs.repl.rhino.RhinoEnv</a></span>
+    <div id="proto-var-entry">
+      <br />
+      <h3 id="cljs.repl/-get-error">-get-error</h3>
+      <span id="var-type">function</span><br />
+      <pre id="var-usage">Usage: (-get-error repl-env name env build-options)
+</pre>
+      <pre id="var-docstr">Given a symbol representing a var holding an error, an analysis
+ environment, and the REPL/compiler options return the canonical error
+ representation:
+
+ {:value &lt;string&gt;
+  :stacktrace &lt;string&gt;}
+
+:value should be the host environment JavaScript error message string.
+:stacktrace should be the host JavaScript environment stacktrace string.</pre>
+      <pre id="var-specs"></pre>
+      
+      
+      
+    </div>
+    
+    
+    
+  </div><div id="proto-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl/IJavaScriptEnv">IJavaScriptEnv</h2>
+    <span id="proto-type">Protocol</span><br />
+    <pre id="proto-docstr"></pre>
+    Known implementations: <span id="proto-impls"><a href="cljs.repl.browser-api.html#cljs.repl.browser/BrowserEnv">cljs.repl.browser.BrowserEnv</a>, <a href="cljs.repl.nashorn-api.html#cljs.repl.nashorn/NashornEnv">cljs.repl.nashorn.NashornEnv</a>, <a href="cljs.repl.node-api.html#cljs.repl.node/NodeEnv">cljs.repl.node.NodeEnv</a>, <a href="cljs.repl.rhino-api.html#cljs.repl.rhino/RhinoEnv">cljs.repl.rhino.RhinoEnv</a></span>
+    <div id="proto-var-entry">
+      <br />
+      <h3 id="cljs.repl/-evaluate">-evaluate</h3>
+      <span id="var-type">function</span><br />
+      <pre id="var-usage">Usage: (-evaluate repl-env filename line js)
+</pre>
+      <pre id="var-docstr">evaluate a javascript string</pre>
+      <pre id="var-specs"></pre>
+      
+      
+      
+    </div><div id="proto-var-entry">
+      <br />
+      <h3 id="cljs.repl/-load">-load</h3>
+      <span id="var-type">function</span><br />
+      <pre id="var-usage">Usage: (-load repl-env provides url)
+</pre>
+      <pre id="var-docstr">load code at url into the environment</pre>
+      <pre id="var-specs"></pre>
+      
+      
+      
+    </div><div id="proto-var-entry">
+      <br />
+      <h3 id="cljs.repl/-setup">-setup</h3>
+      <span id="var-type">function</span><br />
+      <pre id="var-usage">Usage: (-setup repl-env opts)
+</pre>
+      <pre id="var-docstr">initialize the environment</pre>
+      <pre id="var-specs"></pre>
+      
+      
+      
+    </div><div id="proto-var-entry">
+      <br />
+      <h3 id="cljs.repl/-tear-down">-tear-down</h3>
+      <span id="var-type">function</span><br />
+      <pre id="var-usage">Usage: (-tear-down repl-env)
+</pre>
+      <pre id="var-docstr">dispose of the environment</pre>
+      <pre id="var-specs"></pre>
+      
+      
+      
+    </div>
+    
+    
+    
+  </div><div id="proto-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl/IParseError">IParseError</h2>
+    <span id="proto-type">Protocol</span><br />
+    <pre id="proto-docstr"></pre>
+    Known implementations: <span id="proto-impls"><a href="cljs.repl.nashorn-api.html#cljs.repl.nashorn/NashornEnv">cljs.repl.nashorn.NashornEnv</a>, <a href="cljs.repl.node-api.html#cljs.repl.node/NodeEnv">cljs.repl.node.NodeEnv</a></span>
+    <div id="proto-var-entry">
+      <br />
+      <h3 id="cljs.repl/-parse-error">-parse-error</h3>
+      <span id="var-type">function</span><br />
+      <pre id="var-usage">Usage: (-parse-error repl-env error build-options)
+</pre>
+      <pre id="var-docstr">Given the original JavaScript error return the error to actually
+use.</pre>
+      <pre id="var-specs"></pre>
+      
+      
+      
+    </div>
+    
+    
+    
+  </div><div id="proto-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl/IParseStacktrace">IParseStacktrace</h2>
+    <span id="proto-type">Protocol</span><br />
+    <pre id="proto-docstr"></pre>
+    Known implementations: <span id="proto-impls"><a href="cljs.repl.browser-api.html#cljs.repl.browser/BrowserEnv">cljs.repl.browser.BrowserEnv</a>, <a href="cljs.repl.nashorn-api.html#cljs.repl.nashorn/NashornEnv">cljs.repl.nashorn.NashornEnv</a>, <a href="cljs.repl.rhino-api.html#cljs.repl.rhino/RhinoEnv">cljs.repl.rhino.RhinoEnv</a></span>
+    <div id="proto-var-entry">
+      <br />
+      <h3 id="cljs.repl/-parse-stacktrace">-parse-stacktrace</h3>
+      <span id="var-type">function</span><br />
+      <pre id="var-usage">Usage: (-parse-stacktrace repl-env stacktrace error build-options)
+</pre>
+      <pre id="var-docstr">Given the original JavaScript stacktrace string, the entire original error
+value and current compiler build options, parse the stacktrace into the
+canonical form:
+
+[{:file &lt;string&gt;
+  :function &lt;string&gt;
+  :line &lt;integer&gt;
+  :column &lt;integer&gt;}*]
+
+:file must be a URL path (without protocol) relative to :output-dir. If
+no source file can be supplied (such as REPL defs), :file may be a custom
+identifier string surrounded by angle brackets, i.e. "&lt;cljs repl&gt;".</pre>
+      <pre id="var-specs"></pre>
+      
+      
+      
+    </div>
+    
+    
+    
+  </div><div id="proto-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl/IPrintStacktrace">IPrintStacktrace</h2>
+    <span id="proto-type">Protocol</span><br />
+    <pre id="proto-docstr"></pre>
+    Known implementations: <span id="proto-impls"></span>
+    <div id="proto-var-entry">
+      <br />
+      <h3 id="cljs.repl/-print-stacktrace">-print-stacktrace</h3>
+      <span id="var-type">function</span><br />
+      <pre id="var-usage">Usage: (-print-stacktrace repl-env stacktrace error build-options)
+</pre>
+      <pre id="var-docstr">Implementing REPL evaluation environments are given the opportunity to
+print the mapped stacktrace themselves. This permits further processing.</pre>
+      <pre id="var-specs"></pre>
+      
+      
+      
+    </div>
+    
+    
+    
+  </div><div id="proto-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl/IReplEnvOptions">IReplEnvOptions</h2>
+    <span id="proto-type">Protocol</span><br />
+    <pre id="proto-docstr"></pre>
+    Known implementations: <span id="proto-impls"><a href="cljs.repl.browser-api.html#cljs.repl.browser/BrowserEnv">cljs.repl.browser.BrowserEnv</a>, <a href="cljs.repl.nashorn-api.html#cljs.repl.nashorn/NashornEnv">cljs.repl.nashorn.NashornEnv</a>, <a href="cljs.repl.node-api.html#cljs.repl.node/NodeEnv">cljs.repl.node.NodeEnv</a>, <a href="cljs.repl.rhino-api.html#cljs.repl.rhino/RhinoEnv">cljs.repl.rhino.RhinoEnv</a>, Object</span>
+    <div id="proto-var-entry">
+      <br />
+      <h3 id="cljs.repl/-repl-options">-repl-options</h3>
+      <span id="var-type">function</span><br />
+      <pre id="var-usage">Usage: (-repl-options repl-env)
+</pre>
+      <pre id="var-docstr">Return default REPL options for a REPL Env</pre>
+      <pre id="var-specs"></pre>
+      
+      
+      
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+<div id="var-section">
+  <p></p>
+  <h2>Public Variables and Functions</h2>
+  <div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl/analyze-source">analyze-source</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (analyze-source src-dir)
+       (analyze-source src-dir opts)
+</pre>
+    <pre id="var-docstr">Given a source directory, analyzes all .cljs files. Used to populate
+(:cljs.analyzer/namespaces compiler-env) so as to support code reflection.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl/apropos">apropos</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (apropos str-or-pattern)
+</pre>
+    <pre id="var-docstr">Given a regular expression or stringable thing, return a seq of all
+public definitions in all currently-loaded namespaces that match the
+str-or-pattern.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl/dir">dir</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (dir ns)
+</pre>
+    <pre id="var-docstr">Prints a sorted directory of public vars in a namespace</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl/doc">doc</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (doc name)
+</pre>
+    <pre id="var-docstr">Prints documentation for a var or special form given its name</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl/evaluate-form">evaluate-form</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (evaluate-form repl-env env filename form)
+       (evaluate-form repl-env env filename form wrap)
+       (evaluate-form repl-env env filename form wrap opts)
+</pre>
+    <pre id="var-docstr">Evaluate a ClojureScript form in the JavaScript environment. Returns a
+string which is the ClojureScript return value. This string may or may
+not be readable by the Clojure reader.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl/find-doc">find-doc</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (find-doc re-string-or-pattern)
+</pre>
+    <pre id="var-docstr">Prints documentation for any var whose documentation or name
+contains a match for re-string-or-pattern</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl/js-src-&gt;cljs-src">js-src-&gt;cljs-src</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (js-src-&gt;cljs-src f)
+</pre>
+    <pre id="var-docstr">Map a JavaScript output file back to the original ClojureScript source
+file (.cljs or .cljc).</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl/known-repl-opts">known-repl-opts</h2>
+    <span id="var-type">var</span><br />
+    <pre id="var-usage"></pre>
+    <pre id="var-docstr">Set of all known REPL options.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl/load-namespace">load-namespace</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (load-namespace repl-env ns)
+       (load-namespace repl-env ns opts)
+</pre>
+    <pre id="var-docstr">Load a namespace and all of its dependencies into the evaluation environment.
+The environment is responsible for ensuring that each namespace is loaded once and
+only once.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl/mapped-stacktrace">mapped-stacktrace</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (mapped-stacktrace stacktrace)
+       (mapped-stacktrace stacktrace opts)
+</pre>
+    <pre id="var-docstr">Given a vector representing the canonicalized JavaScript stacktrace
+return the ClojureScript stacktrace. The canonical stacktrace must be
+in the form:
+
+ [{:file &lt;string&gt;
+   :function &lt;string&gt;
+   :line &lt;integer&gt;
+   :column &lt;integer&gt;}*]
+
+:file must be a URL path (without protocol) relative to :output-dir or a
+identifier delimited by angle brackets. The returned mapped stacktrace will
+also contain :url entries to the original sources if it can be determined
+from the classpath.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl/ns-info">ns-info</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (ns-info f)
+</pre>
+    <pre id="var-docstr">Given a path to a js source file return the ns info for the corresponding
+ClojureScript file if it exists.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl/print-mapped-stacktrace">print-mapped-stacktrace</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (print-mapped-stacktrace stacktrace)
+       (print-mapped-stacktrace stacktrace opts)
+</pre>
+    <pre id="var-docstr">Given a vector representing the canonicalized JavaScript stacktrace
+print the ClojureScript stacktrace. See mapped-stacktrace.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl/read-source-map">read-source-map</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (read-source-map f)
+</pre>
+    <pre id="var-docstr">Return the source map for the JavaScript source file.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl/repl">repl</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (repl repl-env &amp; opts)
+</pre>
+    <pre id="var-docstr">Generic, reusable, read-eval-print loop. By default, reads from *in* using
+a c.t.r.reader-types/source-logging-push-back-reader,
+writes to *out*, and prints exception summaries to *err*. If you use the
+default :read hook, *in* must either be an instance of
+c.t.r.reader-types/PushbackReader or duplicate its behavior of both supporting
+unread and collapsing CR, LF, and CRLF into a single \newline. Options
+are sequential keyword-value pairs. The first argument is the JavaScript
+evaluation environment, the second argument is an extended version of the
+standard ClojureScript compiler options. In addition to ClojureScript compiler
+build options it also take a set of options similar to clojure.main/repl with
+adjustments for ClojureScript evalution and compilation model:
+
+Available clojure.main/repl style options and their defaults:
+
+   - :init, function of no arguments, initialization hook called with
+     bindings for set!-able vars in place.
+     default: #()
+
+   - :need-prompt, function of no arguments, called before each
+     read-eval-print except the first, the user will be prompted if it
+     returns true.
+     default: #(if (c.t.r.readers-types/indexing-reader? *in*)
+                 (== (c.t.r.reader-types/get-column-number *in*) 1)
+                 (identity true))
+
+   - :prompt, function of no arguments, prompts for more input.
+     default: repl-prompt
+
+   - :flush, function of no arguments, flushes output
+     default: flush
+
+   - :read, function of two arguments, reads from *in*:
+       - returns its first argument to request a fresh prompt
+         - depending on need-prompt, this may cause the repl to prompt
+           before reading again
+       - returns its second argument to request an exit from the repl
+       - else returns the next object read from the input stream
+     default: repl-read
+
+   - :eval, function of one argument, returns the evaluation of its
+     argument. The eval function must take repl-env, the JavaScript evaluation
+     environment, env, the ClojureScript analysis environment, the form
+     and opts, the standard ClojureScript REPL/compiler options.
+     default: eval
+
+   - :print, function of one argument, prints its argument to the output
+     default: println
+
+   - :caught, function of three arguments, a throwable, called when
+     read, eval, or print throws an exception or error default. The second
+     argument is the JavaScript evaluation environment this permits context
+     sensitive handling if necessary. The third argument is opts, the standard
+     ClojureScript REPL/compiler options. In the case of errors or exception
+     in the JavaScript target, these will be thrown as
+     clojure.lang.IExceptionInfo instances.
+     default: repl-caught
+
+   - :reader, the c.t.r reader to use.
+     default: c.t.r.reader-types/source-logging-push-back-reader
+
+   - :print-no-newline, print without a newline.
+     default: print
+
+   - :source-map-inline, whether inline source maps should be enabled. Most
+     useful in browser context. Implies using a fresh reader for each form.
+     default: true</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl/repl-read">repl-read</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (repl-read request-prompt request-exit)
+       (repl-read request-prompt request-exit opts)
+</pre>
+    <pre id="var-docstr">Default :read hook for repl. Reads from *in* which must either be an
+instance of LineNumberingPushbackReader or duplicate its behavior of both
+supporting .unread and collapsing all of CR, LF, and CRLF into a single
+\newline. repl-read:
+  - skips whitespace, then
+    - returns request-prompt on start of line, or
+    - returns request-exit on end of stream, or
+    - reads an object from the input stream, then
+      - skips the next input character if it's end of line, then
+      - returns the object.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl/skip-if-eol">skip-if-eol</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (skip-if-eol s)
+</pre>
+    <pre id="var-docstr">If the next character on stream s is a newline, skips it, otherwise
+leaves the stream untouched. Returns :line-start, :stream-end, or :body
+to indicate the relative location of the next character on s. The stream
+must either be an instance of LineNumberingPushbackReader or duplicate
+its behavior of both supporting .unread and collapsing all of CR, LF, and
+CRLF to a single \newline.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl/skip-whitespace">skip-whitespace</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (skip-whitespace s)
+</pre>
+    <pre id="var-docstr">Skips whitespace characters on stream s. Returns :line-start, :stream-end,
+or :body to indicate the relative location of the next character on s.
+Interprets comma as whitespace and semicolon as comment to end of line.
+Does not interpret #! as comment to end of line because only one
+character of lookahead is available. The stream must either be an
+instance of LineNumberingPushbackReader or duplicate its behavior of both
+supporting .unread and collapsing all of CR, LF, and CRLF to a single
+\newline.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl/source">source</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (source n)
+</pre>
+    <pre id="var-docstr">Prints the source code for the given symbol, if it can find it.
+This requires that the symbol resolve to a Var defined in a
+namespace for which the .cljs is in the classpath.
+
+Example: (source filter)</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl/source-fn">source-fn</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (source-fn env x)
+</pre>
+    <pre id="var-docstr">Returns a string of the source code for the given symbol, if it can
+find it.  This requires that the symbol resolve to a Var defined in
+a namespace for which the .clj is in the classpath.  Returns nil if
+it can't find the source.  For most REPL usage, 'source' is more
+convenient.
+
+Example: (source-fn 'filter)</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div>
+</div>
+
+<br />
+<h2 id="cljs.repl.browser">cljs.repl.browser</h2>
+<pre id="namespace-docstr"></pre>
+
+
+<br />
+
+<div id="type-section">
+  <p></p>
+  <h2>Types</h2>
+  <div id="type-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.browser/BrowserEnv">BrowserEnv</h2>
+    <span id="type-type">record</span><br />
+    <pre id="type-docstr"></pre>
+    Fields: <span id="type-fields">[]</span><br />
+    Protocols: <span id="type-protocols"><a href="cljs.repl-api.html#cljs.repl/IGetError">cljs.repl/IGetError</a>, <a href="cljs.repl-api.html#cljs.repl/IJavaScriptEnv">cljs.repl/IJavaScriptEnv</a>, <a href="cljs.repl-api.html#cljs.repl/IParseStacktrace">cljs.repl/IParseStacktrace</a>, <a href="cljs.repl-api.html#cljs.repl/IReplEnvOptions">cljs.repl/IReplEnvOptions</a></span><br />
+    Interfaces: <span id="type-interfaces">clojure.lang.IHashEq, clojure.lang.IKeywordLookup, clojure.lang.ILookup, clojure.lang.IObj, clojure.lang.IPersistentMap, java.io.Serializable, java.util.Map</span><br />
+  </div>
+</div>
+<div id="var-section">
+  <p></p>
+  <h2>Public Variables and Functions</h2>
+  <div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.browser/-&gt;BrowserEnv">-&gt;BrowserEnv</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (-&gt;BrowserEnv)
+</pre>
+    <pre id="var-docstr">Positional factory function for class cljs.repl.browser.BrowserEnv.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.browser/browser-eval">browser-eval</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (browser-eval form)
+</pre>
+    <pre id="var-docstr">Given a string of JavaScript, evaluate it in the browser and return a map representing the
+result of the evaluation. The map will contain the keys :type and :value. :type can be
+:success, :exception, or :error. :success means that the JavaScript was evaluated without
+exception and :value will contain the return value of the evaluation. :exception means that
+there was an exception in the browser while evaluating the JavaScript and :value will
+contain the error message. :error means that some other error has occured.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.browser/constrain-order">constrain-order</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (constrain-order order f)
+</pre>
+    <pre id="var-docstr">Elements to be printed in the REPL will arrive out of order. Ensure
+that they are printed in the correct order.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.browser/load-javascript">load-javascript</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (load-javascript repl-env provides url)
+</pre>
+    <pre id="var-docstr">Accepts a REPL environment, a list of namespaces, and a URL for a
+JavaScript file which contains the implementation for the list of
+namespaces. Will load the JavaScript file into the REPL environment
+if any of the namespaces have not already been loaded from the
+ClojureScript REPL.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.browser/map-&gt;BrowserEnv">map-&gt;BrowserEnv</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (map-&gt;BrowserEnv m#)
+</pre>
+    <pre id="var-docstr">Factory function for class cljs.repl.browser.BrowserEnv, taking a map of keywords to field values.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.browser/repl-env">repl-env</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (repl-env &amp; {:as opts})
+</pre>
+    <pre id="var-docstr">Create a browser-connected REPL environment.
+
+Options:
+
+port:           The port on which the REPL server will run. Defaults to 9000.
+working-dir:    The directory where the compiled REPL client JavaScript will
+                be stored. Defaults to ".repl" with a ClojureScript version
+                suffix, eg. ".repl-0.0-2138".
+serve-static:   Should the REPL server attempt to serve static content?
+                Defaults to true.
+static-dir:     List of directories to search for static content. Defaults to
+                ["." "out/"].
+optimizations:  The level of optimization to use when compiling the client
+                end of the REPL. Defaults to :simple.
+src:            The source directory containing user-defined cljs files. Used to
+                support reflection. Defaults to "src/".
+</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.browser/send-for-eval">send-for-eval</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (send-for-eval form return-value-fn)
+       (send-for-eval conn form return-value-fn)
+</pre>
+    <pre id="var-docstr">Given a form and a return value function, send the form to the
+browser for evaluation. The return value function will be called
+when the return value is received.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div>
+</div>
+
+<br />
+<h2 id="cljs.repl.nashorn">cljs.repl.nashorn</h2>
+<pre id="namespace-docstr"></pre>
+
+
+<br />
+
+<div id="type-section">
+  <p></p>
+  <h2>Types</h2>
+  <div id="type-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.nashorn/NashornEnv">NashornEnv</h2>
+    <span id="type-type">record</span><br />
+    <pre id="type-docstr"></pre>
+    Fields: <span id="type-fields">[engine debug]</span><br />
+    Protocols: <span id="type-protocols"><a href="cljs.repl-api.html#cljs.repl/IJavaScriptEnv">cljs.repl/IJavaScriptEnv</a>, <a href="cljs.repl-api.html#cljs.repl/IParseError">cljs.repl/IParseError</a>, <a href="cljs.repl-api.html#cljs.repl/IParseStacktrace">cljs.repl/IParseStacktrace</a>, <a href="cljs.repl-api.html#cljs.repl/IReplEnvOptions">cljs.repl/IReplEnvOptions</a></span><br />
+    Interfaces: <span id="type-interfaces">clojure.lang.IHashEq, clojure.lang.IKeywordLookup, clojure.lang.ILookup, clojure.lang.IObj, clojure.lang.IPersistentMap, java.io.Serializable, java.util.Map</span><br />
+  </div>
+</div>
+<div id="var-section">
+  <p></p>
+  <h2>Public Variables and Functions</h2>
+  <div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.nashorn/-&gt;NashornEnv">-&gt;NashornEnv</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (-&gt;NashornEnv engine debug)
+</pre>
+    <pre id="var-docstr">Positional factory function for class cljs.repl.nashorn.NashornEnv.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.nashorn/eval-resource">eval-resource</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (eval-resource engine path debug)
+</pre>
+    <pre id="var-docstr">Evaluate a file on the classpath in the engine.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.nashorn/map-&gt;NashornEnv">map-&gt;NashornEnv</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (map-&gt;NashornEnv m#)
+</pre>
+    <pre id="var-docstr">Factory function for class cljs.repl.nashorn.NashornEnv, taking a map of keywords to field values.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.nashorn/repl-env">repl-env</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (repl-env &amp; {:as opts})
+</pre>
+    <pre id="var-docstr">Create a Nashorn repl-env for use with the repl/repl* method in Clojurescript.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div>
+</div>
+
+<br />
+<h2 id="cljs.repl.node">cljs.repl.node</h2>
+<pre id="namespace-docstr"></pre>
+
+
+<br />
+
+<div id="type-section">
+  <p></p>
+  <h2>Types</h2>
+  <div id="type-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.node/NodeEnv">NodeEnv</h2>
+    <span id="type-type">record</span><br />
+    <pre id="type-docstr"></pre>
+    Fields: <span id="type-fields">[host port socket proc]</span><br />
+    Protocols: <span id="type-protocols"><a href="cljs.repl-api.html#cljs.repl/IJavaScriptEnv">cljs.repl/IJavaScriptEnv</a>, <a href="cljs.repl-api.html#cljs.repl/IParseError">cljs.repl/IParseError</a>, <a href="cljs.repl-api.html#cljs.repl/IReplEnvOptions">cljs.repl/IReplEnvOptions</a></span><br />
+    Interfaces: <span id="type-interfaces">clojure.lang.IHashEq, clojure.lang.IKeywordLookup, clojure.lang.ILookup, clojure.lang.IObj, clojure.lang.IPersistentMap, java.io.Serializable, java.util.Map</span><br />
+  </div>
+</div>
+<div id="var-section">
+  <p></p>
+  <h2>Public Variables and Functions</h2>
+  <div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.node/-&gt;NodeEnv">-&gt;NodeEnv</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (-&gt;NodeEnv host port socket proc)
+</pre>
+    <pre id="var-docstr">Positional factory function for class cljs.repl.node.NodeEnv.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.node/load-javascript">load-javascript</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (load-javascript repl-env provides url)
+</pre>
+    <pre id="var-docstr">Load a Closure JavaScript file into the Node REPL process.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.node/map-&gt;NodeEnv">map-&gt;NodeEnv</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (map-&gt;NodeEnv m#)
+</pre>
+    <pre id="var-docstr">Factory function for class cljs.repl.node.NodeEnv, taking a map of keywords to field values.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.node/node-eval">node-eval</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (node-eval repl-env js)
+</pre>
+    <pre id="var-docstr">Evaluate a JavaScript string in the Node REPL process.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.node/repl-env">repl-env</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (repl-env &amp; {:as options})
+</pre>
+    <pre id="var-docstr">Construct a Node.js evalution environment. Can supply :host and :port.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div>
+</div>
+
+<br />
+<h2 id="cljs.repl.reflect">cljs.repl.reflect</h2>
+<pre id="namespace-docstr"></pre>
+
+
+<br />
+
+
+<div id="var-section">
+  <p></p>
+  <h2>Public Variables and Functions</h2>
+  <div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.reflect/parse-param">parse-param</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (parse-param path)
+</pre>
+    <pre id="var-docstr">Parses the query parameter of a path of the form "/reflect?var=foo"
+into the vector ["var" "foo"].</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div>
+</div>
+
+<br />
+<h2 id="cljs.repl.rhino">cljs.repl.rhino</h2>
+<pre id="namespace-docstr"></pre>
+
+
+<br />
+
+<div id="type-section">
+  <p></p>
+  <h2>Types</h2>
+  <div id="type-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.rhino/RhinoEnv">RhinoEnv</h2>
+    <span id="type-type">record</span><br />
+    <pre id="type-docstr"></pre>
+    Fields: <span id="type-fields">[]</span><br />
+    Protocols: <span id="type-protocols"><a href="cljs.repl-api.html#cljs.repl/IGetError">cljs.repl/IGetError</a>, <a href="cljs.repl-api.html#cljs.repl/IJavaScriptEnv">cljs.repl/IJavaScriptEnv</a>, <a href="cljs.repl-api.html#cljs.repl/IParseStacktrace">cljs.repl/IParseStacktrace</a>, <a href="cljs.repl-api.html#cljs.repl/IReplEnvOptions">cljs.repl/IReplEnvOptions</a></span><br />
+    Interfaces: <span id="type-interfaces">clojure.lang.IHashEq, clojure.lang.IKeywordLookup, clojure.lang.ILookup, clojure.lang.IObj, clojure.lang.IPersistentMap, java.io.Serializable, java.util.Map</span><br />
+  </div>
+</div>
+<div id="var-section">
+  <p></p>
+  <h2>Public Variables and Functions</h2>
+  <div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.rhino/-&gt;RhinoEnv">-&gt;RhinoEnv</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (-&gt;RhinoEnv)
+</pre>
+    <pre id="var-docstr">Positional factory function for class cljs.repl.rhino.RhinoEnv.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.rhino/load-file">load-file</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (load-file repl-env opts src)
+</pre>
+    <pre id="var-docstr">Load a JavaScript. This is needed to load JavaScript files before the Rhino
+environment is bootstrapped. After bootstrapping load-javascript will be
+used.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.rhino/map-&gt;RhinoEnv">map-&gt;RhinoEnv</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (map-&gt;RhinoEnv m#)
+</pre>
+    <pre id="var-docstr">Factory function for class cljs.repl.rhino.RhinoEnv, taking a map of keywords to field values.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.rhino/repl-env">repl-env</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (repl-env &amp; {:as opts})
+</pre>
+    <pre id="var-docstr">Returns a fresh JS environment, suitable for passing to repl.
+Hang on to return for use across repl calls.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div>
+</div>
+
+<br />
+<h2 id="cljs.repl.server">cljs.repl.server</h2>
+<pre id="namespace-docstr"></pre>
+
+
+<br />
+
+
+<div id="var-section">
+  <p></p>
+  <h2>Public Variables and Functions</h2>
+  <div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.server/connection">connection</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (connection)
+</pre>
+    <pre id="var-docstr">Promise to return a connection when one is available. If a
+connection is not available, store the promise in server/state.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.server/dispatch-on">dispatch-on</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (dispatch-on method pred handler)
+       (dispatch-on method {:as m})
+</pre>
+    <pre id="var-docstr">Registers a handler to be dispatched based on a request method and a
+predicate.
+
+pred should be a function that accepts an options map, a connection,
+and a request map and returns a boolean value based on whether or not
+that request should be dispatched to the related handler.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.server/parse-headers">parse-headers</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (parse-headers header-lines)
+</pre>
+    <pre id="var-docstr">Parse the headers of an HTTP POST request.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.server/send-and-close">send-and-close</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (send-and-close conn status form)
+       (send-and-close conn status form content-type)
+       (send-and-close conn status form content-type encoding)
+</pre>
+    <pre id="var-docstr">Use the passed connection to send a form to the browser. Send a
+proper HTTP response.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.server/set-connection">set-connection</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (set-connection conn)
+</pre>
+    <pre id="var-docstr">Given a new available connection, either use it to deliver the
+connection which was promised or store the connection for later
+use.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.repl.server/start">start</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (start opts)
+</pre>
+    <pre id="var-docstr">Start the server on the specified port.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div>
+</div>
+
+
+</div>
+              </div>
+            </div>
+          </div>
+	</div>
+	<div id="foot">
+	  <div id="copyright" style="text-align: center;">No copyright info </div>
+	</div>
+      </div>
+      <div id="DesignedBy">Logo &amp; site design by <a href="http://www.tomhickey.com" title="Visit Tom Hickey's website.">Tom Hickey</a>.<br />
+      Clojure auto-documentation system by Tom Faulhaber.</div>
+    </div>
+    <!-- /AllContentContainer -->
+  </body>
+
+</html>

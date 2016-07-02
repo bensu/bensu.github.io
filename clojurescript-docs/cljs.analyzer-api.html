@@ -1,0 +1,937 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>cljs.analyzer - clojurescript API documentation</title>
+    <link rel="icon" href="static/favicon.png" />
+    <link rel="shortcut icon" href="static/favicon.png" />
+    <link rel="stylesheet" href="static/clojure.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="static/wiki.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="static/internal.css" type="text/css" media="all" />
+    <style>.menuWrapper{height: 36px;}</style>
+  </head>
+<!--
+This document was auto-generated from the source by the clojure autodoc system.
+To report errors or ask questions about the overall documentation structure, formatting,
+etc., contact Tom Faulhaber (google mail name: tomfaulhaber).
+For errors in the documentation of a particular namespace, contact the author of that
+namespace.
+-->
+  <body>
+    <div id="AllContentContainer">
+      <div id="Header">
+	<a href="index.html" id="Logo"><img src="static/clojure-icon.gif" width="100" height="100" alt="Clojure" /></a>
+	<h1><a href="index.html" id="page-header" title="page header title">clojurescript</a></h1>
+      </div>
+      <div id="leftcolumn"><div style="text-align: center;"></div>
+<div class="menu">
+  <div class="WikiCustomNav WikiElement wiki">
+    <span class="toc-header"><span id="project-name">clojurescript</span> <span id="version"></span> API</span><br />
+    <ul>
+      <li><a href="index.html" class="wiki_link">Overview</a></li>
+      <li><a href="api-index.html" class="wiki_link">API Index</a></li>
+    </ul>
+    <div class="NamespaceTOC">
+      <span class="toc-header">Namespaces</span>
+      <ul id="left-sidebar-list">
+        <li><a class="wiki_link" href="cljs.analyzer-api.html">cljs.analyzer</a></li><li><a class="wiki_link" href="cljs.build.api-api.html">cljs.build.api</a></li><li><a class="wiki_link" href="cljs.closure-api.html">cljs.closure</a></li><li><a class="wiki_link" href="cljs.compiler-api.html">cljs.compiler</a></li><li><a class="wiki_link" href="cljs.core-api.html">cljs.core</a></li><li><a class="wiki_link" href="cljs.env-api.html">cljs.env</a></li><li><a class="wiki_link" href="cljs.js-api.html">cljs.js</a></li><li><a class="wiki_link" href="cljs.js-deps-api.html">cljs.js-deps</a></li><li><a class="wiki_link" href="cljs.pprint-api.html">cljs.pprint</a></li><li><a class="wiki_link" href="cljs.repl-api.html">cljs.repl</a></li><li><a class="wiki_link" href="cljs.source-map-api.html">cljs.source-map</a></li><li><a class="wiki_link" href="cljs.spec-api.html">cljs.spec</a></li><li><a class="wiki_link" href="cljs.stacktrace-api.html">cljs.stacktrace</a></li><li><a class="wiki_link" href="cljs.support-api.html">cljs.support</a></li><li><a class="wiki_link" href="cljs.tagged-literals-api.html">cljs.tagged-literals</a></li><li><a class="wiki_link" href="cljs.test-api.html">cljs.test</a></li><li><a class="wiki_link" href="cljs.util-api.html">cljs.util</a></li>
+      </ul>
+    </div>
+    
+    <a class="wiki_link" href="http://clojure.org">Clojure Home</a>
+  </div>
+</div>
+</div>
+      <div id="rightcolumn">
+	<div id="Content">
+	  <div class="contentBox"><div class="innerContentBox">
+              <div class="wiki wikiPage" id="content_view">
+                <div id="right-sidebar"><div id="toc">
+  <h1 class="nopad">Table of Contents</h1>
+  <div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#toc0">Overview</a>
+    
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#"></a>
+    
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#"></a>
+    
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#var-section">Vars and Functions</a>
+    <div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer/aliasable-clj-ns?" class="toc-entry-anchor">aliasable-clj-ns?</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer/analyze" class="toc-entry-anchor">analyze</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer/analyze-deps" class="toc-entry-anchor">analyze-deps</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer/analyze-file" class="toc-entry-anchor">analyze-file</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer/analyze-symbol" class="toc-entry-anchor">analyze-symbol</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer/cache-file" class="toc-entry-anchor">cache-file</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer/clj-ns-&gt;cljs-ns" class="toc-entry-anchor">clj-ns-&gt;cljs-ns</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer/confirm-bindings" class="toc-entry-anchor">confirm-bindings</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer/confirm-ns" class="toc-entry-anchor">confirm-ns</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer/core-name?" class="toc-entry-anchor">core-name?</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer/desugar-ns-specs" class="toc-entry-anchor">desugar-ns-specs</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer/empty-env" class="toc-entry-anchor">empty-env</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer/forms-seq" class="toc-entry-anchor">forms-seq</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer/forms-seq*" class="toc-entry-anchor">forms-seq*</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer/get-expander" class="toc-entry-anchor">get-expander</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer/infer-tag" class="toc-entry-anchor">infer-tag</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer/intern-macros" class="toc-entry-anchor">intern-macros</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer/loaded-js-ns?" class="toc-entry-anchor">loaded-js-ns?</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer/locate-src" class="toc-entry-anchor">locate-src</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer/macro-autoload-ns?" class="toc-entry-anchor">macro-autoload-ns?</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer/macroexpand-1" class="toc-entry-anchor">macroexpand-1</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer/parse-ns" class="toc-entry-anchor">parse-ns</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer/requires-analysis?" class="toc-entry-anchor">requires-analysis?</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer/resolve-existing-var" class="toc-entry-anchor">resolve-existing-var</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer/resolve-macro-var" class="toc-entry-anchor">resolve-macro-var</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer/resolve-var" class="toc-entry-anchor">resolve-var</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer/rewrite-cljs-aliases" class="toc-entry-anchor">rewrite-cljs-aliases</a>
+      
+    </div>
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#"></a>
+    
+  </div><div class="toc-section" style="margin-left: 1em;">
+    <a style="margin-top: 3px;" href="#cljs.analyzer.api">cljs.analyzer.api</a>
+    <div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer.api/all-ns" class="toc-entry-anchor">all-ns</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer.api/analyze" class="toc-entry-anchor">analyze</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer.api/analyze-file" class="toc-entry-anchor">analyze-file</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer.api/default-warning-handler" class="toc-entry-anchor">default-warning-handler</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer.api/empty-env" class="toc-entry-anchor">empty-env</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer.api/empty-state" class="toc-entry-anchor">empty-state</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer.api/find-ns" class="toc-entry-anchor">find-ns</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer.api/forms-seq" class="toc-entry-anchor">forms-seq</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer.api/get-js-index" class="toc-entry-anchor">get-js-index</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer.api/get-options" class="toc-entry-anchor">get-options</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer.api/in-cljs-user" class="toc-entry-anchor">in-cljs-user</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer.api/no-warn" class="toc-entry-anchor">no-warn</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer.api/ns-interns" class="toc-entry-anchor">ns-interns</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer.api/ns-publics" class="toc-entry-anchor">ns-publics</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer.api/ns-resolve" class="toc-entry-anchor">ns-resolve</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer.api/parse-ns" class="toc-entry-anchor">parse-ns</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer.api/remove-ns" class="toc-entry-anchor">remove-ns</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer.api/resolve" class="toc-entry-anchor">resolve</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer.api/warning-enabled?" class="toc-entry-anchor">warning-enabled?</a>
+      
+    </div><div class="toc-entry" style="margin-left: 1em;">
+      <a href="#cljs.analyzer.api/with-state" class="toc-entry-anchor">with-state</a>
+      
+    </div>
+  </div>
+</div>
+</div>
+                <div id="content-tag"><h1 id="overview">API for <span id="cljs.analyzer">cljs.analyzer</span>
+  - <span id="header-project">clojurescript</span> <span id="header-version"></span>
+  </h1>
+
+<br />Full namespace name: <span id="long-name">cljs.analyzer</span>
+<p></p>
+<h2>Overview</h2>
+
+<pre id="namespace-docstr"></pre>
+
+
+<br />
+
+
+
+<div id="var-section">
+  <p></p>
+  <h2>Public Variables and Functions</h2>
+  <div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer/aliasable-clj-ns?">aliasable-clj-ns?</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (aliasable-clj-ns? sym)
+</pre>
+    <pre id="var-docstr">Predicate for testing with a symbol represents an aliasable clojure namespace.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer/analyze">analyze</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (analyze env form)
+       (analyze env form name)
+       (analyze env form name opts)
+</pre>
+    <pre id="var-docstr">Given an environment, a map containing {:locals (mapping of names to bindings), :context
+(one of :statement, :expr, :return), :ns (a symbol naming the
+compilation ns)}, and form, returns an expression object (a map
+containing at least :form, :op and :env keys). If expr has any (immediately)
+nested exprs, must have :children [exprs...] entry. This will
+facilitate code walking without knowing the details of the op set.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer/analyze-deps">analyze-deps</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (analyze-deps lib deps env)
+       (analyze-deps lib deps env opts)
+</pre>
+    <pre id="var-docstr">Given a lib, a namespace, deps, its dependencies, env, an analysis environment
+and opts, compiler options - analyze all of the dependencies. Required to
+correctly analyze usage of other namespaces.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer/analyze-file">analyze-file</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (analyze-file f)
+       (analyze-file f opts)
+       (analyze-file f skip-cache opts)
+</pre>
+    <pre id="var-docstr">Given a java.io.File, java.net.URL or a string identifying a resource on the
+classpath attempt to analyze it.
+
+This function side-effects the ambient compilation environment
+`cljs.env/*compiler*` to aggregate analysis information. opts argument is
+compiler options, if :cache-analysis true will cache analysis to
+":output-dir/some/ns/foo.cljs.cache.edn". This function does not return a
+meaningful value.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer/analyze-symbol">analyze-symbol</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (analyze-symbol env sym)
+</pre>
+    <pre id="var-docstr">Finds the var associated with sym</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer/cache-file">cache-file</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (cache-file src)
+       (cache-file src output-dir)
+       (cache-file src ns-info output-dir)
+       (cache-file src ns-info output-dir mode)
+</pre>
+    <pre id="var-docstr">Given a ClojureScript source file returns the read/write path to the analysis
+cache file. Defaults to the read path which is usually also the write path.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer/clj-ns-&gt;cljs-ns">clj-ns-&gt;cljs-ns</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (clj-ns-&gt;cljs-ns sym)
+</pre>
+    <pre id="var-docstr">Given a symbol that starts with clojure as the first segment return the
+same symbol with the first segment replaced with cljs</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer/confirm-bindings">confirm-bindings</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (confirm-bindings env names)
+</pre>
+    <pre id="var-docstr">Given env, an analysis environment env, and names, a list of symbols, confirm
+that all correspond to declared dynamic vars.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer/confirm-ns">confirm-ns</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (confirm-ns env ns-sym)
+</pre>
+    <pre id="var-docstr">Given env, an analysis environment, and ns-sym, a symbol identifying a
+namespace, confirm that the namespace exists. Warn if not found.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer/core-name?">core-name?</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (core-name? env sym)
+</pre>
+    <pre id="var-docstr">Is sym visible from core in the current compilation namespace?</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer/desugar-ns-specs">desugar-ns-specs</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (desugar-ns-specs args)
+</pre>
+    <pre id="var-docstr">Given an original set of ns specs desugar :include-macros and :refer-macros
+usage into only primitive spec forms - :use, :require, :use-macros,
+:require-macros. If a library includes a macro file of with the same name
+as the namespace will also be desugared.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer/empty-env">empty-env</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (empty-env)
+</pre>
+    <pre id="var-docstr">Construct an empty analysis environment. Required to analyze forms.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer/forms-seq">forms-seq</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (forms-seq f)
+       (forms-seq f filename)
+       (forms-seq f filename return-reader?)
+</pre>
+    <pre id="var-docstr">DEPRECATED: Seq of Clojure/ClojureScript forms from [f], which can be anything
+for which `clojure.java.io/reader` can produce a `java.io.Reader`. Optionally
+accepts a [filename] argument, which the reader will use in any emitted errors.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer/forms-seq*">forms-seq*</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (forms-seq* rdr)
+       (forms-seq* rdr filename)
+</pre>
+    <pre id="var-docstr">Seq of Clojure/ClojureScript forms from rdr, a java.io.Reader. Optionally
+accepts a filename argument which will be used in any emitted errors.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer/get-expander">get-expander</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (get-expander sym env)
+</pre>
+    <pre id="var-docstr">Given a sym, a symbol identifying a macro, and env, an analysis environment
+return the corresponding Clojure macroexpander.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer/infer-tag">infer-tag</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (infer-tag env e)
+</pre>
+    <pre id="var-docstr">Given env, an analysis environment, and e, an AST node, return the inferred
+type of the node</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer/intern-macros">intern-macros</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (intern-macros ns)
+       (intern-macros ns reload)
+</pre>
+    <pre id="var-docstr">Given a Clojure namespace intern all macros into the ambient ClojureScript
+analysis environment.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer/loaded-js-ns?">loaded-js-ns?</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (loaded-js-ns? env prefix)
+</pre>
+    <pre id="var-docstr">Check if a JavaScript namespace has been loaded. JavaScript vars are
+not currently checked.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer/locate-src">locate-src</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (locate-src ns)
+</pre>
+    <pre id="var-docstr">Given a namespace return the corresponding ClojureScript (.cljs or .cljc)
+resource on the classpath or file from the root of the build.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer/macro-autoload-ns?">macro-autoload-ns?</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (macro-autoload-ns? form)
+</pre>
+    <pre id="var-docstr">Given a spec form check whether the spec namespace requires a macro file
+of the same name. If so return true.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer/macroexpand-1">macroexpand-1</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (macroexpand-1 env form)
+</pre>
+    <pre id="var-docstr">Given a env, an analysis environment, and form, a ClojureScript form,
+macroexpand the form once.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer/parse-ns">parse-ns</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (parse-ns src)
+       (parse-ns src opts)
+       (parse-ns src dest opts)
+</pre>
+    <pre id="var-docstr">Helper for parsing only the essential namespace information from a
+ClojureScript source file and returning a cljs.closure/IJavaScript compatible
+map _not_ a namespace AST node.
+
+By default does not load macros or perform any analysis of dependencies. If
+opts parameter provided :analyze-deps and :load-macros keys their values will
+be used for *analyze-deps* and *load-macros* bindings respectively. This
+function does _not_ side-effect the ambient compilation environment unless
+requested via opts where :restore is false.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer/requires-analysis?">requires-analysis?</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (requires-analysis? src)
+       (requires-analysis? src output-dir)
+       (requires-analysis? src cache output-dir)
+</pre>
+    <pre id="var-docstr">Given a src, a resource, and output-dir, a compilation output directory
+return true or false depending on whether src needs to be (re-)analyzed.
+Can optionally pass cache, the analysis cache file.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer/resolve-existing-var">resolve-existing-var</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (resolve-existing-var env sym)
+</pre>
+    <pre id="var-docstr">Given env, an analysis environment, and sym, a symbol, resolve an existing var.
+Emits a warning if no such var exists.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer/resolve-macro-var">resolve-macro-var</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (resolve-macro-var env sym)
+</pre>
+    <pre id="var-docstr">Given env, an analysis environment, and sym, a symbol, resolve a macro.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer/resolve-var">resolve-var</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (resolve-var env sym)
+       (resolve-var env sym confirm)
+</pre>
+    <pre id="var-docstr">Resolve a var. Accepts a side-effecting confirm fn for producing
+warnings about unresolved vars.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer/rewrite-cljs-aliases">rewrite-cljs-aliases</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (rewrite-cljs-aliases args)
+</pre>
+    <pre id="var-docstr">Alias non-existing clojure.* namespaces to existing cljs.* namespaces if
+possible.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div>
+</div>
+
+<br />
+<h2 id="cljs.analyzer.api">cljs.analyzer.api</h2>
+<pre id="namespace-docstr">This is intended to be a stable api for those who need programmatic access
+to the analyzer.</pre>
+
+
+<br />
+
+
+<div id="var-section">
+  <p></p>
+  <h2>Public Variables and Functions</h2>
+  <div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer.api/all-ns">all-ns</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (all-ns)
+       (all-ns state)
+</pre>
+    <pre id="var-docstr">Return all namespaces. Analagous to clojure.core/all-ns but
+returns symbols identifying namespaces not Namespace instances.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer.api/analyze">analyze</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (analyze env form)
+       (analyze env form name)
+       (analyze env form name opts)
+       (analyze state env form name opts)
+</pre>
+    <pre id="var-docstr">Given an environment, a map containing {:locals (mapping of names to bindings), :context
+(one of :statement, :expr, :return), :ns (a symbol naming the
+compilation ns)}, and form, returns an expression object (a map
+containing at least :form, :op and :env keys). If expr has any (immediately)
+nested exprs, must have :children [exprs...] entry. This will
+facilitate code walking without knowing the details of the op set.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer.api/analyze-file">analyze-file</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (analyze-file f)
+       (analyze-file f opts)
+       (analyze-file state f opts)
+</pre>
+    <pre id="var-docstr">Given a java.io.File, java.net.URL or a string identifying a resource on the
+   classpath attempt to analyze it.
+
+   This function side-effects the ambient compilation environment
+   `cljs.env/*compiler*` to aggregate analysis information. opts argument is
+   compiler options, if :cache-analysis true will cache analysis to
+   ":output-dir/some/ns/foo.cljs.cache.edn". This function does not return a
+   meaningful value.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer.api/default-warning-handler">default-warning-handler</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (default-warning-handler warning-type env extra)
+</pre>
+    <pre id="var-docstr">The default warning handler.
+
+Outputs the warning messages to *err*.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer.api/empty-env">empty-env</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (empty-env)
+</pre>
+    <pre id="var-docstr">Creates an empty analysis environment.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer.api/empty-state">empty-state</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (empty-state)
+</pre>
+    <pre id="var-docstr">Creates an empty compilation state Atom&lt;Map&gt;.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer.api/find-ns">find-ns</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (find-ns sym)
+       (find-ns state sym)
+</pre>
+    <pre id="var-docstr">Given a namespace return the corresponding namespace analysis map. Analagous
+to clojure.core/find-ns.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer.api/forms-seq">forms-seq</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (forms-seq rdr)
+       (forms-seq rdr filename)
+</pre>
+    <pre id="var-docstr">Seq of Clojure/ClojureScript forms from rdr, a java.io.Reader. Optionally
+accepts a filename argument which will be used in any emitted errors.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer.api/get-js-index">get-js-index</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (get-js-index)
+       (get-js-index state)
+</pre>
+    <pre id="var-docstr">Return the currently computed Google Closure js dependency index from the
+compiler state.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer.api/get-options">get-options</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (get-options)
+       (get-options state)
+</pre>
+    <pre id="var-docstr">Return the compiler options from compiler state.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer.api/in-cljs-user">in-cljs-user</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (in-cljs-user env &amp; body)
+</pre>
+    <pre id="var-docstr">Binds cljs.analyzer/*cljs-ns* to 'cljs.user and uses the given compilation
+environment atom and runs body.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer.api/no-warn">no-warn</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (no-warn &amp; body)
+</pre>
+    <pre id="var-docstr">Disable analyzer warnings for any analysis executed in body.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer.api/ns-interns">ns-interns</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (ns-interns ns)
+       (ns-interns state ns)
+</pre>
+    <pre id="var-docstr">Given a namespace return all the var analysis maps. Analagous to
+clojure.core/ns-interns but returns var analysis maps not vars.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer.api/ns-publics">ns-publics</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (ns-publics ns)
+       (ns-publics state ns)
+</pre>
+    <pre id="var-docstr">Given a namespace return all the public var analysis maps. Analagous to
+clojure.core/ns-publics but returns var analysis maps not vars.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer.api/ns-resolve">ns-resolve</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (ns-resolve ns sym)
+       (ns-resolve state ns sym)
+</pre>
+    <pre id="var-docstr">Given a namespace and a symbol return the corresponding var analysis map.
+Analagous to clojure.core/ns-resolve but returns var analysis map not Var.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer.api/parse-ns">parse-ns</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (parse-ns src)
+       (parse-ns src opts)
+       (parse-ns src dest opts)
+       (parse-ns state src dest opts)
+</pre>
+    <pre id="var-docstr">Helper for parsing only the essential namespace information from a
+   ClojureScript source file and returning a cljs.closure/IJavaScript compatible
+   map _not_ a namespace AST node.
+
+   By default does not load macros or perform any analysis of dependencies. If
+   opts parameter provided :analyze-deps and :load-macros keys their values will
+   be used for *analyze-deps* and *load-macros* bindings respectively. This
+   function does _not_ side-effect the ambient compilation environment unless
+   requested via opts where :restore is false.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer.api/remove-ns">remove-ns</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (remove-ns ns)
+       (remove-ns state ns)
+</pre>
+    <pre id="var-docstr">Removes the namespace named by the symbol.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer.api/resolve">resolve</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (resolve env sym)
+</pre>
+    <pre id="var-docstr">Given an analysis environment resolve a var. Analogous to
+clojure.core/resolve</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer.api/warning-enabled?">warning-enabled?</h2>
+    <span id="var-type">function</span><br />
+    <pre id="var-usage">Usage: (warning-enabled? warning-type)
+</pre>
+    <pre id="var-docstr">Test if the given warning-type is enabled.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div><div id="var-entry">
+    <br />
+    <hr />
+    <h2 id="cljs.analyzer.api/with-state">with-state</h2>
+    <span id="var-type">macro</span><br />
+    <pre id="var-usage">Usage: (with-state state body)
+</pre>
+    <pre id="var-docstr">Run the body with the given compilation state Atom&lt;Map&gt;.</pre>
+    <pre id="var-specs"></pre>
+    
+    
+    
+  </div>
+</div>
+
+
+</div>
+              </div>
+            </div>
+          </div>
+	</div>
+	<div id="foot">
+	  <div id="copyright" style="text-align: center;">No copyright info </div>
+	</div>
+      </div>
+      <div id="DesignedBy">Logo &amp; site design by <a href="http://www.tomhickey.com" title="Visit Tom Hickey's website.">Tom Hickey</a>.<br />
+      Clojure auto-documentation system by Tom Faulhaber.</div>
+    </div>
+    <!-- /AllContentContainer -->
+  </body>
+
+</html>
