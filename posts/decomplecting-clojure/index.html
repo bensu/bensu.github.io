@@ -4,16 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   
-  <title>bensu&#39;s blog</title>
-  <meta property="og:title" content="bensu&#39;s blog" />
-  <meta name="twitter:title" content="bensu&#39;s blog" />
+  <title>Decomplecting Clojure</title>
+  <meta property="og:title" content="Decomplecting Clojure" />
+  <meta name="twitter:title" content="Decomplecting Clojure" />
   
 
   
 
   <meta name="author" content=""/>
   <meta property="og:site_name" content="bensu&#39;s blog" />
-  <meta property="og:url" content="https://bensu.github.io/" />
+  <meta property="og:url" content="https://bensu.github.io/posts/decomplecting-clojure/" />
 
   
   <meta name="twitter:card" content="summary" />
@@ -21,13 +21,12 @@
   
 
   
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="article" />
+  
   
   
   <meta name="generator" content="Hugo 0.40.3" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
   <link rel="stylesheet" href="https://bensu.github.iocss/style.css" />
-  <link href="https://bensu.github.io/index.xml" rel="alternate" type="application/rss+xml" title="bensu&#39;s blog" />
-  
   <script type="text/javascript" src="https://bensu.github.iojs/bundle.js"></script>
   
 
@@ -100,62 +99,203 @@
     <main id="main" class="l-main">
 
 
-
-<article class="c-article p-list-article">
+<article class="p-article">
   <header>
-    <h2 class="c-title c-article__title"><a href="https://bensu.github.io/posts/abstracting-engineering/">Abstracting Engineering Away</a></h2>
-    <p class="c-article__meta">
-      <time datetime="2015-12-15T00:00:00Z">
-        December 2015, Stockholm
-      </time>
-    </p>
-  </header>
-  <div class="c-article__summary">
-    Should programmers call themselves engineers? Controversy aside, I think there is a real, meaningful distinction to be found: programmers and engineers deal with different levels of uncertainty.
-By uncertainty I mean: if you want to solve a problem, how well do you know what you are doing and how will you do it?
-For example, researchers know very little about what they are doing, and even less about how they'll do it.
-  </div>
-  
-  <a href="https://bensu.github.io/posts/abstracting-engineering/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-
-
-<article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://bensu.github.io/posts/decomplecting-clojure/">Decomplecting Clojure</a></h2>
-    <p class="c-article__meta">
-      <time datetime="2015-08-10T00:00:00Z">
-        August 2015, Stockholm
-      </time>
-    </p>
-  </header>
-  <div class="c-article__summary">
-    Clojure is a programming language that combines several concepts in a unique way. It is hard to understand the value of each concept, and they often blur together. As Rich Hickey, the creator of the language, suggests, taking a system apart is difficult but worth it. After "decomplecting" you end up with smaller pieces which are easier to reason about and use.
-This is not an introduction to the language but an attempt to explain its underpinnings.
-  </div>
-  
-  <a href="https://bensu.github.io/posts/decomplecting-clojure/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-<nav class="c-pagination p-pagination">
-  <div class="c-pagination__ctrl">
-    <div class="c-pagination__newer">
+    <h1 class="main-title">Decomplecting Clojure</h1>
+    <h3 class="subtitle"></h3>
+    <div>
+        
       
     </div>
-    <div class="c-pagination__older">
-      
-    </div>
-  </div>
-  <span class="c-pagination__count p-pagination__count">Page 1 of 1</span>
-</nav>
+  </header>
+  
+  <section id="js-article" class="p-article__body">
+    <p>Clojure is a programming language that combines several concepts in a unique way. It is hard to understand the value of each concept, and they often blur together. As Rich Hickey, the creator of the language, suggests, taking a system apart is difficult but worth it. After "decomplecting" you end up with smaller pieces which are easier to reason about and use.</p>
+
+<p>This is not an introduction to the language but an attempt to explain its underpinnings. Let's break Clojure apart and see what does each piece bring to the table.</p>
+
+<h4 id="the-jvm">The JVM</h4>
+
+<p>Clojure's runtime is implemented in Java. Some of the benefits of using the JVM are:</p>
+
+<ul>
+<li>Clojure can use Java libraries. Through Java interop, Clojure had an <a href="http://eclipse.org/jetty/" title="HTTP server">HTTP server</a>, a <a href="https://www.bouncycastle.org/java.html" title="cryptography library">cryptography library</a>, and a <a href="http://search.maven.org/" title="package repository">package repository</a> from day one<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>.</li>
+<li>Clojure can be deployed wherever Java is supported, and that is virtually everywhere.</li>
+<li>Whenever extra performance is needed, you can seamlessly use Java.</li>
+<li>There are armies working on optimizations, profiling, and monitoring for the JVM.</li>
+</ul>
+
+<p>The JVM makes Clojure <strong>practical</strong>.</p>
+
+<p>Every decision comes with trade-offs. Firstly, the JVM doesn't know about Clojure which leads to:</p>
+
+<ul>
+<li>Slow start times: when the JVM is started, it must first load Clojure itself and then proceed to run your code. This makes it unsuitable for <a href="http://blog.ndk.io/2015/04/23/state-of-coa.html" title="Android">Android</a> and CLI tools.</li>
+<li>Poor stack traces: they contain all the underlying Java classes and methods involved and they are hard to decipher.</li>
+<li>No tail call optimization.<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup></li>
+</ul>
+
+<h4 id="functional-style">Functional Style</h4>
+
+<p>The Clojure standard library is based on the ML family and heavily features lazy collections. There are plenty of blog posts describing functional programming and how it will solve all your problems but let's limit the hype.</p>
+
+<p>I find the "collection + lambdas" approach more elegant than "loops + iterators". Higher-order functions describe intent more succinctly and allow for more reuse. To me, it is the difference between seeing the forest and only seeing trees:</p>
+
+<pre><code class="language-clojure">(filter even? (map inc some-array))
+</code></pre>
+
+<pre><code class="language-java">someOtherArray = [];
+var x, i;
+for(i = 0; i &lt; someArray.length; i++) {
+  x = someArray[i] + 1;
+  if (isEven(x)) {
+    someOtherArray.push(x);
+  }
+}
+</code></pre>
+
+<p>A functional style makes Clojure <strong>elegant</strong>.</p>
+
+<h4 id="lisp">Lisp</h4>
+
+<p>Lisp is many things to many people, a religion to some and an antique to others. To me it represents two distinct things: a syntax and an approach to designing and developing code.</p>
+
+<p>Lisp programs are defined in terms of "s-expressions", lists with a consistent syntax. An s-expression is list of symbols where the first symbol is the operator, the rest are its arguments, and when evaluated it returns a value:</p>
+
+<pre><code class="language-clojure">(op arg1 arg2 ... arg-n)
+
+(+ 1 1) ;; =&gt; 2
+</code></pre>
+
+<p>Since the expression is a list (not a string!), it can easily be manipulated by other programs. For example, if you wanted to find the operator of an s-expression:</p>
+
+<pre><code class="language-clojure">(first '(+ 1 1)) ;; =&gt; +
+
+(first '(first (+ 1 1))) ;; =&gt; first
+</code></pre>
+
+<p>A consistent syntax is crucial when writing macros, programs that write other programs. Macros give you the power to write language extensions. If your Lisp is missing feature X, you could probably write a set of macros to implement it. A good example is <code>core.async</code> : the team behind Clojure used macros to add CSP, the concurrency model used by Go, as a library without the need to modify the language itself.</p>
+
+<p>s-expressions come with some trade-offs:</p>
+
+<ul>
+<li>Parenthesis whining: beginners and non lispers dislike them and complain loudly. Some operators like <code>&lt;</code> are always hard to read at the beginning of the expression.</li>
+<li>Macro abuse: some people like to experiment with macro DSLs making their code harder to read. It is less of a problem when using popular Clojure libraries since it is regarded as good practice to write macros only when you have to<sup class="footnote-ref" id="fnref:3"><a href="#fn:3">3</a></sup>.</li>
+</ul>
+
+<p>s-expressions can be written and tested individually which leads to an interactive workflow. You type expressions in a console/REPL and modify them until they return the desired value. This leads you to compose small abstractions into larger ones. This strategy, bottom-up programming, allows for tremendous reuse.</p>
+
+<p>Lisp makes Clojure <strong>powerful</strong>.</p>
+
+<h4 id="data-as-data">Data as Data</h4>
+
+<p>Clojure comes with four main data structures (lists, vectors, hash-maps, and sets) and nudges you into modeling your domain with them. In most cases you don't need to create your own types. Instead, you use the existing ones and the core library to manipulate them.</p>
+
+<p>Most functions in the core library when used on the standard data structures have the "closure property". An operation and a type X has the closure property if it takes and returns elements of the same type X, allowing you to combine them in some fashion:</p>
+
+<pre><code class="language-clojure">;; integers are closed under +
+(+ 40 2) ;; =&gt; 42 - an integer
+
+;; sets can be merged into a bigger set
+(set/union #{1 2} #{1 3}) ;; =&gt; #{1 2 3}
+
+;; functions can be *comp*osed into other functions
+(comp zero? mod) ;; =&gt; divisible-by? - a function
+</code></pre>
+
+<p>The opposite approach is to define your own types and then add methods which are specific to them. To see the two approaches I'll steal this example: you need to draw a poker hand out of a deck of cards. The OO encapsulation style leads you to:</p>
+
+<pre><code class="language-java">class Card {
+  rank: Int
+  suit: Enum
+}
+
+class Deck {
+  deck: List&lt;Card&gt;
+}
+</code></pre>
+
+<p>In Clojure you would use a vector for the card, <code>[3 :spades]</code>, and a vector of cards for the deck, <code>[[3 :spades] [1 :hearts]]</code>. Now you can leverage all of Clojure's functions to manipulate your cards and decks. For example, "get me a poker hand out of a deck of cards":</p>
+
+<pre><code class="language-clojure">(-&gt;&gt; [:spades :hearts :diamonds :clubs]
+     (mapcat (fn [color]
+               (map vector (range 13) (repeat color))))
+     shuffle
+     (take 2))
+
+;; =&gt; ([7 :hearts] [5 :spades])
+</code></pre>
+
+<p>We don't need any custom data or functions to model and manipulate our domain and the resulting code is straightforward.</p>
+
+<p>Now think about adding the shuffle and sort methods to the <code>Deck</code> class. Since the data is wrapped, we now have to dispatch each function from the class to the underlying implementation, e.g., <code>deck.shuffle()</code> to <code>innerList.shuffle()</code>. All that extra work is needed to bridge the distance between the custom types and the language.</p>
+
+<p>Data as data makes Clojure <strong>simple</strong>.</p>
+
+<h4 id="immutability">Immutability</h4>
+
+<p>Clojure data structures are immutable: once defined they can't be changed. If there is something that changes as time moves forward (state), you need to explicitly define it as mutable and change it through a well defined interface. Immutability helps you write concurrent code. To understand how, let's analyze the opposite: how mutability make concurrency hard.</p>
+
+<p>For example, your server needs to know many clients are connected at any time. In most OO languages you would define some object to hold the count:</p>
+
+<pre><code class="language-java">// On each connection
+if client.isNew() {
+    Int clientCount = clientCounter.getCount();
+    // What if somebody connects right *now*?
+    clientCounter.setCount(clientCount + 1);
+}
+</code></pre>
+
+<p>You are first retrieving the value, then adding one to it, and then setting it. There is a window of time in which you are holding a version of <code>clientCount</code> that might not represent the real count. What if a new client connects in between those statements? Alternatively:</p>
+
+<pre><code class="language-clojure">;; define a mutable reference with `atom`
+(def client-count (atom 0))
+
+(when (new-client? client-id)
+  ;; atomically apply `inc` to the value in `client-count`
+  ;; and then swap the old one for the new one
+  (swap! client-count inc))
+</code></pre>
+
+<p>Making state explicit forces you to model the system clearly. You don't have objects that have important state and objects that are just stateful. You minimize the moving parts and just like in mechanical engineering, your design improves.</p>
+
+<p>Immutability makes Clojure programs <strong>easy to reason about</strong>.</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">From a historical perspective, targeting the JVM helped Clojure overcome the chicken-and-egg problem all new languages face: nobody wants to program in a language with no libraries, and no one wants to develop libraries for a language with no users. <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+
+<li id="fn:2">Clojure works around it by introducing [[https://clojuredocs.org/clojure.core/loop][loop]] and [[https://clojuredocs.org/clojure.core/recur][recur] which make tail calls explicit. <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+
+<li id="fn:3">Zach Tellman has a great talk on how/when to use macros. <a class="footnote-return" href="#fnref:3"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+  </section>
+  <footer>
+    
+    <nav class="p-pagination c-pagination">
+      <div class="c-pagination__ctrl">
+        <div class="c-pagination__newer">
+          
+          <a href="https://bensu.github.io/posts/abstracting-engineering/">Newer</a>
+          
+        </div>
+        <div class="c-pagination__older">
+          
+          
+        </div>
+      </div>
+    </nav>
+    
 
 
+    
 
+  </footer>
+</article>
   
 
   <footer class="l-footer">

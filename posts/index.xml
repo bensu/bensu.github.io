@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on bensu&#39;s blog</title>
+    <link>https://bensu.github.io/posts/</link>
+    <description>Recent content in Posts on bensu&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 15 Dec 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://bensu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Abstracting Engineering Away</title>
+      <link>https://bensu.github.io/posts/abstracting-engineering/</link>
+      <pubDate>Tue, 15 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://bensu.github.io/posts/abstracting-engineering/</guid>
+      <description>Should programmers call themselves engineers? Controversy aside, I think there is a real, meaningful distinction to be found: programmers and engineers deal with different levels of uncertainty.
+By uncertainty I mean: if you want to solve a problem, how well do you know what you are doing and how will you do it?
+For example, researchers know very little about what they are doing, and even less about how they&#39;ll do it.</description>
+    </item>
+    
+    <item>
+      <title>Decomplecting Clojure</title>
+      <link>https://bensu.github.io/posts/decomplecting-clojure/</link>
+      <pubDate>Mon, 10 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://bensu.github.io/posts/decomplecting-clojure/</guid>
+      <description>Clojure is a programming language that combines several concepts in a unique way. It is hard to understand the value of each concept, and they often blur together. As Rich Hickey, the creator of the language, suggests, taking a system apart is difficult but worth it. After &#34;decomplecting&#34; you end up with smaller pieces which are easier to reason about and use.
+This is not an introduction to the language but an attempt to explain its underpinnings.</description>
+    </item>
+    
+  </channel>
+</rss>

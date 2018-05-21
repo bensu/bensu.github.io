@@ -4,16 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   
-  <title>bensu&#39;s blog</title>
-  <meta property="og:title" content="bensu&#39;s blog" />
-  <meta name="twitter:title" content="bensu&#39;s blog" />
+  <title>Abstracting Engineering Away</title>
+  <meta property="og:title" content="Abstracting Engineering Away" />
+  <meta name="twitter:title" content="Abstracting Engineering Away" />
   
 
   
 
   <meta name="author" content=""/>
   <meta property="og:site_name" content="bensu&#39;s blog" />
-  <meta property="og:url" content="https://bensu.github.io/" />
+  <meta property="og:url" content="https://bensu.github.io/posts/abstracting-engineering/" />
 
   
   <meta name="twitter:card" content="summary" />
@@ -21,13 +21,12 @@
   
 
   
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="article" />
+  
   
   
   <meta name="generator" content="Hugo 0.40.3" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
   <link rel="stylesheet" href="https://bensu.github.iocss/style.css" />
-  <link href="https://bensu.github.io/index.xml" rel="alternate" type="application/rss+xml" title="bensu&#39;s blog" />
-  
   <script type="text/javascript" src="https://bensu.github.iojs/bundle.js"></script>
   
 
@@ -100,62 +99,128 @@
     <main id="main" class="l-main">
 
 
-
-<article class="c-article p-list-article">
+<article class="p-article">
   <header>
-    <h2 class="c-title c-article__title"><a href="https://bensu.github.io/posts/abstracting-engineering/">Abstracting Engineering Away</a></h2>
-    <p class="c-article__meta">
-      <time datetime="2015-12-15T00:00:00Z">
-        December 2015, Stockholm
-      </time>
-    </p>
-  </header>
-  <div class="c-article__summary">
-    Should programmers call themselves engineers? Controversy aside, I think there is a real, meaningful distinction to be found: programmers and engineers deal with different levels of uncertainty.
-By uncertainty I mean: if you want to solve a problem, how well do you know what you are doing and how will you do it?
-For example, researchers know very little about what they are doing, and even less about how they'll do it.
-  </div>
-  
-  <a href="https://bensu.github.io/posts/abstracting-engineering/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-
-
-<article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://bensu.github.io/posts/decomplecting-clojure/">Decomplecting Clojure</a></h2>
-    <p class="c-article__meta">
-      <time datetime="2015-08-10T00:00:00Z">
-        August 2015, Stockholm
-      </time>
-    </p>
-  </header>
-  <div class="c-article__summary">
-    Clojure is a programming language that combines several concepts in a unique way. It is hard to understand the value of each concept, and they often blur together. As Rich Hickey, the creator of the language, suggests, taking a system apart is difficult but worth it. After "decomplecting" you end up with smaller pieces which are easier to reason about and use.
-This is not an introduction to the language but an attempt to explain its underpinnings.
-  </div>
-  
-  <a href="https://bensu.github.io/posts/decomplecting-clojure/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-<nav class="c-pagination p-pagination">
-  <div class="c-pagination__ctrl">
-    <div class="c-pagination__newer">
+    <h1 class="main-title">Abstracting Engineering Away</h1>
+    <h3 class="subtitle">Quotes from the Borax Experiments</h3>
+    <div>
+        
       
     </div>
-    <div class="c-pagination__older">
-      
-    </div>
-  </div>
-  <span class="c-pagination__count p-pagination__count">Page 1 of 1</span>
-</nav>
+  </header>
+  
+  <section id="js-article" class="p-article__body">
+    <p>Should programmers call themselves engineers? Controversy aside, I think there is a real, meaningful distinction to be found: programmers and engineers deal with different levels of uncertainty.</p>
+
+<p>By uncertainty I mean: if you want to solve a problem, how well do you know <em>what</em> you are doing and <em>how</em> will you do it?</p>
+
+<p>For example, researchers know very little about what they are doing, and even less about how they'll do it. They first need to figure out the right questions to ask, and only then the answers. In that sense, researches deal with high levels of uncertainty.</p>
+
+<p>Unlike researchers, engineers have a better understanding of what they need to accomplish. For example, build a nuclear reactor. Design decisions are needed: should it be a boiling water reactor or a pressurized water reactor? Engineers face well-understood trade-offs and can reference previous solutions. Clearly, that doesn't make building a reactor an easy task. Expertise, skill, and effort are needed to implement any complex solution, even if is well-understood.</p>
+
+<p>Finally, technicians implement known solutions for known problems with little variation. An electrician can estimate the fuses required for a house, install them, and rarely get it wrong. When the problem is well-understood and the solution is repeatable, there is low uncertainty.</p>
+
+<p>The three categories, researches, engineers, and technicians, offer a continuum of technical activities with varying degrees of uncertainty. Where does programming fall in the scale?</p>
+
+<p>Most people assume it neatly falls alongside engineering: its members call themselves "software engineers". Thus, people expect software to work like any other engineering. This leads to all sorts of confusion, most notably with regards to scheduling and failure rates.<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">1</a></sup> Society's expectations correlate with uncertainty: research is not held to deadlines and failure is accepted, engineering projects are scheduled with some leeway but expected to succeed, and technical tasks are integrated as predictable steps into larger processes.</p>
+
+<p>While there is a subset of engineering that resembles programming and a subset of programming that resembles engineering<sup class="footnote-ref" id="fnref:3"><a href="#fn:3">2</a></sup>, uncertainty is higher in programming.</p>
+
+<p>Let's pick up our very serious example: building a nuclear plant. The engineers will use the best practices accumulated from previous engineers. Their job is to check how does this current plant differ from previous ones and adapt the known methods. But what happens if there are no previous plants?</p>
+
+<p>The Borax experiments were carried by the team that built the first nuclear reactor in the US.<sup class="footnote-ref" id="fnref:4"><a href="#fn:4">3</a></sup> They faced unexplored requirements and constraints. They had to do much more testing and prototyping than current nuclear engineers. They also probably felt like they didn't know what they were doing, because in fact, they didn't. Did they "act like engineers" or like "sloppy programmers"?</p>
+
+<blockquote>
+<p>
+These Borax-I experiments were expected to provide proof as to whether or not a water reactor could operate in a stable boiling mode. ... It began as a crude reactor experiment, conducted in open air without benefit of any building structure or containment.
+</p>
+</blockquote>
+
+<p>Even nuclear engineers skip SSL on the prototype. Clearly, engineers have to experiment at some point. With that in mind, the following quote makes sense:</p>
+
+<blockquote>
+<p>
+Reactor operators, at that time, had only on-the-job training. It was a bit like how Orville Wright learned how to fly. ... The loose arrangement allowed for decisions and problems to be resolved quickly, sometimes with whatever materials were conveniently available.
+</p>
+</blockquote>
+
+<p>Translation: they winged it and used duck tape.</p>
+
+<blockquote>
+<p>
+There was one commentator who described the Borax experiments as having been conducted by a bunch of cowboys. It was true that we knowingly accepted greater risks than would be acceptable today. ... There was insufficient time available to make the needed modifications. We compensated for the problem by implementing some very innovative tricks.
+</p>
+</blockquote>
+
+<p>Yesterday's tricks are today's best practices and engineering is a collection of tricks that are known to work.</p>
+
+<p>So why is it that <em>all</em> programming feels like the experience of the first nuclear engineers? Abstraction and reuse. Software is free to copy and can be abstracted for reuse. When the software industry solves a problem, it solves it <em>for every project</em>. For example, when was the last time you implemented your own HTTP server? On the other hand, civil engineers need to pour concrete for every building, even though the Romans had a great recipe for it.</p>
+
+<p>When starting a new project, programmers only face the novel elements. For any know problems, they can reuse somebody else's code. Here are some solved problems:</p>
+
+<ul>
+<li>Communicate arbitrary data over a network (IP/TCP).</li>
+<li>Communicate human readable documents over a network (HTTP).</li>
+<li>Store data with "table-shape" (SQL databases).</li>
+</ul>
+
+<p>Here are some of the problems not yet solved:</p>
+
+<ul>
+<li>Build distributed systems that behave as expected.</li>
+<li>Deploy and manage clusters of servers and applications.</li>
+<li>Process large amounts of data either in batches or continuously.</li>
+</ul>
+
+<p>Distributed systems don't look like something you can abstract over but more like a design space. Accordingly, people dealing with them increasingly sound like engineers. They refer to trade-offs (consistency vs availability) and recommend best practices ("don't write your own consensus protocol!"). Similarly, specialized software consultants behave like engineers. They specialize in niches like integrations or payments and see the same problems over and over. They run the risk that their entire niche could be abstracted away at any moment.</p>
+
+<p>There are other programming activities with lower levels of uncertainty.<sup class="footnote-ref" id="fnref:5"><a href="#fn:5">4</a></sup> Consider the average "This business exists!" website. Web consultants can reliably use HTML, PHP scripts, and Wordpress. It's been done a million times, there are few surprises and little need for investigation. They are more like technicians than engineers, implementing a repeated solution for a very well known problem.</p>
+
+<p>When programmers solve a problem, abstraction lets them encode best practices and the industry as a whole moves on to the next frontier. Once a problem is abstracted away, implementing all future solutions will feel like plumbing and not like engineering. The next problem is by definition new so it doesn't feel like engineering either!</p>
+
+<p>Abstraction and reuse are not restricted to software. Electrical engineering has such pervasive standards that it almost feels like no design is needed. There is only one thing to produce, AC electricity, so components can be easily "connected". Electronics has more powerful abstractions: individual components (e.g., transistors) can be composed into more complex components almost indefinitely (computers!). That is one of the reasons digital electronics are more powerful than analog electronics: analog components can't be composed indefinitely because of noise propagation. Mechanical engineers have a harder time. Pumps, electrical engines, and small combustion engines have been abstracted into catalog components. Beyond that, things are harder to abstract: you need to redesign support structures and stress test for each project. Civil engineers face the hardest challenges when dealing with reuse but even they've found some abstractions: steel framing for skyscrapers and prebuilt homes transformed "building a structure" into "assembling a structure" which is much quicker.</p>
+
+<p>All those disciplines have distinct places where the quirky engineers tinker and explore: workshops. If you believe that engineers are somehow serious, visit a workshop. You'll either leave thinking that tape is a valid structural material or you'll never trust an engineer again. While the tinkerers remain hidden in workshops, the rest of the engineers are visibly busy solving problems they couldn't abstract away: keeping the production line running, pouring concrete into molds, etc. In programming the opposite is true: the tinkerers are the majority, goofing in public.</p>
+
+<p>Engineering only emerges when a problem has no final answer but actually represents a design space with multiple solutions and trade-offs. Programmers have been around for less than a century and are still abstracting problems away. Let's hope it continues that way, tinkering is much more fun.</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:2">People are tremendously disappointed when they realize that programming doesn't work like engineering, which probably explains the tone of some of the "Programming vs Engineering" essays. <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+
+<li id="fn:3">This was so obvious to my brother (an engineering student) that it almost prevented me from publishing the essay. His first instinct was to compare programmers to philosophers because they both "build upon ideas". He clearly doesn't know about CSS. <a class="footnote-return" href="#fnref:3"><sup>[return]</sup></a></li>
+
+<li id="fn:4">For much more on the fascinating story of the BORAX I, the first nuclear reactor, read the [[https://www.ne.anl.gov/pdfs/reactors/Story-of-BORAX-Reactor-by-Ray-Haroldsen-v2.pdf][account of one of its creators]]. The quotes are just from the preface. <a class="footnote-return" href="#fnref:4"><sup>[return]</sup></a></li>
+
+<li id="fn:5">What about higher levels of uncertainty? Programming, being between engineering and research in the uncertainty continuum also gets associated to computer science research, with its own set of interesting consequences. That is the starting point of Hackers and Painters where Paul Graham argues that programming and research should also be kept separate. <a class="footnote-return" href="#fnref:5"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+  </section>
+  <footer>
+    
+    <nav class="p-pagination c-pagination">
+      <div class="c-pagination__ctrl">
+        <div class="c-pagination__newer">
+          
+          
+        </div>
+        <div class="c-pagination__older">
+          
+          <a href="https://bensu.github.io/posts/decomplecting-clojure/">Older</a>
+          
+        </div>
+      </div>
+    </nav>
+    
 
 
+    
 
+  </footer>
+</article>
   
 
   <footer class="l-footer">
