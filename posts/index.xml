@@ -6,10 +6,21 @@
     <description>Recent content in Posts on bensu&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 15 Dec 2015 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 26 May 2018 00:00:00 -0700</lastBuildDate>
     
 	<atom:link href="https://bensu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The Book of Why</title>
+      <link>https://bensu.github.io/posts/the-book-of-why/</link>
+      <pubDate>Sat, 26 May 2018 00:00:00 -0700</pubDate>
+      
+      <guid>https://bensu.github.io/posts/the-book-of-why/</guid>
+      <description>Not recommended. While there are clearly genius ideas here, the tone and the half of the content get in the way.
+The book makes the following main points:
+ Statistics as a field has a dogmatic tendency to avoid talking about causation. For any given study, the most important question is what causes what. The author&#39;s do-calculus is the best tool we have to study causation.  I don&#39;t need to be convinced of 2, I don&#39;t care at all about 1, and the book convinced me I should understand 3.</description>
+    </item>
     
     <item>
       <title>Abstracting Engineering Away</title>

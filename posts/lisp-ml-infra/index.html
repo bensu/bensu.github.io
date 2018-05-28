@@ -4,16 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   
-  <title>Posts</title>
-  <meta property="og:title" content="Posts" />
-  <meta name="twitter:title" content="Posts" />
+  <title>Lisp Parasites</title>
+  <meta property="og:title" content="Lisp Parasites" />
+  <meta name="twitter:title" content="Lisp Parasites" />
   
 
   
 
   <meta name="author" content=""/>
   <meta property="og:site_name" content="bensu&#39;s blog" />
-  <meta property="og:url" content="https://bensu.github.io/posts/" />
+  <meta property="og:url" content="https://bensu.github.io/posts/lisp-ml-infra/" />
 
   
   <meta name="twitter:card" content="summary" />
@@ -21,7 +21,8 @@
   
 
   
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="article" />
+  
   
   
   <meta name="generator" content="Hugo 0.40.3" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
@@ -97,86 +98,178 @@
     </div>
     <main id="main" class="l-main">
 
-<h2 class="c-title p-tag-title">Posts</h2>
 
-
-<article class="c-article p-list-article">
+<article class="p-article">
   <header>
-    <h2 class="c-title c-article__title"><a href="https://bensu.github.io/posts/the-book-of-why/">The Book of Why</a></h2>
-    <p class="c-article__meta">
-      <time datetime="2018-05-26T00:00:00-07:00">
-        May 2018, San Francisco
-      </time>
-    </p>
-  </header>
-  <div class="c-article__summary">
-    Not recommended. While there are clearly genius ideas here, the tone and the half of the content get in the way.
-The book makes the following main points:
- Statistics as a field has a dogmatic tendency to avoid talking about causation. For any given study, the most important question is what causes what. The author's do-calculus is the best tool we have to study causation.  I don't need to be convinced of 2, I don't care at all about 1, and the book convinced me I should understand 3.
-  </div>
-  
-  <a href="https://bensu.github.io/posts/the-book-of-why/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-
-
-<article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://bensu.github.io/posts/abstracting-engineering/">Abstracting Engineering Away</a></h2>
-    <p class="c-article__meta">
-      <time datetime="2015-12-15T00:00:00Z">
-        December 2015, Stockholm
-      </time>
-    </p>
-  </header>
-  <div class="c-article__summary">
-    Should programmers call themselves engineers? Controversy aside, I think there is a real, meaningful distinction to be found: programmers and engineers deal with different levels of uncertainty.
-By uncertainty I mean: if you want to solve a problem, how well do you know what you are doing and how will you do it?
-For example, researchers know very little about what they are doing, and even less about how they'll do it.
-  </div>
-  
-  <a href="https://bensu.github.io/posts/abstracting-engineering/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-
-
-<article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://bensu.github.io/posts/decomplecting-clojure/">Decomplecting Clojure</a></h2>
-    <p class="c-article__meta">
-      <time datetime="2015-08-10T00:00:00Z">
-        August 2015, Stockholm
-      </time>
-    </p>
-  </header>
-  <div class="c-article__summary">
-    Clojure is a programming language that combines several concepts in a unique way. It is hard to understand the value of each concept, and they often blur together. As Rich Hickey, the creator of the language, suggests, taking a system apart is difficult but worth it. After "decomplecting" you end up with smaller pieces which are easier to reason about and use.
-This is not an introduction to the language but an attempt to explain its underpinnings.
-  </div>
-  
-  <a href="https://bensu.github.io/posts/decomplecting-clojure/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-<nav class="c-pagination p-pagination">
-  <div class="c-pagination__ctrl">
-    <div class="c-pagination__newer">
+    <h1 class="main-title">Lisp Parasites</h1>
+    <h3 class="subtitle">ML Infrastructure with Clojure and Hy</h3>
+    <div>
+        
       
     </div>
-    <div class="c-pagination__older">
-      
-    </div>
-  </div>
-  <span class="c-pagination__count p-pagination__count">Page 1 of 1</span>
-</nav>
+  </header>
+  
+  <section id="js-article" class="p-article__body">
+    <p>I've encountered a problem that seems to be common enough to talk about but hard enough to solve with a library that everybody has to solve it alone. There are several such problems, configuration and deployment systems are a perennial source of them. Therefore, I'm pushing a polished version of my notes and some of the code involved with hopes of helping others and signaling and fair bit myself.</p>
+
+<p>Machine Learning models should ideally be worked on and deployed orthogonally from the regular production system and the skills involved in running the production system and the model are non-overlapping.</p>
+
+<h4 id="the-players">The players:</h4>
+
+<ul>
+<li>The developer(s) that run the production app and need an ML model (much programming, little stats)</li>
+<li>The data scientist that does the exploring, modeling (little programming, much stats)</li>
+</ul>
+
+<h4 id="requirements">Requirements:</h4>
+
+<ol>
+<li>The data scientist can explore the data, generate models, and deploy them directly to production from its own programming environment, Python.</li>
+<li>The developer can monitor the JVM app without caring too much about which model is running.</li>
+<li>Everybody can evaluate the model's output.</li>
+<li>The model should work exactly the same in development an production.</li>
+</ol>
+
+<h4 id="proposed-workflow">Proposed workflow:</h4>
+
+<ol>
+<li>The data scientist takes a well named data source (named after its content hash) and develops a model in Python.</li>
+<li>The data scientist serializes the model along with some metadata and working examples, names it, and pushes it to a "Model Registry" in S3 from Python.</li>
+<li>The JVM app checks a <code>current-model-id</code> variable from fast storage (Dynamo DB). If <code>current-model-id</code> is already loaded, use that. Otherwise, load the new model from the Model Registry in S3.</li>
+<li>The JVM logs the input/output each time the model runs</li>
+<li>Everybody can see the model outputs from the logs in a webpage.</li>
+</ol>
+
+<p>From that workflow, we derive the requirements of the ML framework:</p>
+
+<ul>
+<li>The models should be serializable</li>
+<li>The models can be run on the JVM and on Python getting exact results<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>.</li>
+</ul>
+
+<p>After some research, <a href="https://www.tensorflow.org/" title="Tensor Flow">Tensor Flow</a> seems to be the only one that fits that criteria: it can <a href="https://www.tensorflow.org/programmers_guide/saved_model" title="serialize models">serialize models</a> and the JVM and Python bindings use the same binaries under the hood.</p>
+
+<h4 id="solution">Solution</h4>
+
+<h5 id="1-developing-a-model-in-python">1. Developing a model in Python</h5>
+
+<h5 id="2-serialize-and-publish-the-model">2. Serialize and publish the model</h5>
+
+<p>We need a Python script with the following signature:</p>
+
+<pre><code class="language-python">def publish_model(session, model, model_name):
+  &quot;Serializes the Tensor Flow and publishes it to the S3 Model Registry&quot;
+</code></pre>
+
+<p>The data scientist can call that function with the trained model whenever he wants a model in production.</p>
+
+<p>Since I program mostly in Lisp (Clojure), I can't stand not having s-expression. Luckily, other Lisp users are as stubborn as I am an d they wrote <a href="http://docs.hylang.org/en/stable/" title="Hy">Hy</a>, a Lisp dialect that translates directly to Python. Installing and setting up Hy with Emacs took less than 30 minutes and I got my s-expressions and REPL. I recommend it.</p>
+
+<p>The final Hy file that exports publish_model looks like this:</p>
+
+<pre><code class="language-clojure">(import os)
+(import shutil)
+(import boto3)
+(import namesgenerator)
+(import datetime)
+(import json)
+(import tensorflow)
+
+(setv *default-target-dir* &quot;data/models/&quot;)
+
+(defn save-model! [session model model-name examples owner target-dir]
+  &quot;Saves the model, returns the directory where it was saved&quot;
+  (setv builder (tensorflow.saved_model.builder.SavedModelBuilder (os.path.join target-dir model-name)))
+  (.add_meta_graph_and_variables builder
+                                 session
+                                 [tensorflow.saved_model.tag_constants.SERVING]
+                                 :signature_def_map {model-name model})
+  (.save builder model-name)
+  (with [json-file (open (os.path.join target-dir model-name &quot;custom-meta.json&quot;) &quot;w&quot;)]
+    (json.dump {&quot;examples&quot; (run-examples session examples)
+                &quot;owner&quot; owner
+                &quot;name&quot; model-name
+                &quot;model-type&quot; &quot;tensorflow&quot;}
+               json-file))
+  (os.path.join target-dir model-name))
+
+(defn zipdir! [source target]
+  (shutil.make_archive target &quot;zip&quot; source))
+
+(defn quasi-unique-name []
+  &quot;The namesgenerator has 15k which is not unique enough for my taste. Increasing to 1M by prepending a second adjective&quot;
+  (setv unique-name (namesgenerator.get_random_name &quot;-&quot;))
+  (+ (first (.split(namesgenerator.get_random_name &quot;-&quot;) &quot;-&quot;)) &quot;-&quot; unique-name))
+
+(setv *models-bucket* &quot;the-bucket-you-are-using&quot;)
+
+(defn update-registry! [s3-client model-description]
+  &quot;registry.json contains a list with all the models ever uploaded&quot;
+  (setv registry-object (s3-client.get_object :Bucket *models-bucket* :Key &quot;registry.json&quot;))
+  (setv registry (json.loads (.decode (.read (get registry-object &quot;Body&quot;)) &quot;utf-8&quot;)))
+  (assoc registry &quot;updated-ts&quot; (.isoformat (datetime.datetime.now)))
+  (setv registered-models (get registry &quot;models&quot;))
+  (.append registered-models model-description)
+  (s3-client.put_object :Bucket *models-bucket* :Key &quot;registry.json&quot; :Body (.encode (json.dumps registry))))
+
+(defn publish-model [session model model-name examples owner]
+  &quot;Saves the model to disk, names it, zips it, and uploads it to S3. Returns the generated name for the model&quot;
+  ;; save
+  (setv saved-model-dir (save-model! :target-dir *default-target-dir* :session session :model model
+                                     :model-name model-name :examples examples :owner owner))
+  ;; name
+  (setv now-str (.isoformat (datetime.datetime.now)))
+  (setv model-key (quasi-unique-name))
+  ;; zip
+  (zipdir! saved-model-dir saved-model-dir)
+  ;; upload
+  (setv s3 (boto3.resource &quot;s3&quot;))
+  (setv bucket (s3.Bucket *models-bucket*))
+  (setv model-description {&quot;owner&quot; owner
+                           &quot;model-key&quot; model-key
+                           &quot;model-name&quot; model-name
+                           &quot;model-type&quot; &quot;tensorflow&quot;
+                           &quot;created-ts&quot; now-str})
+  (bucket.upload_file (+ saved-model-dir &quot;.zip&quot;) model-key :ExtraArgs {&quot;Metadata&quot; model-description})
+  (setv s3-client (boto3.client &quot;s3&quot;))
+  (s3-client.get_object :Bucket *models-bucket* :Key &quot;registry.json&quot;)
+  ;; update registry
+  (update-registry! s3-client model-description)
+  model-key)
+</code></pre>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">Alternatively, we could reimplement the models in the JVM but as a one-person team I shouldn't. Hell, I shouldn't even be blogging. <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+  </section>
+  <footer>
+    
+    <nav class="p-pagination c-pagination">
+      <div class="c-pagination__ctrl">
+        <div class="c-pagination__newer">
+          
+          <a href="https://bensu.github.io/posts/the-book-of-why/">Newer</a>
+          
+        </div>
+        <div class="c-pagination__older">
+          
+          <a href="https://bensu.github.io/posts/abstracting-engineering/">Older</a>
+          
+        </div>
+      </div>
+    </nav>
+    
 
 
+    
 
+  </footer>
+</article>
   
 
   <footer class="l-footer">

@@ -4,16 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   
-  <title>Posts</title>
-  <meta property="og:title" content="Posts" />
-  <meta name="twitter:title" content="Posts" />
+  <title>The Book of Why</title>
+  <meta property="og:title" content="The Book of Why" />
+  <meta name="twitter:title" content="The Book of Why" />
   
 
   
 
   <meta name="author" content=""/>
   <meta property="og:site_name" content="bensu&#39;s blog" />
-  <meta property="og:url" content="https://bensu.github.io/posts/" />
+  <meta property="og:url" content="https://bensu.github.io/posts/the-book-of-why/" />
 
   
   <meta name="twitter:card" content="summary" />
@@ -21,7 +21,8 @@
   
 
   
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="article" />
+  
   
   
   <meta name="generator" content="Hugo 0.40.3" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
@@ -97,86 +98,175 @@
     </div>
     <main id="main" class="l-main">
 
-<h2 class="c-title p-tag-title">Posts</h2>
 
-
-<article class="c-article p-list-article">
+<article class="p-article">
   <header>
-    <h2 class="c-title c-article__title"><a href="https://bensu.github.io/posts/the-book-of-why/">The Book of Why</a></h2>
-    <p class="c-article__meta">
-      <time datetime="2018-05-26T00:00:00-07:00">
-        May 2018, San Francisco
-      </time>
-    </p>
-  </header>
-  <div class="c-article__summary">
-    Not recommended. While there are clearly genius ideas here, the tone and the half of the content get in the way.
-The book makes the following main points:
- Statistics as a field has a dogmatic tendency to avoid talking about causation. For any given study, the most important question is what causes what. The author's do-calculus is the best tool we have to study causation.  I don't need to be convinced of 2, I don't care at all about 1, and the book convinced me I should understand 3.
-  </div>
-  
-  <a href="https://bensu.github.io/posts/the-book-of-why/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-
-
-<article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://bensu.github.io/posts/abstracting-engineering/">Abstracting Engineering Away</a></h2>
-    <p class="c-article__meta">
-      <time datetime="2015-12-15T00:00:00Z">
-        December 2015, Stockholm
-      </time>
-    </p>
-  </header>
-  <div class="c-article__summary">
-    Should programmers call themselves engineers? Controversy aside, I think there is a real, meaningful distinction to be found: programmers and engineers deal with different levels of uncertainty.
-By uncertainty I mean: if you want to solve a problem, how well do you know what you are doing and how will you do it?
-For example, researchers know very little about what they are doing, and even less about how they'll do it.
-  </div>
-  
-  <a href="https://bensu.github.io/posts/abstracting-engineering/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-
-
-<article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://bensu.github.io/posts/decomplecting-clojure/">Decomplecting Clojure</a></h2>
-    <p class="c-article__meta">
-      <time datetime="2015-08-10T00:00:00Z">
-        August 2015, Stockholm
-      </time>
-    </p>
-  </header>
-  <div class="c-article__summary">
-    Clojure is a programming language that combines several concepts in a unique way. It is hard to understand the value of each concept, and they often blur together. As Rich Hickey, the creator of the language, suggests, taking a system apart is difficult but worth it. After "decomplecting" you end up with smaller pieces which are easier to reason about and use.
-This is not an introduction to the language but an attempt to explain its underpinnings.
-  </div>
-  
-  <a href="https://bensu.github.io/posts/decomplecting-clojure/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-<nav class="c-pagination p-pagination">
-  <div class="c-pagination__ctrl">
-    <div class="c-pagination__newer">
+    <h1 class="main-title">The Book of Why</h1>
+    <h3 class="subtitle"></h3>
+    <div>
+        
       
     </div>
-    <div class="c-pagination__older">
-      
-    </div>
-  </div>
-  <span class="c-pagination__count p-pagination__count">Page 1 of 1</span>
-</nav>
+  </header>
+  
+  <section id="js-article" class="p-article__body">
+    <p>Not recommended. While there are clearly genius ideas here, the tone and the half of the content get in the way.</p>
+
+<p>The book makes the following main points:</p>
+
+<ol>
+<li>Statistics as a field has a dogmatic tendency to avoid talking about causation.</li>
+<li>For any given study, the most important question is what causes what.</li>
+<li>The author's do-calculus is the best tool we have to study causation.</li>
+</ol>
+
+<p>I don't need to be convinced of 2, I don't care at all about 1, and the book convinced me I should understand 3.</p>
+
+<p>Sadly, Pearl holds enough of a grudge on the Statistics community that most of the book takes the following form:</p>
+
+<ul>
+<li>Look at experiment A.</li>
+<li>Look how wrong the statistical results for A are.</li>
+<li>Look how well the do-calculus solves a simplified version of A.</li>
+</ul>
+
+<p>I guess it is my fault for not reading the math textbook<sup class="footnote-ref" id="fnref:5"><a href="#fn:5">1</a></sup> directly which probably avoids criticizing Statistics so much.</p>
+
+<p>Also, even though polite, the overall tone of the book is too self-congratulatory for my taste.</p>
+
+<h2 id="takeaways">Takeaways</h2>
+
+<h3 id="ladder-of-causation">Ladder of Causation</h3>
+
+<ol>
+<li>Association: X and Y are associated if they have a tendency to change together. In statistics, association is captured by the correlation coefficient.</li>
+<li>Intervention: If I change X, what will happen to Y? Intervention tries to predict a the future and allows for experiments. According to Pearl, statistic tools for this are error-prone.</li>
+<li>Counterfactuals: If X were different in the past, what would have happened to Y? Counterfactuals allows us to generalize from limited experiences.</li>
+</ol>
+
+<p>It is not clear if Pearl sees the Ladder of Causation as a "true" taxonomy<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">2</a></sup> or rather, those are the things that fall out of the do-calculus so he presents it as such.</p>
+
+<h3 id="bayesian-networks">Bayesian networks</h3>
+
+<p>With Bayesian networks we can study many random variables that are somehow correlated to each other. We can draw a graph that connects each variable to the ones it is correlated with. Then, using Bayes Thereom and the measured values of some of the random variables, we can derive the likely values of the rest of the variables.</p>
+
+<h3 id="do-calculus">do-calculus</h3>
+
+<p>If we can add the causal relationships as arrows in a Bayesian network, we can augment probability and Bayes Theorem with a new operator, <code>do(X)</code>, which allows us to study causation. It is called the <em>do-calculus</em> because it also provides rules to manipulate the algebraic expressions involving <code>do(X)</code>.</p>
+
+<h2 id="highlights">Highlights</h2>
+
+<h3 id="explicit-models">Explicit models</h3>
+
+<blockquote>
+<p>
+Also, notice that the omitted arrows actually convey more significant assumptions than those that are present.
+</p>
+</blockquote>
+
+<p>What we leave out of a model is as important as what we put in by assuming it doesn't matter.</p>
+
+<blockquote>
+<p>
+In fact, one of the major accomplishments of causal diagrams is to make the assumptions transparent so that they can be discussed and debated by experts and policy makers.
+</p>
+</blockquote>
+
+<p>This is very useful when discussing a problem: being extra explicit about the underlying model resolves half of the disagreements I have.<sup class="footnote-ref" id="fnref:4"><a href="#fn:4">3</a></sup></p>
+
+<h3 id="progressive-intelligence">Progressive intelligence</h3>
+
+<blockquote>
+<p>
+We will probably will not succeed in creating humanlike intelligence until we can create childlike intelligence<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">4</a></sup>, and a key component of this intelligence is the mastery of causation.
+</p>
+</blockquote>
+
+<h3 id="data-experiments-without-theory">Data & experiments without theory</h3>
+
+<p>This point is repeated often to show how Pearl's work deviates from traditional statistical methods:</p>
+
+<blockquote>
+<p>
+Data are objective; opinions are subjective. ...
+</p>
+<p>
+The struggle for objectivity - the idea of reasoning exclusively from data and experiment - has been part of the way that science has defined itself ever since Galileo.
+</p>
+<p>
+... causal analysis requires the user to make a subjective commitment. She must draw a causal diagram that reflects here qualitative belief - or better yet, the consensus belief of researchers in her field of expertise - about the topology of the causal process at work.
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+They are data driven, not model driven.
+</p>
+</blockquote>
+
+<p>Pearl insists that there is always an explanatory theory at work and that data is never "just data". Putting theories before observation is an idea first attributed to Karl Popper and I was very surprised that I didn't find a single Popper reference in the book.<sup class="footnote-ref" id="fnref:3"><a href="#fn:3">5</a></sup></p>
+
+<h3 id="dags">DAGs</h3>
+
+<p>Before you can use the do-calculus, you need to define a Direct Acyclic Graph with the causal structure of the problem. Keeping that DAG in mind, you can operate on the equation. General purpose computation can also be very well expressed as DAGs. The fact that DAGs are everywhere leads me to believe that DAGs are not everywhere but rather in our mind.</p>
+
+<p>Bayesian networks don't have directed edges, so they don't capture causation, just correlation.</p>
+
+<h3 id="evolutionary-psychology">Evolutionary Psychology</h3>
+
+<p>While I have no problems with the field of Evolutionary Psychology per se, I do see a tendency of unrelated scholars to invent plausible ad-hoc explanations of how evolution would have allowed their theory of choice. "Ancestral humans" shouldn't make it into every non-fiction book, let alone math ones.</p>
+
+<p>We should ban "what makes us human" from our scientific discourse.</p>
+
+<h3 id="representation-problem">Representation Problem</h3>
+
+<blockquote>
+<p>
+How do humans represent "possible worlds" in their minds and compute the closes one, when the number of possibilities is far beyond the capacity of the human brain? ... We must have some extremely economical code to manage that many worlds. Could structural models be the actual shortcut that we use?
+</p>
+</blockquote>
+
+<p>By "structural" he means the DAGs used by the do-calculus. Sounds a lot like the properties of immutable data structures: allow for cheap variation on a big initial structure without losing the original one.</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:5">Causality: Models, Reasoning, and Inference <a class="footnote-return" href="#fnref:5"><sup>[return]</sup></a></li>
+
+<li id="fn:1">"True" as derived from experience or from reality, not from mathematical artifacts. <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+
+<li id="fn:4">See Aumann's agreement theorem and Rationally Speaking episode on it. <a class="footnote-return" href="#fnref:4"><sup>[return]</sup></a></li>
+
+<li id="fn:2">He traces the idea of child intelligences to Turing's original imitation game paper. <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+
+<li id="fn:3">If you do find Popper references, please contact me. <a class="footnote-return" href="#fnref:3"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+  </section>
+  <footer>
+    
+    <nav class="p-pagination c-pagination">
+      <div class="c-pagination__ctrl">
+        <div class="c-pagination__newer">
+          
+          
+        </div>
+        <div class="c-pagination__older">
+          
+          <a href="https://bensu.github.io/posts/abstracting-engineering/">Older</a>
+          
+        </div>
+      </div>
+    </nav>
+    
 
 
+    
 
+  </footer>
+</article>
   
 
   <footer class="l-footer">
