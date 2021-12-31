@@ -1,47 +1,75 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <url>
-    <loc>https://bensu.github.io/books/the-book-of-why/</loc>
-    <lastmod>2018-05-26T00:00:00-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bensu.github.io/books/</loc>
-    <lastmod>2017-04-17T11:01:21-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bensu.github.io/posts/abstracting-engineering/</loc>
-    <lastmod>2015-12-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bensu.github.io/posts/decomplecting-clojure/</loc>
-    <lastmod>2015-08-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://bensu.github.io/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://bensu.github.io/posts/</loc>
-    <lastmod>2015-12-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://bensu.github.io/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://bensu.github.io/</loc>
-    <lastmod>2018-05-26T00:00:00-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url>
+<loc>
+http://bensu.github.io/blog/index.html
+</loc>
+<lastmod>
+2021-12-30
+</lastmod>
+</url>
+<url>
+<loc>
+http://bensu.github.io/blog/posts/2021-12-13-gift-card-marketplaces/index.html
+</loc>
+<lastmod>
+2021-12-30
+</lastmod>
+</url>
+<url>
+<loc>
+http://bensu.github.io/blog/posts/2021-01-30-apis-as-ladders/index.html
+</loc>
+<lastmod>
+2021-12-30
+</lastmod>
+</url>
+<url>
+<loc>
+http://bensu.github.io/blog/authors/Sebastian Bensusan/index.html
+</loc>
+<lastmod>
+2021-12-30
+</lastmod>
+</url>
+<url>
+<loc>
+http://bensu.github.io/blog/404.html
+</loc>
+<lastmod>
+2021-12-30
+</lastmod>
+</url>
+<url>
+<loc>
+http://bensu.github.io/blog/archives/index.html
+</loc>
+<lastmod>
+2021-12-30
+</lastmod>
+</url>
+<url>
+<loc>
+http://bensu.github.io/blog/tags/index.html
+</loc>
+<lastmod>
+2021-12-30
+</lastmod>
+</url>
+<url>
+<loc>
+http://bensu.github.io/blog/tags/API/index.html
+</loc>
+<lastmod>
+2021-12-30
+</lastmod>
+</url>
+<url>
+<loc>
+http://bensu.github.io/blog/pages/about/index.html
+</loc>
+<lastmod>
+2021-12-30
+</lastmod>
+</url>
 </urlset>
