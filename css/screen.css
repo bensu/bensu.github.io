@@ -247,3 +247,27 @@ pre, code, .hljs {
         text-align: left;
     }
 }
+
+table {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+td, th {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-right: solid black;
+}
+
+tr {
+    border: solid black;
+}
+
+/* footnotes */
+.footnotes {
+    margin-top: 3rem;
+}
+
+.footnotes > li {
+    margin-bottom: 1rem;
+}
