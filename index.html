@@ -41,13 +41,24 @@
 <div id="post">
     
     <div class="post-header">
+        <h2>Breaking changes in JSON APIs</h2>
+        <div id="post-meta">
+            
+            <div class="date">March 16, 2023</div>
+        </div>
+    </div>
+    <p>For an overall product development strategy to avoid breaking changes, see <a href="/posts/2023-03-16-api-product-development/">Product development for APIs: avoid braking changes</a>.</p><p>When writing graphical user interfaces, the end user is a person. If the user interface changes overnight, the user might be surprised but they can adapt and react accordingly. Most software companies are used to changing their products often in various ways. API products don’t have this luxury.</p>
+    <a href="/posts/2023-03-16-api-breaking-changes/">Continue reading &#8594;</a>
+    <hr>
+    
+    <div class="post-header">
         <h2>Product development for APIs: avoid braking changes</h2>
         <div id="post-meta">
             
             <div class="date">March 16, 2023</div>
         </div>
     </div>
-    <p>When writing graphical user interfaces, the end user is a person. If the user interface changes overnight, the user might be surprised but they can adapt and react accordingly. Most software companies are used to changing their products often in various ways. API products don’t have this luxury.</p><p>APIs are used by programs which can’t adapt to change. So, whenever you change an API, the change should be <em>backwards compatible</em> so that the new API version can be used by existing integrations.  For a list of breaking changes one can make to JSON APIs, see (TODO)</p>
+    <p>When writing graphical user interfaces, the end user is a person. If the user interface changes overnight, the user might be surprised but they can adapt and react accordingly. Most software companies are used to changing their products often in various ways. API products don’t have this luxury.</p><p>APIs are used by programs which can’t adapt to change. So, whenever you change an API, the change should be <em>backwards compatible</em> so that the new API version can be used by existing integrations.  For a list of breaking changes one can make to JSON APIs, see <a href="/posts/2023-03-16-api-breaking-changes/">Breaking changes in JSON APIs</a>.</p>
     <a href="/posts/2023-03-16-api-product-development/">Continue reading &#8594;</a>
     <hr>
     
@@ -82,17 +93,6 @@
     </div>
     <p><i>There is a <a href="/posts/2023-01-18-high-variance-management-math">math supplement</a> to this post where I build some intuition on the different probability distributions involved. If you are interested, read that later.</i></p><h1 id="why_variance_matters">Why variance matters</h1>
     <a href="/posts/2023-01-18-high-variance-management/">Continue reading &#8594;</a>
-    <hr>
-    
-    <div class="post-header">
-        <h2>APIs as ladders</h2>
-        <div id="post-meta">
-            
-            <div class="date">January 24, 2022</div>
-        </div>
-    </div>
-    <p>Developers have opinions on what a good API<a href="#fn-1" id="fnref1"><sup>1</sup></a> is, but rarely have a shared vocabulary to describe what makes them good. This essay puts forward one set of considerations (out of many) that we started using at Stripe in 2019 to discuss API design<a href="#fn-2" id="fnref2"><sup>2</sup></a>. You can find some of these concepts interspersed in this excellent <a href="https://stripe.com/blog/payment-api-design">blogpost</a> by Michelle Bu.</p><p>The hard part of an API is not to use it, but to learn it. After learning how the API works, typing out the commands is not hard. But when you first time you encounter an API, a million questions pop into your mind: What is this object for? Is there a parameter for that? Can the API do X? Learning requires effort, but the more the developer learns, the more problems they can solve. We can imagine the developers climbing a ladder where, for every step they take up the “learning ladder”<a href="#fn-3" id="fnref3"><sup>3</sup></a>, the more problems they can solve.</p>
-    <a href="/posts/2022-01-24-apis-as-ladders/">Continue reading &#8594;</a>
     <hr>
     
 
