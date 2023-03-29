@@ -167,10 +167,10 @@ blockquote footer {
 }
 .post-header h2 {
     font-size: 45px;
-    line-height: 80px;
+    line-height: 65px;
     font-weight: 500;
     color: #1b2733;
-    margin-bottom: 0px;
+    margin-bottom: 15px;
 }
 
 img {
