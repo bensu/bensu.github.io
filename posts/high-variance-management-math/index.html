@@ -30,7 +30,7 @@
     <div class="container nav-container">
         <div class="vertical-container">
             <div class="nav-inner-container">
-              <a class="top-link" href="/">sbensu/</a>
+              <a class="top-link" href="/">index/</a>
               <div>
                   <span>sbensu@gmail.com • </span>
                   <a href="https://twitter.com/sebasbensu">@sebasbensu</a>
@@ -54,7 +54,7 @@
     </div>
 </div>
 <div>
-    <p><em>This is a supplement to <a href="/posts/2023-01-18-high-variance-management">High Variance Management</a>, where I build some intuition on the different probability distributions involved. Please read that post before reading this one.</em></p><h2 id="the_normal_and_gumbel_probability_distributions">The normal and Gumbel probability distributions</h2><p>We can develop some intuitions for these concepts using a simple probability model of Broadway and Hollywood. I'll use Julia to simulate distributions and plot them:</p><pre><code class="julia">using Random, Distributions, Plots
+    <p><em>This is a supplement to <a href="/posts/high-variance-management">High Variance Management</a>, where I build some intuition on the different probability distributions involved. Please read that post before reading this one.</em></p><h2 id="the_normal_and_gumbel_probability_distributions">The normal and Gumbel probability distributions</h2><p>We can develop some intuitions for these concepts using a simple probability model of Broadway and Hollywood. I'll use Julia to simulate distributions and plot them:</p><pre><code class="julia">using Random, Distributions, Plots
 plotly()
 Random.seed!(123)
 </code></pre><p>Let's assume that the quality of a given take from an actor follows a normal distribution with zero mean and variance of one, <code>Normal(0, 1)</code>. This is a way of modeling the following intuitions:</p><ul><li>Most takes are close to the mean, which we pick to be zero.</li><li>While there are some great takes (with quality higher than 1 or 2), they are rare.</li><li>You get as many bad takes as good takes around the mean (the distribution is symmetric).</li></ul><p>In Broadway, each take <em>is</em> the scene. So, how a scene goes looks like directly sampling from a normal distribution:</p><pre><code class="julia">broadway = Normal(0, 1)
