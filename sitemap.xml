@@ -5,7 +5,7 @@
 https://blog.sbensu.com/index.html
 </loc>
 <lastmod>
-2023-04-04
+2023-08-04
 </lastmod>
 </url>
 <url>
@@ -13,7 +13,7 @@ https://blog.sbensu.com/index.html
 https://blog.sbensu.com/posts/payments-vs-transfers/index.html
 </loc>
 <lastmod>
-2023-04-04
+2023-08-04
 </lastmod>
 </url>
 <url>
@@ -21,7 +21,7 @@ https://blog.sbensu.com/posts/payments-vs-transfers/index.html
 https://blog.sbensu.com/posts/high-variance-management-math/index.html
 </loc>
 <lastmod>
-2023-04-04
+2023-08-04
 </lastmod>
 </url>
 <url>
@@ -29,7 +29,7 @@ https://blog.sbensu.com/posts/high-variance-management-math/index.html
 https://blog.sbensu.com/posts/api-avoid-breaking-changes/index.html
 </loc>
 <lastmod>
-2023-04-04
+2023-08-04
 </lastmod>
 </url>
 <url>
@@ -37,7 +37,15 @@ https://blog.sbensu.com/posts/api-avoid-breaking-changes/index.html
 https://blog.sbensu.com/posts/apis-as-ladders/index.html
 </loc>
 <lastmod>
-2023-04-04
+2023-08-04
+</lastmod>
+</url>
+<url>
+<loc>
+https://blog.sbensu.com/posts/interfaces-for-logical-migrations/index.html
+</loc>
+<lastmod>
+2023-08-04
 </lastmod>
 </url>
 <url>
@@ -45,7 +53,7 @@ https://blog.sbensu.com/posts/apis-as-ladders/index.html
 https://blog.sbensu.com/posts/high-variance-management/index.html
 </loc>
 <lastmod>
-2023-04-04
+2023-08-04
 </lastmod>
 </url>
 <url>
@@ -53,7 +61,7 @@ https://blog.sbensu.com/posts/high-variance-management/index.html
 https://blog.sbensu.com/posts/gift-card-marketplaces/index.html
 </loc>
 <lastmod>
-2023-04-04
+2023-08-04
 </lastmod>
 </url>
 <url>
@@ -61,7 +69,7 @@ https://blog.sbensu.com/posts/gift-card-marketplaces/index.html
 https://blog.sbensu.com/posts/everybody-is-the-main-character/index.html
 </loc>
 <lastmod>
-2023-04-04
+2023-08-04
 </lastmod>
 </url>
 <url>
@@ -69,7 +77,7 @@ https://blog.sbensu.com/posts/everybody-is-the-main-character/index.html
 https://blog.sbensu.com/posts/team-oriented-vs-outcome-oriented/index.html
 </loc>
 <lastmod>
-2023-04-04
+2023-08-04
 </lastmod>
 </url>
 <url>
@@ -77,7 +85,7 @@ https://blog.sbensu.com/posts/team-oriented-vs-outcome-oriented/index.html
 https://blog.sbensu.com/posts/api-breaking-changes/index.html
 </loc>
 <lastmod>
-2023-04-04
+2023-08-04
 </lastmod>
 </url>
 <url>
@@ -85,7 +93,7 @@ https://blog.sbensu.com/posts/api-breaking-changes/index.html
 https://blog.sbensu.com/authors/Sebastian Bensusan/index.html
 </loc>
 <lastmod>
-2023-04-04
+2023-08-04
 </lastmod>
 </url>
 <url>
@@ -93,7 +101,7 @@ https://blog.sbensu.com/authors/Sebastian Bensusan/index.html
 https://blog.sbensu.com/404.html
 </loc>
 <lastmod>
-2023-04-04
+2023-08-04
 </lastmod>
 </url>
 <url>
@@ -101,7 +109,7 @@ https://blog.sbensu.com/404.html
 https://blog.sbensu.com/archives/index.html
 </loc>
 <lastmod>
-2023-04-04
+2023-08-04
 </lastmod>
 </url>
 <url>
@@ -109,7 +117,7 @@ https://blog.sbensu.com/archives/index.html
 https://blog.sbensu.com/tags/index.html
 </loc>
 <lastmod>
-2023-04-04
+2023-08-04
 </lastmod>
 </url>
 <url>
@@ -117,7 +125,7 @@ https://blog.sbensu.com/tags/index.html
 https://blog.sbensu.com/pages/about/index.html
 </loc>
 <lastmod>
-2023-04-04
+2023-08-04
 </lastmod>
 </url>
 </urlset>
