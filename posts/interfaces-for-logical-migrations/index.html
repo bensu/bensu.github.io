@@ -6,9 +6,9 @@
     
 <meta name="keywords" content="">
 
-<meta name="description" content=" All problems in computer science can be solved by another level of indirection Most software companies eventually realize that the way they originally modeled data is too restrictive for new use-cases.">
+<meta name="description" content="This post explains how you can use interfaces to make data model and database migrations easier.Imagine you run a B2B company and Account represents how you want to bill each of your clients. Account is both a table in your database and an object in memory that has:">
 
-<meta property="og:description" content=" All problems in computer science can be solved by another level of indirection Most software companies eventually realize that the way they originally modeled data is too restrictive for new use-cases.">
+<meta property="og:description" content="This post explains how you can use interfaces to make data model and database migrations easier.Imagine you run a B2B company and Account represents how you want to bill each of your clients. Account is both a table in your database and an object in memory that has:">
 
 <meta property="og:url" content="https://blog.sbensu.com/posts/interfaces-for-logical-migrations/" />
 <meta property="og:title" content="Interfaces for logical migrations" />
@@ -54,18 +54,18 @@
     </div>
 </div>
 <div>
-    <blockquote><p> All problems in computer science can be solved by another level of indirection </p></blockquote><p>Most software companies eventually realize that the way they originally modeled data is too restrictive for new use-cases.</p><p>Imagine you run a B2B company and <code>Account</code> represents how you want to bill each of your clients. <code>Account</code> has:</p><ul><li>a <code>name</code></li><li>a <code>balance</code> property for how much balance is owed by the account</li><li>an <code>owner</code> property representing the person to email the bills to</li><li><code>permissions</code> representing which users have access to this <code>Account</code></li></ul><p>In Ruby, that might looks like this:</p><pre><code class="ruby">class Account
+    <p>This post explains how you can use interfaces to make data model and database migrations easier.</p><p>Imagine you run a B2B company and <code>Account</code> represents how you want to bill each of your clients. <code>Account</code> is both a table in your database and an object in memory that has:</p><ul><li>a <code>name</code></li><li>a <code>balance</code> property for how much balance is owed by the account</li><li>an <code>owner</code> property representing the person to email the bills to</li><li><code>permissions</code> representing which users have access to this <code>Account</code></li></ul><p>In Ruby<a href="#fn-1" id="fnref1"><sup>1</sup></a>, that might looks like this:</p><pre><code class="ruby">class Account
   def name(); end
   def owner(); end
   def balance(); end
   def permissions(); end
 end
-</code></pre><p><img src="/img/interfaces-for-logical-migrations/basic_account.png" alt="" /></p><p>But over time, requirements change:</p><ul><li>The finance and marketing departments of your biggest client want their bill broken down in two so that they can own separate profit and loss statements.</li><li>They still want to have the same <code>owner</code> that receives one bill but with the subtotal.</li></ul><p>You realize, that you want to represent things with:</p><ul><li>Two <code>Accounts</code>, one for finance, one for marketing where you track the separate balances.</li><li>One <code>Organization</code> for the entire company which pays the final bill.</li></ul><p><img src="/img/interfaces-for-logical-migrations/org_and_account.png" alt="" /></p><p></p><p>Looking at the new database schema, you might think that you need to run a migration right away. And this would be bad for two reasons:</p><ol><li><strong>Freezing existing code</strong>: There is existing code to migrate that is getting enhancements and bug fixes daily. A database migration like the one described usually freezes the codebase.</li><li><strong>Pausing new code</strong>: The Security team is trying to redo how permissions work. They agree that permissions is something that conceptually belongs at the <code>Organization</code> level. But they can't wait until <code>Orgnization</code> exists to start their work.</li></ol><p>But if you add a level of indirection, nobody needs to wait for the database migration. You can <em>logically migrate</em> the codebase before you the database migration.</p><p>You start by introducing an <em>interface</em> for <code>Organization</code>s, called <code>IOrganization</code>. If an object implements <code>IOrganization</code>, it is as-if they were an <code>Organization</code>:</p><pre><code class="ruby">module IOrganization
+</code></pre><p><img src="/img/interfaces-for-logical-migrations/basic_account.png" alt="" /></p><p>But over time, requirements change:</p><ul><li>The finance and marketing departments of your biggest client want their bill broken down in two so that they can own separate profit and loss statements.</li><li>They still want to have the same <code>owner</code> that receives one bill but with the subtotal.</li></ul><p>You realize, that you want to represent things with:</p><ul><li>Two <code>Accounts</code>, one for finance, one for marketing where you track the separate balances.</li><li>One <code>Organization</code> for the entire company which pays the final bill.</li></ul><p>You would like to have both of these objects in your database.</p><p><img src="/img/interfaces-for-logical-migrations/org_and_account.png" alt="" /></p><p></p><p>Looking at the new database schema, you might think that you need to run a migration right away. And this would be bad for two reasons:</p><ol><li><strong>Freezing existing code</strong>: There is existing code to migrate that is getting enhancements and bug fixes daily. A database migration like the one described usually freezes the codebase.</li><li><strong>Pausing new code</strong>: The Security team is trying to redo how permissions work. They agree that permissions is something that conceptually belongs at the <code>Organization</code> level. But they can't wait until <code>Orgnization</code> exists to start their work.</li></ol><p>But if you add a level of indirection, nobody needs to wait for the database migration. You can <em>logically migrate</em> the codebase before you the database migration.</p><p>You start by introducing an <em>interface</em> for <code>Organization</code>s, called <code>IOrganization</code>. If an object implements <code>IOrganization</code>, it is as-if they were an <code>Organization</code>:</p><pre><code class="ruby">module IOrganization
   def owner(); end
   def accounts(); end
   def permissions(); end
 end
-</code></pre><p>Then, you create a temporary object, <code>AccountAsOrg</code> that makes an <code>Account</code> look like an  <code>IOrganization</code> to the rest of the codebase:</p><pre><code class="ruby">class Account
+</code></pre><p>Then, you create a temporary in-memory object, <code>AccountAsOrg</code> that makes an <code>Account</code> look like an  <code>IOrganization</code> to the rest of the codebase:</p><pre><code class="ruby">class Account
 
   class AccountAsOrg
     def initialize(account)
@@ -109,7 +109,7 @@ send_bill!(account)
 def send_bill!(organization: IOrganization)
   owner = organization.owner()
   accounts = organization.accounts()
-  subtotals = accounts..map(&amp;:balance).join("\n")
+  subtotals = accounts.map(&amp;:balance).join("\n")
   total_balance = accounts.map(&amp;:balance).reduce(:+)	
   email_body = &lt;&lt;~TEXT
     Line items:
@@ -158,7 +158,7 @@ send_bill!(account.organization())
 
 # Security's code works:
 check_permissions_integrity(account.organization())
-</code></pre>
+</code></pre><ol class="footnotes"><li id="fn-1">In Java, C#, TypeScript we would use <code>interface</code>, in Clojure <code>protocol</code>, in Haskell <code>typeclass</code><a href="#fnref1">↩</a></li></ol>
 </div>
 
 
