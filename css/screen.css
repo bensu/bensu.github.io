@@ -287,3 +287,7 @@ ol.footnotes li {
 ul, ol {
     padding-left: 2rem;
 }
+
+.link-highlight {
+    font-weight: 600;
+}
