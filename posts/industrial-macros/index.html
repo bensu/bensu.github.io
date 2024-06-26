@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>sbensu: Industrial macros</title>
+    
+<meta name="keywords" content="Software,Management,Misc">
+
+<meta name="description" content="Most industry codebases use macros, aka code-generation to solve practical problems like talking to the database.">
+
+<meta property="og:description" content="Most industry codebases use macros, aka code-generation to solve practical problems like talking to the database.">
+
+<meta property="og:url" content="https://blog.sbensu.com/posts/industrial-macros/" />
+<meta property="og:title" content="Industrial macros" />
+<meta property="og:type" content="article" />
+
+    <link rel="canonical" href="https://blog.sbensu.com/posts/industrial-macros/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700" rel="stylesheet"
+        type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://blog.sbensu.com/feed.xml">
+
+    <link href="/css/screen.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-default">
+        <div class="container nav-container">
+            <div class="vertical-container">
+                <div class="nav-inner-container">
+                    <a class="top-link" href="/">index/</a>
+                    <div>
+                        <span>sbensu@gmail.com • </span>
+                        <a href="https://twitter.com/sebasbensu">@sebasbensu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="content">
+                    
+<div id="post">
+    <div class="post-header">
+    <h1>Industrial macros</h1>
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">June 2024</div>
+        
+    </div>
+</div>
+<div>
+    <p>There is a common belief in the programming languages world that "macros are bad and complicated" which then translates into these conclusions:</p><ul><li>I don't use macros.</li><li>Programming language X shouldn't have macros.</li></ul><p>I think those conclusions don't quite follow <em>even if you agree with the original statement</em> that macros are bad and complicated.</p><p>You are most likely already using macros in your codebase<a href="#fn-1" id="fnref1"><sup>1</sup></a> even if you ostensibly dislike them in the abstract.</p><p>Macro is the name we give to code generation that is built-in to the programming language. Once you replace "macro" with "code generation", you see that:</p><ul><li>Most industry codebases use code generation in one way or another</li><li>They use code generation for practical concerns like serialization, rendering UIs, and database access.</li></ul><p>In this post, I'll do a shallow overview of those industrial macros to show you how widespread they are. And if I succeed, hopefully you can see how this sentence is flawed:</p><blockquote><p> My programming language doesn't need macros. They make it too complicated. </p></blockquote><p>And instead we get:</p><blockquote><p> If a programming language doesn't have macros, its ecosystem will use "templates", "code generation", "transpilers", "meta-programming" instead and they will be adopted by a majority of its users. </p></blockquote><p>To be extra clear: I am not trying to convince you that "macros are good" or that "you should be using macros all the time". This post is simply a reminder that you are most likely already using macros, you chose them, and think they are better than the alternative of not using them.</p><p>On to the list of industrial macros.</p><h2 id="serialization:_avro_and_protocol_buffers">Serialization: Avro and Protocol Buffers</h2> Avro and Protocol Buffers work the same way:<ol><li>You define the data types for your messages, in a custom schema language they provide. This schema is shared across codebases and across programming languages.</li><li>They give you a utility program that reads those schema definitions and <em>generates code</em> in your programming language of choice.</li><li>You now include that generated code in your application and to serialize your data structures in and out of binary streams.</li></ol><p>In other words, Protocol Buffers is an additional compiler that parses, analyzes, and generates code:</p><ul><li><strong>Java</strong>: <a href="(db.discussion/posts-for-user" title="dbuser-id" _:older-than-ts="_:older-than-ts" older-than="older-than">Here is documentation</a> for where to put the generated code. The Java gRPC compiler generates files that you are supposed to check into your codebase. <a href="https://github.com/grpc/grpc-java/blob/master/compiler/src/java_plugin/cpp/java_generator.cpp#L1115">They wrote a compiler in C++</a> that writes Java files to your disk.</li><li><strong>JavaScript</strong>. They provide a <a href="https://github.com/protobufjs/protobuf.js/blob/master/cli/pbjs.js">CLI to generate JS files</a> from your protobuf definitions. Here is where they <a href="https://github.com/protobufjs/protobuf.js/blob/master/src/tokenize.js">tokenize</a> and <a href="https://github.com/protobufjs/protobuf.js/blob/0a0cdb6b0c635d86a9bb96a382b4ff73ee848109/src/parse.js#L63">parse</a> the schema files and <a href="https://github.com/protobufjs/protobuf.js/blob/0a0cdb6b0c635d86a9bb96a382b4ff73ee848109/cli/targets/static.js#L616">here</a> is where they generate the JS files.</li><li><strong>Rust</strong>. The Rust package is neatly organized into <a href="https://github.com/stepancheg/rust-protobuf/tree/master/protobuf-parse">parser</a> , <a href="https://github.com/stepancheg/rust-protobuf/tree/master/protobuf-codegen">codegen</a> modules. They also write the generated <a href="https://github.com/stepancheg/rust-protobuf/blob/master/protobuf-codegen/src/gen/all.rs">Rust source files to disk</a>.</li><li><strong>Python and Ruby</strong>. Here is how to invoke the protobuf compiler to generate <a href="https://protobuf.dev/reference/python/python-generated/">Python</a>  and <a href="https://protobuf.dev/reference/ruby/ruby-generated/">Ruby</a> code.</li></ul><p>Notice how in all these cases, somebody is:</p><ul><li>Parsing files</li><li>Doing static analysis over them</li><li>Generating source files by concatenating strings</li><li>Writing them to disk</li><li>Reading those generated programs from a different interpreter / compiler</li></ul><p><a href="https://github.com/apache/avro">Avro</a> is mostly the same<a href="#fn-2" id="fnref2"><sup>2</sup></a>. In their <a href="https://avro.apache.org/docs/">documentation</a> they do specify that they only generate code for statically typed languages:</p><blockquote><p> Simple integration with dynamic languages. Code generation is not required to read or write data files nor to use or implement RPC protocols. Code generation as an optional optimization, only worth implementing for statically typed languages. </p></blockquote><h3 id="for_serialization,_rust_uses_macros_instead">For serialization, Rust uses macros instead</h3><p>Rust has <a href="https://github.com/serde-rs/serde">serde</a>, a library to serialize and deserialize Rust data structures. From their docs:</p><pre><code class="rust">use serde::{Deserialize, Serialize};
+
+#[derive(Serialize, Deserialize)]
+struct Point {
+    x: i32,
+    y: i32,
+}
+
+fn main() {
+    let point = Point { x: 1, y: 2 };
+
+    // Convert the Point to a JSON string.
+    let serialized = serde_json::to_string(&amp;point).unwrap();
+
+    // Prints serialized = {"x":1,"y":2}
+    println!("serialized = {}", serialized);
+
+    // Convert the JSON string back to a Point.
+    let deserialized: Point = serde_json::from_str(&amp;serialized).unwrap();
+
+    // Prints deserialized = Point { x: 1, y: 2 }
+    println!("deserialized = {:?}", deserialized);
+}
+</code></pre><p>Notice the <code>#[derive(Serialize, Deserialize)]</code> line. Those are macro invocations. <a href="https://doc.rust-lang.org/book/ch19-06-macros.html">Rust has macros</a>! So, Rust is capable of generating code natively without a special build system and having writing files to disk.</p><h2 id="user_interfaces:_html_and_jsx_syntax">User Interfaces: HTML and JSX syntax</h2> Most frontend JavaScript and TypeScript use JSX syntax<a href="#fn-3" id="fnref3"><sup>3</sup></a> to define a user interface with React or some other frontend framework.<p>The Babel package that implements this, <a href="https://babeljs.io/docs/babel-plugin-transform-react-jsx">@babel/plugin-transform-react-jsx</a>, explains the code that it generates for you:</p><pre><code class="jsx">// Code you write
+const profile = (
+  &lt;div&gt;
+    &lt;img src="avatar.png" className="profile" /&gt;
+    &lt;h3&gt;{[user.firstName, user.lastName].join(" ")}&lt;/h3&gt;
+  &lt;/div&gt;
+);
+
+// Code it generates
+import { jsx as _jsx } from "react/jsx-runtime";
+import { jsxs as _jsxs } from "react/jsx-runtime";
+
+const profile = _jsxs("div", {
+  children: [
+    _jsx("img", {
+      src: "avatar.png",
+      className: "profile",
+    }),
+    _jsx("h3", {
+       children: [user.firstName, user.lastName].join(" "),
+    }),
+  ],
+});
+</code></pre><p>I got lost in the Babel codebase but AFAICT, this <a href="https://github.com/babel/babel/blob/main/packages/babel-helper-builder-react-jsx/src/index.ts">file</a> shows how JSX AST nodes are validated, transformed, and passed to the Babel compiler to be generated into regular JS.</p><p>If you are using <a href="https://babeljs.io/">Babel</a>, you can think of each Babel plugin as a set of macros that generate code on your behalf. As of June 2024, the <a href="https://www.npmjs.com/package/@babel/core"><code>@babel/core</code></a> package is downloaded ~50M times per week from npm.</p><h3 id="for_user_interfaces,_rust_uses_macros_instead">For user interfaces, Rust uses macros instead</h3> I don't know much about Rust's UI ecosystem but here are some UI libraries that implement macros to get a similar feel to JSX:<ul><li><a href="https://dioxuslabs.com/">Dioxus Labs</a> implements a <code>rsx!</code> macro, very similar to JSX</li><li><a href="https://github.com/slint-ui/slint">Slint</a> is implemented in Rust and parses a DSL they created to specify how the UI should look like. You can define the UI in <code>.slint</code> files or in <code>.rs</code> inside of the <code>slint!</code> macro.</li><li><a href="https://yew.rs/docs/getting-started/build-a-sample-app">Yew</a> uses a <code>html!</code> macro that lets you write something similar to HTML inside of your Rust source files:<pre><code class="rust">use yew::prelude::*;  
+  
+#[function_component]  
+fn App() -&gt; Html {  
+  let counter = use_state(|| 0);  
+  let onclick = {  
+    let counter = counter.clone();  
+    move |_| {  
+      let value = *counter + 1;  
+	  counter.set(value);  
+    }
+  };
+
+  html! {  
+    &lt;div&gt;  
+      &lt;button {onclick}&gt;{ "+1" }&lt;/button&gt;  
+      &lt;p&gt;{ *counter }&lt;/p&gt;  
+    &lt;/div&gt;  
+  }  
+} 
+
+fn main() {
+  yew::Renderer::&lt;App&gt;::new().render();
+}
+</code></pre></li></ul><p>To be clear, not all Rust UI libraries use macros and macros are not necessary to write UIs. For example, <a href="https://github.com/linebender/druid">Druid</a>, <a href="https://github.com/linebender/xilem">Xilem</a>, <a href="https://github.com/fltk-rs/fltk-rs">Rust bindings for fltk</a>, and <a href="https://iced.rs/">iced</a> are UI frameworks without macros.</p><h2 id="databases:_sql_queries">Databases: SQL queries</h2> To have better APIs to deal with SQL, many programming language ecosystems resort to generated code in way or another:<ul><li><strong>Haskell</strong> has <a href="https://www.yesodweb.com/book/persistent#persistent_code_generation">Persistent</a> which lets you define a schema with Haskell type declarations and then generates Haskell code with Template Haskell<a href="#fn-4" id="fnref4"><sup>4</sup></a> to query a database with that expected schema.</li><li><strong>Java</strong> has <a href="https://www.jooq.org/">jOOQ</a> which "generates Java code from your database". It has a compiler that you run every time you change your schema, it reads from the database, and generates Java code that you can then call from your application to query SQL.</li><li><strong>Go</strong> has <a href="https://github.com/go-jet/jet">jet</a> which does the same as jOOQ.</li><li><strong>TypeScript</strong> has <a href="https://github.com/adelsz/pgtyped"><code>pgtyped</code></a>.</li></ul><p>The SQL-to-code tradition has been going for decades at this point. This <a href="https://www.javacodegeeks.com/2019/12/type-safe-sql-in-java.html">fun article</a> explains how in 1995 COBOL programmers used Embedded SQL, a SQL-to-COBOL code-generator:</p><p><img src="/img/industrial-macros/sqlprecompiler.webp" alt="steps-in-the-cobol-precompiler" /></p><h3 id="for_sql,_rust_uses_macros_instead">For SQL, Rust uses macros instead</h3><p>Once gain, Rust uses its macro system to solve this problem. For example, <a href="https://github.com/launchbadge/sqlx">sqlx</a> comes with the <a href="https://github.com/launchbadge/sqlx?tab=readme-ov-file#compile-time-verification"><code>sqlx::query!</code></a> macro to generate at compile-time the Rust your SQL query would return:</p><pre><code class="rust">let countries = sqlx::query!(
+        "
+SELECT country, COUNT(*) as count
+FROM users
+GROUP BY country
+WHERE organization = ?
+        ",
+        organization
+    )
+    .fetch_all(&amp;pool) // -&gt; Vec&lt;{ country: String, count: i64 }&gt;
+    .await?;
+
+// countries[0].country
+// countries[0].count
+</code></pre><p>To do that, the macro finds a local database with the schema and introspects it to understand the types of <code>country</code> and <code>organization</code> the <code>users</code> table. <em>This macro reads from a database at compile time<a href="#fn-5" id="fnref5"><sup>5</sup></a>.</em></p><h2 id="common_objections">Common objections</h2><p>You can object to many parts of this post:</p><p><strong>Dynamically-typed languages don't need macros</strong>. Ruby and Python are not prominent in the examples above. Many of those examples come from an underlying need that is specific to statically-typed languages: when you need to specify types that depend on external systems (protobuf schema, SQL schema), it is error-prone to spell out those type definitions in two separate places (the programming language and the external system). But code generation is also used for UIs:</p><ul><li><a href="https://chameleon.readthedocs.io/en/latest/library.html#getting-started">Chameleon</a>  <a href="https://github.com/malthe/chameleon/blob/master/src/chameleon/compiler.py">generates</a> Python bytecode from HTML templates into strings which it then <a href="https://github.com/malthe/chameleon/blob/master/src/chameleon/loader.py#L155">loads</a> into Python using Python's builtin <code>compile</code> and <code>exec</code>.</li><li><a href="https://github.com/jeremyevans/tilt?tab=readme-ov-file#template-compilation">Tilt</a> generates Ruby code for each of its templates. It <a href="https://github.com/jeremyevans/tilt/blob/master/lib/tilt/template.rb#L318">generates strings</a> with Ruby code and then it <a href="https://github.com/jeremyevans/tilt/blob/master/lib/tilt/template.rb#L370">loads them</a>  into the Ruby VM.</li></ul><p>Ruby and Python are dynamic enough to generate code and load code while your application is running. Their meta-programming solves many of the problems that macros solve elsewhere.</p><p><strong>Those examples are all complicated things I don't like</strong>. Great! Do you still use them? If you write applications for a living and you don't use any of those code-generation patterns, good for you. But if you don't like them and still use them, hopefully you can see that you have a need that can be solved by code generation, <em>even if you don't like that solution</em>.</p><p><strong>Programming language X doesn't have macros or code-generation and solves these problems</strong>. Great, consider porting those solutions to other ecosystems so that 99% of programmers can enjoy them! Also, send me an email with what that is.</p><p>These are all fine objections to the idea of macros but don't address the point of the post: <em>somehow, everybody ends up using code generation</em>.</p><h1 id="takeaway?">Takeaway?</h1> If by now the following points are not obvious to you, then I have failed<a href="#fn-6" id="fnref6"><sup>6</sup></a>:<ul><li>Most programming language ecosystems develop the need to generate code.</li><li>If the programming language doesn't support macros directly, its ecosystem develops someway to do it. It is often called templates, code-generation, transpiling, or monkey-patching<a href="#fn-7" id="fnref7"><sup>7</sup></a>.</li></ul><p>So, please, next time you dunk on macros, remember that you are using them too.</p><p><br /></p><h1 id="footnotes">Footnotes</h1> <ol class="footnotes"><li id="fn-1">You are most likely already using macros in your codebase <em>if you are reading a blogpost about macros in programming languages...</em><a href="#fnref1">↩</a></li><li id="fn-2">You can find their compiler implementations for C++ <a href="https://github.com/apache/avro/blob/main/lang/c%2B%2B/impl/Compiler.cc">here</a> and for C# <a href="https://github.com/apache/avro/blob/main/lang/csharp/src/apache/main/CodeGen/CodeGen.cs">here</a>.<a href="#fnref2">↩</a></li><li id="fn-3">These days, when starting out, many programmers think JSX is part of the JS standard.<a href="#fnref3">↩</a></li><li id="fn-4">According to a friend that has been writing a Haskell <em>application</em> for years, many applications use Template Haskell but also, many stay away from it.<a href="#fnref4">↩</a></li><li id="fn-5">In case you don't want to depend on that database being live on your system, <a href="https://github.com/launchbadge/sqlx/blob/main/sqlx-cli/README.md#enable-building-in-offline-mode-with-query">you can also prepare a representation of that database to check in to your source with a CLI they provide</a>.<a href="#fnref5">↩</a></li><li id="fn-6">At least I have succeeded at writing and entire post about macros without using the L-word.<a href="#fnref6">↩</a></li><li id="fn-7">Maybe in a different post I could explain why these strategies are worse than directly supporting macros.<a href="#fnref7">↩</a></li></ol>
+</div>
+<!-- 
+<div id="post-tags">
+    <b>Tags: </b>
+    
+    <a href="/tags/Software/">Software</a>
+    
+</div>
+
+ -->
+
+    <div id="prev-next">
+        
+        
+        <a class="right" href="/posts/incentives-as-selection-effects/">Incentives as selection effects &raquo;</a>
+        
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer></footer>
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="/js/highlight.pack.js" type="application/javascript"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-66101645-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>
