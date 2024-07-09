@@ -58,18 +58,18 @@
     </div>
 </div>
 <div>
-    <p>This post explains how you can use interfaces to make data model and database migrations easier.</p><p>Imagine you run a B2B company and <code>Account</code> represents how you want to bill each of your clients. <code>Account</code> is both a table in your database and an object in memory that has:</p><ul><li>a <code>name</code></li><li>a <code>balance</code> property for how much balance is owed by the account</li><li>an <code>owner</code> property representing the person to email the bills to</li><li><code>permissions</code> representing which users have access to this <code>Account</code></li></ul><p>In Ruby<a href="#fn-1" id="fnref1"><sup>1</sup></a>, that might looks like this:</p><pre><code class="ruby">class Account
+    <p>This post explains how you can use interfaces to make data model and database migrations easier.</p><p>Imagine you run a B2B company and <code>Account</code> represents how you want to bill each of your clients. <code>Account</code> is both a table in your database and an object in memory that has:</p><ul><li>a <code>name</code></li><li>a <code>balance</code> property for how much balance is owed by the account</li><li>an <code>owner</code> property representing the person to email the bills to</li><li><code>permissions</code> representing which users have access to this <code>Account</code></li></ul><p>In Ruby<a href="#fn-1" id="fnref1"><sup>1</sup></a>, that might looks like this:</p><pre><code class="ruby language-ruby">class Account
   def name(); end
   def owner(); end
   def balance(); end
   def permissions(); end
 end
-</code></pre><p><img src="/img/interfaces-for-logical-migrations/basic_account.png" alt="" /></p><p>But over time, requirements change:</p><ul><li>The finance and marketing departments of your biggest client want their bill broken down in two so that they can own separate profit and loss statements.</li><li>They still want to have the same <code>owner</code> that receives one bill but with the subtotal.</li></ul><p>You realize, that you want to represent things with:</p><ul><li>Two <code>Accounts</code>, one for finance, one for marketing where you track the separate balances.</li><li>One <code>Organization</code> for the entire company which pays the final bill.</li></ul><p>You would like to have both of these objects in your database.</p><p><img src="/img/interfaces-for-logical-migrations/org_and_account.png" alt="" /></p><p></p><p>Looking at the new database schema, you might think that you need to run a migration right away. And this would be bad for two reasons:</p><ol><li><strong>Freezing existing code</strong>: There is existing code to migrate that is getting enhancements and bug fixes daily. A database migration like the one described usually freezes the codebase.</li><li><strong>Pausing new code</strong>: The Security team is trying to redo how permissions work. They agree that permissions is something that conceptually belongs at the <code>Organization</code> level. But they can't wait until <code>Orgnization</code> exists to start their work.</li></ol><p>But if you add a level of indirection, nobody needs to wait for the database migration. You can <em>logically migrate</em> the codebase before you the database migration.</p><p>You start by introducing an <em>interface</em> for <code>Organization</code>s, called <code>IOrganization</code>. If an object implements <code>IOrganization</code>, it is as-if they were an <code>Organization</code>:</p><pre><code class="ruby">module IOrganization
+</code></pre><p><img src="/img/interfaces-for-logical-migrations/basic_account.png" alt="" /></p><p>But over time, requirements change:</p><ul><li>The finance and marketing departments of your biggest client want their bill broken down in two so that they can own separate profit and loss statements.</li><li>They still want to have the same <code>owner</code> that receives one bill but with the subtotal.</li></ul><p>You realize, that you want to represent things with:</p><ul><li>Two <code>Accounts</code>, one for finance, one for marketing where you track the separate balances.</li><li>One <code>Organization</code> for the entire company which pays the final bill.</li></ul><p>You would like to have both of these objects in your database.</p><p><img src="/img/interfaces-for-logical-migrations/org_and_account.png" alt="" /></p><p></p><p>Looking at the new database schema, you might think that you need to run a migration right away. And this would be bad for two reasons:</p><ol><li><strong>Freezing existing code</strong>: There is existing code to migrate that is getting enhancements and bug fixes daily. A database migration like the one described usually freezes the codebase.</li><li><strong>Pausing new code</strong>: The Security team is trying to redo how permissions work. They agree that permissions is something that conceptually belongs at the <code>Organization</code> level. But they can't wait until <code>Orgnization</code> exists to start their work.</li></ol><p>But if you add a level of indirection, nobody needs to wait for the database migration. You can <em>logically migrate</em> the codebase before you the database migration.</p><p>You start by introducing an <em>interface</em> for <code>Organization</code>s, called <code>IOrganization</code>. If an object implements <code>IOrganization</code>, it is as-if they were an <code>Organization</code>:</p><pre><code class="ruby language-ruby">module IOrganization
   def owner(); end
   def accounts(); end
   def permissions(); end
 end
-</code></pre><p>Then, you create a temporary in-memory object, <code>AccountAsOrg</code> that makes an <code>Account</code> look like an  <code>IOrganization</code> to the rest of the codebase:</p><pre><code class="ruby">class Account
+</code></pre><p>Then, you create a temporary in-memory object, <code>AccountAsOrg</code> that makes an <code>Account</code> look like an  <code>IOrganization</code> to the rest of the codebase:</p><pre><code class="ruby language-ruby">class Account
 
   class AccountAsOrg
     def initialize(account)
@@ -95,7 +95,7 @@ end
   def name(); end
   def balance(); end
 end
-</code></pre><p>All new code can target <code>IOrganization</code> which works for the existing <code>AccountAsOrg</code> and will also work for <code>Orginization</code> when that is ready:</p><p><img src="/img/interfaces-for-logical-migrations/iorg_interface.png" alt="" /></p><p></p><h3 id="(1)_existing_code_can_migrate_in_place">(1) Existing code can migrate in place</h3><p>For the existing code, you can start to <em>logically migrate</em> it to work with <code>IOrganization</code> wherever you think that is more appropriate:</p><pre><code class="ruby"># Old Billing module:
+</code></pre><p>All new code can target <code>IOrganization</code> which works for the existing <code>AccountAsOrg</code> and will also work for <code>Orginization</code> when that is ready:</p><p><img src="/img/interfaces-for-logical-migrations/iorg_interface.png" alt="" /></p><p></p><h3 id="(1)_existing_code_can_migrate_in_place">(1) Existing code can migrate in place</h3><p>For the existing code, you can start to <em>logically migrate</em> it to work with <code>IOrganization</code> wherever you think that is more appropriate:</p><pre><code class="ruby language-ruby"># Old Billing module:
 def send_bill!(account: Account)
   owner = account.owner()
   balance = account.balance()
@@ -124,7 +124,7 @@ def send_bill!(organization: IOrganization)
 end
 # calling the function:
 send_bill!(account.organization())
-</code></pre><h3 id="(2)_new_code_can_directly_target_the_interface">(2) New code can directly target the interface</h3><p>Instead of working with <code>account.permissions()</code>, the Security team can directly target <code>organization.permissions()</code>:</p><pre><code class="ruby">module Security
+</code></pre><h3 id="(2)_new_code_can_directly_target_the_interface">(2) New code can directly target the interface</h3><p>Instead of working with <code>account.permissions()</code>, the Security team can directly target <code>organization.permissions()</code>:</p><pre><code class="ruby language-ruby">module Security
   # this module never references Account
 
   def check_permissions_integrity(org: IOrganization)
@@ -135,7 +135,7 @@ end
 
 # at the very edge of the module:
 check_permissions_integrity(account.organization())
-</code></pre><h2 id="logical_migration_first,_database_migration_later">Logical migration first, database migration later</h2><p>Later, you can do the actual database migration and create a table with all the <code>Organizations</code>:</p><ul><li>Each <code>Account</code> points to one <code>Organization</code> and vice-versa.</li><li>Each <code>Organization</code> points to one or multiple <code>Account</code>s.</li></ul><p>The new <code>class Organization</code> implements <code>IOrganization</code>, so you can just start passing it wherever <code>IOrganization</code> was expected:</p><pre><code class="ruby">class Organization
+</code></pre><h2 id="logical_migration_first,_database_migration_later">Logical migration first, database migration later</h2><p>Later, you can do the actual database migration and create a table with all the <code>Organizations</code>:</p><ul><li>Each <code>Account</code> points to one <code>Organization</code> and vice-versa.</li><li>Each <code>Organization</code> points to one or multiple <code>Account</code>s.</li></ul><p>The new <code>class Organization</code> implements <code>IOrganization</code>, so you can just start passing it wherever <code>IOrganization</code> was expected:</p><pre><code class="ruby language-ruby">class Organization
   include IOrganiation
   def owner(); end
   def accounts()
@@ -150,19 +150,19 @@ check_permissions_integrity(organization)
 
 # In the Billing module
 send_bill!(organization)
-</code></pre><p>and <code>account.organization()</code> returns <code>Organization</code> instead of the temporary <code>AccountAsOrganiztion</code>:</p><pre><code class="ruby">class Account
+</code></pre><p>and <code>account.organization()</code> returns <code>Organization</code> instead of the temporary <code>AccountAsOrganiztion</code>:</p><pre><code class="ruby language-ruby">class Account
   def organization()
     # looks up the Organization and returns that
     Organization.new(...)
   end
   ...
 end
-</code></pre><p>Notice that the existing call-sites using <code>account.organization()</code> don't need to migrate:</p><pre><code class="ruby"># Billing code works:
+</code></pre><p>Notice that the existing call-sites using <code>account.organization()</code> don't need to migrate:</p><pre><code class="ruby language-ruby"># Billing code works:
 send_bill!(account.organization())
 
 # Security's code works:
 check_permissions_integrity(account.organization())
-</code></pre><ol class="footnotes"><li id="fn-1">In Java, C#, TypeScript we would use <code>interface</code>, in Clojure <code>protocol</code>, in Haskell <code>typeclass</code><a href="#fnref1">↩</a></li></ol>
+</code></pre><p><br /></p><h1 id="footnotes">Footnotes</h1><ol class="footnotes"><li id="fn-1">In Java, C#, TypeScript we would use <code>interface</code>, in Clojure <code>protocol</code>, in Haskell <code>typeclass</code><a href="#fnref1">↩</a></li></ol>
 </div>
 <!-- 
 <div id="post-tags">
@@ -193,8 +193,11 @@ check_permissions_integrity(account.organization())
 
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script src="/js/highlight.pack.js" type="application/javascript"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/highlight.min.js" type="application/javascript"></script>
+    <script src="/js/hljs/clojure.min.js" type="application/javascript"></script>
+    <script src="/js/hljs/julia.min.js" type="application/javascript"></script>
+    <script src="/js/hljs/excel.min.js" type="application/javascript"></script>
+    <script>hljs.highlightAll();</script>
     
     
 
