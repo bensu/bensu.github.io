@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>sbensu: We need visual programming. No, not like that.</title>
+    
+<meta name="keywords" content="Software,Misc,Management">
+
+<meta name="description" content="Why do we keep building visual programming environments? Why do we never use them? What should we do instead?">
+
+<meta property="og:description" content="Why do we keep building visual programming environments? Why do we never use them? What should we do instead?">
+
+<meta property="og:url" content="https://blog.sbensu.com/posts/demand-for-visual-programming/" />
+<meta property="og:title" content="We need visual programming. No, not like that." />
+<meta property="og:type" content="article" />
+
+    <link rel="canonical" href="https://blog.sbensu.com/posts/demand-for-visual-programming/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700" rel="stylesheet"
+        type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://blog.sbensu.com/feed.xml">
+
+    <link href="/css/screen.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-default">
+        <div class="container nav-container">
+            <div class="vertical-container">
+                <div class="nav-inner-container">
+                    <a class="top-link" href="/">index/</a>
+                    <div>
+                        <span>sbensu@gmail.com • </span>
+                        <a href="https://twitter.com/sebasbensu">@sebasbensu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="content">
+                    
+<div id="post">
+    <div class="post-header">
+    <h1>We need visual programming. No, not like that.</h1>
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">July 2024</div>
+        
+    </div>
+</div>
+<div>
+    <p>Every few months somebody puts out a very nice visual programming language that looks something like this:</p><p><img src="/img/demand-for-visual-programming/visual_programming.png" alt="" /></p><p>This one looks particularly sleek, most of them are much less inviting.</p><p>The algorithm above is replacing some pseudo-code that looks like<a href="#fn-1" id="fnref1"><sup>1</sup></a>:</p><pre><code class="python">def merge_sort(a):
+  if (length(a) == 2):
+    if (a[0] &lt; a[1])
+      return a
+    else
+      return [a[1], a[0]]
+  else:
+    [x1, x2]  = split_in_half(a)
+    sorted_x1 = merge_sort(x1)
+    sorted_x2 = merge_sort(x2)
+    return priority_merge(sorted_x1, sorted_x2)
+</code></pre><p>Like the example above, the systems I am referring to are trying to replace the code syntax itself. </p><p>But every time one of these visual programming systems come out, we think "oh neat!" and never try them. I have never seen any of these visual programming systems even be mentioned while trying to solve problems. Why? Why do we keep circling back to visual programming if nobody ever uses it?</p><p>One reason is because we think that other, more inexperienced, programmers might have an easier time with visual programming. If only code wasn't as scary! If only it was visual! Excel Formula is the most popular programming language by a few orders of magnitude and it <a href="https://www.reddit.com/r/excel/comments/r9w3wb/what_is_the_craziest_formula_youve_ever_usedseen/">can look like this</a>:</p><pre><code>=INDEX(A1:A4,SMALL(IF(Active[A1:A4]=E$1,ROW(A1:A4)-1),ROW(1:1)),2)
+</code></pre><p>I'll ignore this reason because many of these tools explicitly meant for experienced developers. They assume that you will install them with <code>npm install</code> or deploy its code to AWS Lambdas.</p><p>Why does visual programming fail for developers?</p><p>Developers say they want "visual programming", which makes you think "oh, let's replace <code>if</code> and <code>for</code>". But nobody ever made a flow chart to read <code>for (i in 0..10) if even?(i) print(i)</code>. Developers familiar with code already like and understand textual representations to read and write business logic<a href="#fn-2" id="fnref2"><sup>2</sup></a>.</p><p>This is the standard critique of visual programming systems and IMO, the crowd is right to be dismissive. But why do people keep coming back to visual programming? What should they do instead?</p><p><strong>Let's observe what developers <em>do</em>, not what they <em>say</em>.</strong></p><p>Developers do spend the time to visualize aspects of their code but rarely the logic itself. They visualize other aspects of their software that are <em>important, implicit, and hard to understand</em>.</p><p>Here are some visualizations that I encounter often in <a href="https://notes.andymatuschak.org/z7vdiuQK7HuFyi4V5EemF3e">serious contexts of use</a>:</p><ul><li>Various ways to visualize the codebase overall.</li><li>Diagrams that show how computers are connected in a network</li><li>Diagrams that show how data is laid out in memory</li><li>Transition diagrams for state machines.</li><li>Swimlane diagrams for request / response protocols.</li></ul><p><em>This</em> is the visual programming developers are asking for. Developers need help with those problems and they resort to visuals to tackle them.</p><p>If you are skeptical about needing these, let me ask you: do you know exactly how your data is laid out in memory? Bad memory layouts are one of the biggest contributors to poor performance. Yet it is very hard to "see" how a given piece of data is laid out and contrast it with the access patterns present in the codebase.</p><p>Alternatively, do you know all the external dependencies your code hits when responding to a given HTTP request? Are you sure? Didn't you notice that Bob just added a call to a rate limiter service in the middleware? Don't worry, you'll learn about it in the next outage.</p><p>For both of these questions, the answer is usually "I think I know the answer?" with a creeping fear that <i>maybe you missed something you couldn't see</i>.</p><p>Sadly most of those visualizations are:</p><ul><li>made ad-hoc by somebody that goes out of their way to do it</li><li>manually made, on a napkin or Whimsical</li><li>rarely integrated to a standard workflow</li></ul><p>This is not to say that the industry has nothing to show for. Some visualization techniques are integrated into developer environments and heavily used:</p><ul><li>The DOM element inspector view</li><li>Flamegraphs in profilers</li><li>SQL tables diagrams</li></ul><p>But these are the exceptions not the default. Isn't it great when you can pinpoint the performance problem in a flamegraph? We need that for everything else.</p><p>I'll now cover some of those visualizations to prime you to consider them for your current work or even integrating them into existing developer environments.</p><h2 id="codebase_visualization">Codebase visualization</h2> <a href="https://www.youtube.com/watch?v=**fnIFVYFspfc">This great talk</a> shows many ways to visualize different aspects of a codebase. There are a lot! Here are some that interest me:<ul><li>Treemap</li><li>Sourcetrail</li><li>- a class hierarchy and browser</li><li>- dependency graphs between modules or namespaces</li><li>Code retention over time<h3 id="sourcetrail">Sourcetrail</h3><a href="https://github.com/CoatiSoftware/Sourcetrail">Sourcetrail is an open source</a> to visualize codebases (no longer active), written by the speaker in the talk above. <a href="https://www.youtube.com/watch?v=Cfu6f0uyzc8">Here</a> is a great overview of how the tool helps you navigate a codebase. It looks like this:</li></ul><p><img src="/img/demand-for-visual-programming/code_browser.png" alt="" /></p><p>Sourcetrail solves many of the common design problems of code visualization:</p><ul><li>It shows the visualization next to the code. When you over on the code, it highlights its visual representation. When you hover on the diagram, it highlights the code. When you click on a dependency, it takes you to the code responsible for that dependency (e.g. one function calling another, one module requiring another).</li><li>It is smart about <em>hiding</em> information. In codebases, there are often too many connections to visualize at any given time without overwhelming the user. Sourcetrail tool shows you what it thinks you are looking for first, and asks you to click / hover for more. The UI is designed to to pull on threads that seem interesting, not to get an bird's eye view of the codebase. This is the opposite from Treemap (covered below), which is explicitly designed to get an overview</li></ul><p>But, as the demo shows, it suffers from some of the common problems of this type of visualization:</p><ul><li>There are no obvious hooks to "when do I need this". When you are profiling, you think "I need a flamegraph". When do you <em>need</em> this visualization?</li><li>It is not <em>in</em> the same tools that I want to use. The demo shows the user switching between Sourcetrail and Sublime. That type of code visualization and navigation wants to live <em>inside</em> of the code editor.<h3 id="treemap">Treemap</h3>In this <a href="https://www.youtube.com/watch?v=BqF2SbY99B8">set of videos</a>, Jonathan Blow implements a "treemap" to inspect different aspects of a codebase. From watching the videos (I've never used his viewer), the last version looks like this:</li></ul><p><img src="/img/demand-for-visual-programming/treemap.png" alt="" /></p><ul><li>Each square represents a code file</li><li>The size of each square represents the size of the file</li><li>The color of the square represents a blended of complexity metrics in each file like depth of nested ifs, depth of nested loops, number of global reads, etc.</li></ul><p>With this type of visualization you can visualize other <code>(size, color)</code> metrics over the codebase, like <code>(code_size, code_quality)</code>, <code>(code_size, heap_access / code_size)</code>, etc.</p><p>Even if you visualize something as simple as just <code>code_size</code> with no color, that can be very useful when onboarding in massive codebases. A typical Big Tech monolith might look something like:</p><pre><code>packages/
+  first_dependency/
+    first_transitive_dep/
+  second_dependency/
+    second_transitive_dep/
+  ...
+src/
+  bingo/
+  papaya/
+  lmnop/
+  racoon/
+  wingman/
+  galactus/
+  ...
+</code></pre><p>You probably glanced over it, didn't you? I glanced over it to when I joined a large company. When you <code>git clone</code> this repository and navigate around it, you don't really learn what is there, not even the basic picture. In the example above, it turns out that most of the code is in the <code>racoon/</code> service (3M LOC) and the <code>second_transitive_dep/</code> (1M LOC). Everything else has less than 300k LOC and is, by comparison, a rounding error. You can work on this codebase for years without learning these basic facts.</p><h3 id="code_retention_diagram">Code retention diagram</h3><p><a href="https://dl.acm.org/doi/pdf/10.1145/3386321">Rich Hickey's History of Clojure paper</a> has some neat visualizations to understand how the Clojure codebase evolved over time. This is a burndown chart generated from the <a href="https://github.com/src-d/hercules">Hercules CLI</a>:</p><p><img src="/img/demand-for-visual-programming/history_of_clojure_burndown.png" alt="" /></p><ul><li>The code that was written each year is represented as an area of a certain color (e.g. red for 2006)</li><li>As some of that code is removed / replaced the next year, its area diminishes</li><li>By tracking the colors, we can see the staying power of the code written each year. For example, the code written in 2006 (red) was largely removed or replaced. But the code written is 2011 (green) has stayed almost untouched since then. This is true for most years!<a href="#fn-3" id="fnref3"><sup>3</sup></a></li></ul><h2 id="computer_networks_and_service_topologies">Computer networks and service topologies</h2><p>If you ever use AWS, you'll see that its <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/vpc-endpoints-dynamodb.html">documentation</a> is full of diagrams like this one:</p><p><img src="/img/demand-for-visual-programming/aws_services.png" alt="" /></p><p>I think the diagram is very clear. It shows you all the "services" involved and their connections. In this case, if you know what each of them does, it is obvious how they relate to each other. (If you don't you have to go read about each one.)</p><p>Throughout my career, I made one of these topology diagrams for every single team I've belonged to. A few lessons from making them:</p><ul><li>As new people joined, I started from the last diagram I had made (6 months or so on average) which made it easier. There was also some change from last time.</li><li>I missed something important each time I made the diagram.</li><li>As far as I can tell, it was the most important technical artifact I ever transmitted to new people in the team.<blockquote><p></p></blockquote></li></ul> Idea: if you use gRPC service definitions, can you generate these diagrams from them?<br /><h2 id="memory_layouts">Memory layouts</h2><a href="https://users.rust-lang.org/t/understanding-the-memory-layout-of-rc-t-pointers/70511">This reddit thread</a> captures someone trying to understand the memory layout of <code>Rc&lt;T&gt;</code> pointers: <blockquote><p> Hello,  I would like to understand the memory layout while executing the following piece of code, taken from the standard library example: </p></blockquote><pre><code class="rust">use std::rc::Rc;
+
+let vec_var = vec![1.0, 2.0, 3.0];
+let foo = Rc::new(vec_var);
+let a = Rc::clone(&amp;foo);
+let b = Rc::clone(&amp;foo);
+</code></pre><blockquote><p> I have imagined the memory layout like the following drawing. Is that correct?  Thank you! </p></blockquote><p><img src="/img/demand-for-visual-programming/reddit_memory_question.png" alt="" /></p><p>To which a different user replies with this other diagram:</p><p><img src="/img/demand-for-visual-programming/reddit_memory_layout_answer.png" alt="" /></p><p>Notice that the original code hasn't changed. The only information transmitted in the answer is the corrected diagram. That is because to the person asking the question, <em>the diagram is a better representation of their mental model</em>. As such, getting an corrected diagram has an effect on their mental model but looking at the code doesn't.</p><p>The exchange concludes with (emphasis mine):</p><blockquote><p> Hello and thanks a lot for your help, you've really <strong>thrown light on it</strong>. </p></blockquote><p>This is why visual programming matters: it often matches what people are visualizing in their head (or failing to). Generating a good diagram lights up their head.</p><p><a href="https://www.oreilly.com/library/view/programming-rust-2nd/9781492052586/">Programming Rust</a> makes great use of memory layout diagrams:</p><p><img src="/img/demand-for-visual-programming/rust_memory_layout.png" alt="" /></p><blockquote><p> Idea: Can you generate these diagrams directly from the struct type annotations? </p></blockquote><p>Rust has another way in which "memory is laid out": its ownership model. No matter the shape of the size of the data in memory, different references "own" other references forming a tree. Ownership is better explained by this diagram from Programming Rust than by anything I could ever say:</p><p><img src="/img/demand-for-visual-programming/rust_owernship.png" alt="" /></p><blockquote><p> Idea: can you generate ownership trees given Rust source code? </p></blockquote><h2 id="state_machines">State machines</h2><p>These are pretty standard. The <a href="https://docs.idris-lang.org/en/latest/st/machines.html">Idris documentation</a> uses one well here to show what they'll be talking about before they introduce a bunch of novel concepts on how to model state machines in the type system. IMO, this example succeeds at two levels:</p><ul><li>If you have any familiarity with state transition diagrams, it takes a second to understand what is going on</li><li>You are most likely <em>not</em> familiar with the code notation for the state machine, so it really helps to have an alternative representation for it.</li></ul><p><img src="/img/demand-for-visual-programming/idris_state_machine.png" alt="" /></p><blockquote><p> Idea: Can you generate these diagrams directly from the Idris type annotations? </p></blockquote><p>But you don't need to stick to strict UML state machine diagrams. What are the states used <em>for</em>?</p><p><a href="https://docs.stripe.com/api/payment_intents">Payment Intents</a> are the main object Stripe uses to represent an ongoing payment. A lot can happen to a payment, so it ends up having a pretty complicated state machine. We made this <a href="https://docs.stripe.com/payments/paymentintents/lifecycle">state machine diagram</a> for it in 2019 with Michelle Bu and Isabel Bensusan. At the time, it was one of the first "diagrams" in the documentation. </p><p>The diagram walks through the different states a <code>PaymentIntent</code> can be in, with the corresponding UI for each:</p><p><img src="/img/demand-for-visual-programming/payment_intent_state_machine.png" alt="" /></p><p>For a fun example of state machines and how to formalize them, watch <a href="https://www.youtube.com/watch?v=JwO4yPSEp-0">Leslie Lamport's lecture on transaction commit in TLA+</a>.</p><h2 id="swimlane_diagrams_for_request_/_response">Swimlane diagrams for request / response</h2><p>Client / server request architectures can get pretty complicated. I've often seen people make swimlane diagrams to track them.</p><p>Here is a <a href="https://docs.stripe.com/payments/save-during-payment">good example in the Stripe documentation</a>. It shows all the request / responses that happen when a customer checks out, saves their payment method, and pays:</p><p><img src="/img/demand-for-visual-programming/stripe_swimlane.png" alt="" /></p><p>If you haven't seen one already:</p><ul><li>each column represents who is making each request (a computer or a person)</li><li>each box is an action they can make</li><li>each arrows is the request / responses between them.</li><li>As they make requests, tiem</li></ul><p>They are great. You can see the order of the requests, the dependencies between them, who does what, and more. Importantly, when you are coding and you see a code snippet by itself like this one:</p><pre><code class="javascript">const r = await stripe.confirmPayment();
+</code></pre><p>you can find it its corresponding request and see the context in which it happens <em>even if the code surrounding it doesn't have it</em>.</p><p>Adrienne Dreyfus did much of the work to make and standardize these diagrams throughout the Stripe documentation.</p><blockquote><p> Idea: Can you generate one of these diagrams directly from the end-to-end tests you wrote for your service? </p></blockquote><p>That example doesn't show the passing of time <em>while the messages are traveling</em>. Note that the arrows run horizontal. But you can use the same diagram to diagnose race conditions or other bugs that depend on out-of-order or timing problems.</p><p>Aphyr often uses their own version of swimlane diagrams to show how different processes view state in a distributed system. For example, in the <a href="https://aphyr.com/posts/331-jepsen-voltdb-6-3">Jepsen VoltDB 6.3 analysis</a>, they show how different database nodes can send messages to each other:</p><p><img src="/img/demand-for-visual-programming/aphyr_swimlane.png" alt="" /></p><p>In this version of the swimlane the passage of time between requests is crucial to understand the problems with the system.</p><p>The same post also shows <em>an interactive</em> diagram that resembles a swimlane to visualize the results from the Jepsen tool:</p><p><img src="/img/demand-for-visual-programming/aphyr_serializations_errors.png" alt="" /></p><ul><li>Each "swimlane" is now horizontal, a numbered row (10, 11, 18) representing a process that is either reading or writing data.</li><li>The blocks are the process' operations and they time they take to completeķ- The lines represent logical relationships between the data the processes see. The lines that break linearizability are marked Illegal and red.</li></ul><p>Another very cool example is in the documentation for <a href="https://signal.org/docs/specifications/doubleratchet/">Signal's Double Rachet algorithm</a>. These diagrams track what Alice and Bob need at each step of the protocol to encrypt and decrypt the next message:</p><p><img src="/img/demand-for-visual-programming/signal_double_rachet.png" alt="" /></p><p>The protocol is complicated enough for me to think that <em>the diagrams are the source of truth of the protocol</em>. In other words, I'd venture to say that if an implementation of the Double Rachet algorithm ever does something that doesn't match the diagrams, it is more likely it is the code that is wrong than vice-versa. It is in these domains where I think visual programming <em>should actually be the medium of programming</em> but that is for a different post.</p><p><br /></p><h1 id="footnotes">Footnotes</h1><ol class="footnotes"><li id="fn-1">I don't know if the code above is right – it is what I could deduce from the diagram.<a href="#fnref1">↩</a></li><li id="fn-2"><a href="#fnref2">↩</a></li><li id="fn-3"><a href="https://dl.acm.org/doi/pdf/10.1145/3386321">Rich also gave a neat presentation on Clojure's history</a>, narrating why those burndown charts look the way they do: Clojure avoids rewrites beyond bug fixes to keep the code stable.<a href="#fnref3">↩</a></li></ol>
+</div>
+<!-- 
+<div id="post-tags">
+    <b>Tags: </b>
+    
+    <a href="/tags/Software/">Software</a>
+    
+</div>
+
+ -->
+
+    <div id="prev-next">
+        
+        
+        <a class="right" href="/posts/creative-kernels/">Creative kernels &raquo;</a>
+        
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer></footer>
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="/js/highlight.pack.js" type="application/javascript"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-66101645-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>
