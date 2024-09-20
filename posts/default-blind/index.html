@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>sbensu: Default blind</title>
+    
+<meta name="keywords" content="Management,Notes,Software,Misc">
+
+<meta name="description" content="In a software business, it is hard to even know what is going on.">
+
+<meta property="og:description" content="In a software business, it is hard to even know what is going on.">
+
+<meta property="og:url" content="https://blog.sbensu.com/posts/default-blind/" />
+<meta property="og:title" content="Default blind" />
+<meta property="og:type" content="article" />
+
+    <link rel="canonical" href="https://blog.sbensu.com/posts/default-blind/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700" rel="stylesheet"
+        type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://blog.sbensu.com/feed.xml">
+
+    <link href="/css/screen.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-default">
+        <div class="container nav-container">
+            <div class="vertical-container">
+                <div class="nav-inner-container">
+                    <a class="top-link" href="/">index/</a>
+                    <div>
+                        <span>sbensu@gmail.com • </span>
+                        <a href="https://twitter.com/sebasbensu">@sebasbensu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="content">
+                    
+<div id="post">
+    <div class="post-header">
+    <h1>Default blind</h1>
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">September 2024</div>
+        
+    </div>
+</div>
+<div>
+    <p>Imagine you work at a paper store:</p><ol><li>One day, you observe there are a lot more customers in the store, mostly Chinese, and they are all buying red paper. Some of them ask for red envelopes, which you don't have.</li><li>Eventually you ask them, what are the envelopes for? "Honboa?! Chinese New Year gifts of course!". Trying to orient yourself, you read the <a href="https://en.wikipedia.org/wiki/Red_envelope">Wikipedia page</a> and it all clicks together.</li><li>You decide that you should be ready for the next Chinese New Year.</li><li>You act by ordering the envelopes which 10x sales. Success!</li></ol><p>This wasn't a tough mystery to solve... <em>if you work at the store</em>.</p><p>Now imagine you work at the e-commerce store that sells paper. The computer silently handles the sales. Computers don't volunteer information; you have to ask for it. So, by default you know nothing, not even if you had sales that day. To know that, you have to:</p><ol><li>Decide that you want to know the daily revenue.</li><li>Calculate it (and debug it!) with a SQL query, then put it on a dashboard.</li><li>Look at the dashboard daily.</li></ol><p>But are you breaking the revenue by ethnicity / nationality? Are you breaking it down by paper color? Did you notice Chinese New Year?</p><p>Most likely not. In a software business, you are default blind.</p><h2 id="ooda_loop">OODA loop</h2><p>The <a href="https://en.wikipedia.org/wiki/OODA_loop">Observe, Orient, Decide, Act loop</a> is a way to think about how people make decisions in real-time, challenging situations. Observe is the first step. Without it, you are not Oriented, which makes it impossible to make the right Decisions and Actions.</p><p>In my experience at software businesses, it is not hard to Decide and Act. The hard part is to Observe and Orient. Like in the red envelope story, once you Observe, the rest is usually pretty easy.</p><h2 id="we_forget_to_observe">We forget to observe</h2><p>In software, observing is not only hard because of the additional work. It is also hard because <em>you don't realize</em> you are not observing.</p><p>You work in the paper e-commerce store; the dashboard shows sales going up. It's January, so you think it is probably because people are coming back to school from the winter break. That is a sufficient (but wrong) explanation for the incomplete data you have. So, you call it a day and move on<a href="#fn-1" id="fnref1"><sup>1</sup></a>. <em>You didn't feel like you needed to observe in the first place</em>.</p><p>We automatically generate hypotheses of what is happening whether we did the work to observe or not<a href="#fn-2" id="fnref2"><sup>2</sup></a>. And then, we confuse our first hypothesis for a hard-earned model. In concrete domains where we are observing all the time, the those hypothesis are likely to fit the data <em>because we have data</em>. In abstract systems, we have observed very little data <em>but you never notice how little</em>.</p><p>"Did you remember to observe?" ends up being the first and most important step. And while it is not necessarily a binary choice (you can observe more or less), it looks binary in practice. Some people remember to observe and build a mental model of the abstract system while others don't and remain lost.</p><h2 id="who_is_oriented?_who_is_lost?">Who is oriented? Who is lost?</h2><p>You can tell who is lost by the questions they ask:</p><ul><li>They lack basic concepts and definitions. "What is LTV again?".</li><li>They can't contextualize metrics. "We sold 2000 items today", "Is that a lot?".</li><li>They can't interpret events. "Our partner launched a new product", "What does that mean for us?"</li></ul><p>These can be perfectly legitimate questions and "there are no dumb questions" is a healthy mantra:</p><ul><li>It allows beginners to get up to speed quickly.</li><li>It makes it easier to clarify situations where people are afraid to ask for looking stupid.</li></ul><p>But if the business leader asks "What is LTV?" after a year on the job, they are completely lost. The downside of "there are no dumb questions" is that it prevents you from recognizing who is perennially lost.</p><p>And in an abstract domain people can remain lost for years. It is easy to see how it happens:</p><ul><li>Work starts, you open Slack, and people are talking about X which feels urgent.</li><li>Based on X, you do something. You tell yourself and others what effect it will have.</li><li>The outcome is visible but only to those that sift through the resulting data.</li><li>But nobody has time to do that because there is some new urgent Y to deal with.</li></ul><p>The cycle starts again. Years go by and nothing you ever did mattered. Sometimes because X itself was unimportant, other times because you missed a crucial detail, and other times because you had the entire story wrong. But because you failed to check, so you'll never know.</p><p>This doesn't happen in the concrete world. You show up to the store for work. The shelves are empty. The supplier arrived late. The customers are outside, forming a line to buy. Time to work! When you are done, there is no lingering "Did that matter?".</p><h2 id="is_the_entire_company_lost?">Is the entire company lost?</h2><p>What happens in a company where <strong>50% of people are lost</strong>?</p><p>Statistically, in most meetings you have a few people who aren't lost. This correlates with tenure, so it is natural for those people to lead the meeting. The other 50% listens, asks some questions, and hopefully orient themselves. Half the team can see the ball, they tell the rest the where the ball is, and the game continues.</p><p>50% is not ideal but at least it is stable. In most discussions, the already-oriented agree and set direction for the rest. Most of the company is playing near the ball and has a chance to learn.</p><p>But what happens in a company where <strong>80% of people are lost</strong>?</p><p>Statistically, there are many meetings where <i>everybody</i> is lost. Decisions will be made, actions will be taken, and have no results. The team is on one side of the field while the ball is on the other.</p><p>In other meetings, you might have only one or two people that are oriented. If those happen to be the leaders, they'll speak up when the lost say nonsense. But if the leaders are lost, the oriented are likely to stay silent, confused by the nonsense<a href="#fn-3" id="fnref3"><sup>3</sup></a>.</p><p>Unlike the 50% scenario, the 80% is no longer stable. Now, most discussions are nonsense. The new people can't learn where the ball is because nobody arounds them has ever seen it. The oriented people feel like they are losing their minds and leave. You quickly go from 80% lost to 100% lost.</p><p><em>This</em> is what I fear when a company grows its headcount "too quickly". Such discussions are often about "losing the culture". For software companies, I fear more "losing a basic understanding of what we are even talking about".</p><h2 id="now_what?">Now what?</h2><p>This is not an encouraging post and I am trying hard to find a silver lining. Here is something:</p><ul><li>Once you know to look for people who are oriented, it is easy to spot them. Others ask them questions constantly. They'll also often present evidence for their arguments, for example a SQL query.</li><li>You can get better at this! Study the business. Take notes of what the important metrics are, how they relate to each other, and what are things the company has done to impact them. Take what people tell you with a grain of salt!</li><li>Finally, expect others to be oriented. If a teammate has been lost for 2 years, that is sign that they'll never orient themselves and they should work elsewhere. Holding that bar is important.</li></ul><p><br /></p><h1 id="footnotes">Footnotes</h1><ol class="footnotes"><li id="fn-1">There is no time to dig into every anomaly, there are too many. But you can also see how our natural bias is towards explaining anomalies away and not towards investigating.<a href="#fnref1">↩</a></li><li id="fn-2">Before working in industry, I was a bit befuddled by the "data-driven" mantra. It explicitly ignores taste, common-sense, etc. But I get it now. It is a reminder to actively Observe first.<a href="#fnref2">↩</a></li><li id="fn-3">An reader described one of these meetings with "I have a distinct memory of being the only oriented person in a 10 person meeting, felt I was on some kind of hallucinogen, absolute bizarro world"<a href="#fnref3">↩</a></li></ol>
+</div>
+<!-- 
+<div id="post-tags">
+    <b>Tags: </b>
+    
+    <a href="/tags/Management/">Management</a>
+    
+</div>
+
+ -->
+
+    <div id="prev-next">
+        
+        
+        <a class="right" href="/posts/the-perfectionists/">The Perfectionists (book) &raquo;</a>
+        
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer></footer>
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="/js/highlight.min.js" type="application/javascript"></script>
+    <script src="/js/hljs/clojure.min.js" type="application/javascript"></script>
+    <script src="/js/hljs/julia.min.js" type="application/javascript"></script>
+    <script src="/js/hljs/excel.min.js" type="application/javascript"></script>
+    <script>hljs.highlightAll();</script>
+    
+    
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-66101645-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>
